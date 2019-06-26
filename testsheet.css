@@ -6,6 +6,6 @@ p {
 	color: #abcdef;
 }
 
-.emphasized {
-	font: bold;
+p.emphasized {
+	font: 15px bold;
 }
