@@ -4,9 +4,10 @@ body {
 
 .normal {
 	color: #abcdef;
+	font-variant: small-caps;
 }
 
 .emphasized {
 	color: #fedcba;
-	font: 15px bold;
+	font-weight: bold;
 }
