@@ -2,10 +2,11 @@ body {
 	background-color: #123456;
 }
 
-p {
+.normal {
 	color: #abcdef;
 }
 
-p.emphasized {
+.emphasized {
+	color: #fedcba;
 	font: 15px bold;
 }
