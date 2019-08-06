@@ -1,3 +1,5 @@
+import { sum } from "mathjs"
+
 function weirdtestfunction() {
 	document.getElementById("testground").innerHTML = "I changed a paragraph";
 }
@@ -18,6 +20,6 @@ function add_these_two_numbers() {
 	var numlist = numform.querySelectorAll("input[type=number]");
 	var firstnum = numlist[0].value;
 	var secondnum = numlist[1].value;
-	var sum_of_nums = firstnum + secondnum;
+	var sum_of_nums = math.sum(firstnum,secondnum);
 	document.getElementById("resultdump").innerHTML = sum_of_nums.toString();
 }
