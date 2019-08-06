@@ -1,3 +1,3 @@
 function weirdtestfunction() {
-document.getElementById("testground").innerHTML = "I changed it"
+document.getElementById("testground").innerHTML = "I changed a paragraph"
 }
