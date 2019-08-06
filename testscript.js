@@ -14,9 +14,10 @@ function othertestfunction() {
 }
 
 function add_these_two_numbers() {
-	var numlist = document.getElementById("testform").getElementsByTagName("input");
+	var numform = document.getElementById("testform");
+	var numlist = numform.querySelectorAll("input[type=number]");
 	var firstnum = numlist[0];
 	var secondnum = numlist[1];
 	var sum_of_nums = firstnum + secondnum;
-	document.getElementById("testform").getElementById("resultdump").innerHTML = "sum_of_nums.toString()";
+	document.getElementById("resultdump").innerHTML = sum_of_nums.toString();
 }
