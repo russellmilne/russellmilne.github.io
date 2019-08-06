@@ -3,7 +3,7 @@ function weirdtestfunction() {
 }
 
 function othertestfunction() {
-	document.getElementsByTagName("p").innerHTML = "Let's see if this alters the dropdown menu."
+	document.getElementsByTagName("p")[1].innerHTML = "Let's see if this alters the dropdown menu."
 	document.getElementById("testground").innerHTML = "I changed a paragraph, or maybe several"
-	document.getElementsByTagName("button").innerHTML = "Also a couple buttons"
+	document.getElementsByTagName("button")[*].innerHTML = "Also a couple buttons"
 }
