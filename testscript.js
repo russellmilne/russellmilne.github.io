@@ -18,5 +18,5 @@ function add_these_two_numbers() {
 	var firstnum = numlist[0];
 	var secondnum = numlist[1];
 	var sum_of_nums = firstnum + secondnum;
-	document.getElementById("testform").getElementById("resultdump").innerHTML = sum_of_nums;
+	document.getElementById("testform").getElementById("resultdump").innerHTML = "sum_of_nums.toString();"
 }
