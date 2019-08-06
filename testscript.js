@@ -16,8 +16,8 @@ function othertestfunction() {
 function add_these_two_numbers() {
 	var numform = document.getElementById("testform");
 	var numlist = numform.querySelectorAll("input[type=number]");
-	var firstnum = numlist[0];
-	var secondnum = numlist[1];
+	var firstnum = numlist[0].value;
+	var secondnum = numlist[1].value;
 	var sum_of_nums = firstnum + secondnum;
 	document.getElementById("resultdump").innerHTML = sum_of_nums.toString();
 }
