@@ -3,5 +3,5 @@ function weirdtestfunction() {
 }
 
 function othertestfunction() {
-	document.getElementsByTagName("p").innerHTML = "I changed a paragraph, or maybe several"
+	document.getElementsById("testground").innerHTML = "I changed a paragraph, or maybe several"
 }
