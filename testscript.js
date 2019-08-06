@@ -12,3 +12,11 @@ function othertestfunction() {
 		blist[i].style.color = "red";
 	}
 }
+
+function add_these_two_numbers() {
+	var numlist = document.getElementById("testform").querySelectorAll("input[type=number]");
+	var firstnum = numlist[0];
+	var secondnum = numlist[1];
+	var sum_of_nums = firstnum + secondnum;
+	document.getElementById("testform").getElementById("resultdump").innerHTML = sum_of_nums;
+}

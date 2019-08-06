@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" href="testsheet.css">
 	<script src="testscript.js"></script>
+	<script src="math.js" type="text/javascript"></script>
 </head>
 <body>
 	<p>I will now test a bit of syntax.</p>
@@ -16,5 +17,11 @@
 	<p id="testground">Here is some more text.</p>
 	<button type="button" onclick="weirdtestfunction()">Maybe we should change it.</button>
 	<button type="button" onclick="othertestfunction()">There's no going back once you've clicked this button!</button>
+	<form id="testform">
+		<p>Enter a number here (between 0 and 100): <input type="number" min="0" max="100"></p>
+		<p>Enter another one here (no restrictions): <input type="number"></p>
+		<p id="resultdump"></p>
+	</form>
+	<p><button type="button" onclick="add_these_two_numbers()">Add them together and see what happens</button></p>
 </body>
 </html>
