@@ -5,7 +5,7 @@
 </head>
 <body>
 	<form>
-		<p>Enter a number here: <input type="number" id="myNumber"></p>
+		<p>Enter a number: <input type="number" id="myNumber"></p>
 		<input type="button" value="Display it">
 		<p id="result"></p>
 	</form>
@@ -15,9 +15,10 @@
 
 		onlyButton.onclick = function() {
 			var numInput = parseFloat(document.querySelectorAll('input[type="number"]')[0].value);
-			Papa.parse("http://russellmilne.com/testbook.csv", {
+			Papa.parse("testbook.csv", {
 				header: true,
 				dynamicTyping: true,
+				download: true,
 				delimiter: ",",
 				complete: function(results) {
 					console.log(results);
