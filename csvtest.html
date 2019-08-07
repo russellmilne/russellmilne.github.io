@@ -4,13 +4,14 @@
 </head>
 <body>
 	<form>
-		<p>Enter a number here: <input type="number" id="myNumber"></p>
+		<p>Enter a number: <input type="number" id="myNumber"></p>
 		<input type="button" value="Display it">
 		<p id="result"></p>
 	</form>
 	<script type="text/javascript">
 		var onlyButton = document.querySelector('input[type="button"]');
-		var numInput = parseFloat(document.getElementById("myNumber").value);
+		var numlist = document.querySelectorAll('input[type="number"]');
+		var numInput = parseFloat(numlist[0].value);
 
 		onlyButton.onclick = function() {
 			document.getElementById("result").innerHTML = numInput;
