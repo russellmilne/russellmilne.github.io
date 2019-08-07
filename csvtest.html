@@ -5,7 +5,7 @@
 </head>
 <body>
 	<form>
-		<p>Enter a number: <input type="number" id="myNumber"></p>
+		<p>Enter a number here: <input type="number" id="myNumber"></p>
 		<input type="button" value="Display it">
 		<p id="result"></p>
 	</form>
@@ -23,7 +23,20 @@
 				delimiter: ",",
 				complete: function(results) {
 					uploaded_book = results.data;
-					document.getElementById("result").innerHTML = uploaded_book[0].animal;
+
+					var out_sentence = null;
+
+					for (i = 0; i < uploaded_book.length; i++) {
+						if (uploaded_book[i].juveniles === numInput) {
+							out_sentence = "The juvenile ".concat(uploaded_book[i].animal," population is ",numInput.toString());
+						} else if (uploaded_book[i].adults === numInput) {
+							out_sentence = "The adult ".concat(uploaded_book[i].animal," population is ",numInput.toString());
+						}
+					}
+					if (out_sentence === null) {
+						out_sentence = "There aren't that many of any animal"
+					}
+					document.getElementById("result").innerHTML = out_sentence;
 				}
 			})
 		}
