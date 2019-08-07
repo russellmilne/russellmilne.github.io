@@ -18,17 +18,17 @@
 	<button type="button" onclick="weirdtestfunction()">Maybe we should change it.</button>
 	<button type="button" onclick="othertestfunction()">There's no going back once you've clicked this button!</button>
 	<form id="testform">
-		<p>Enter a number here (between 0 and 100): <input type="number" min="0" max="100"></p>
-		<p>Enter another one here (no restrictions): <input type="number"></p>
+		<p>Enter a number here (between 0 and 100): <input type="number" id="numone" min="0" max="100"></p>
+		<p>Enter another one here (no restrictions): <input type="number" id="numtwo"></p>
 		<p id="resultdump"></p>
 	</form>
 	<p><button type="button" onclick="add_these_two_numbers()">Now add them together and see what happens</button></p>
-	<p><button type="button" onclick="test_mathjs_function()">Combinatorics</button></p>
+	<p><button type="button" onclick="test_mathjs_function()">Combinatorics!</button></p>
 	<p id="nchoosek_dump"></p>
 	<script type="text/javascript">
 		function test_mathjs_function() {
-			var n = parseInt(document.querySelectorAll("input[type=number]")[0].value);
-			var k_input = parseInt(document.querySelectorAll("input[type=number]")[1].value);
+			var n = parseInt(document.getElementsById("numone").value);
+			var k_input = parseInt(document.getElementsById("numtwo").value);
 			document.getElementsById("nchoosek_dump").innerHTML = k_input;
 		}
 	</script>
