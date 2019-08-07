@@ -23,12 +23,12 @@
 		<p id="resultdump"></p>
 	</form>
 	<p><button type="button" onclick="add_these_two_numbers()">Now add them together and see what happens</button></p>
-	<p><button type="button" onclick="test_mathjs_function()">Combinatorics!</button></p>
+	<p><button type="button" onclick="test_mathjs_function()">Combinatorics</button></p>
 	<p id="nchoosek_dump"></p>
 	<script type="text/javascript">
 		function test_mathjs_function() {
-			var n = parseInt(document.getElementsById("numone").value);
-			var k_input = parseInt(document.getElementsById("numtwo").value);
+			var n = document.getElementsById("numone").value;
+			var k_input = document.getElementsById("numtwo").value;
 			document.getElementsById("nchoosek_dump").innerHTML = k_input;
 		}
 	</script>
