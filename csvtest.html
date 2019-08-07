@@ -9,10 +9,10 @@
 		<p id="result"></p>
 	</form>
 	<script type="text/javascript">
-		var onlyButton = document.querySelectorAll('input[type="button"]')[0];
+		var onlyButton = document.querySelector('input[type="button"]');
 		var numInput = parseFloat(document.querySelector('input[type="number"]').value);
 
-		onlyButton.onClick = function() {
+		onlyButton.onclick = function() {
 			document.getElementById("result").innerHTML = numInput;
 		}
 	</script>
