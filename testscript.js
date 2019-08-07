@@ -19,5 +19,5 @@ function add_these_two_numbers() {
 	var firstnum = parseFloat(numlist[0].value);
 	var secondnum = parseFloat(numlist[1].value);
 	var sum_of_nums = firstnum + secondnum;
-	document.getElementById("resultdump").innerHTML = sum_of_nums;
+	document.getElementById("nchoosek_dump").innerHTML = sum_of_nums;
 }
