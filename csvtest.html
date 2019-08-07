@@ -5,7 +5,7 @@
 </head>
 <body>
 	<form>
-		<p>Enter a number: <input type="number" id="myNumber"></p>
+		<p>Enter a number here: <input type="number" id="myNumber"></p>
 		<input type="button" value="Display it">
 		<p id="result"></p>
 	</form>
@@ -21,11 +21,12 @@
 				download: true,
 				delimiter: ",",
 				complete: function(results) {
-					console.log(results.data[0]["Animal"]);
+					console.log(results.data[0]["animal"]);
+					console.log(results.data[0].animal)
 					uploaded_book = results.data;
 				}
 			})
-			document.getElementById("result").innerHTML = "uploaded_book[0].Animal";
+			document.getElementById("result").innerHTML = "uploaded_book[0].animal";
 		}
 	</script>
 </body>
