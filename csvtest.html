@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<p>Enter a number here: <input type="number"></p>
+		<input type="button" value="Display it">
+		<p id="result"></p>
+	</form>
+	<script type="text/javascript">
+		var onlyButton = document.querySelectorAll('input[type="button"]')[0];
+		var numInput = parseFloat(document.querySelector('input[type="number"]'));
+
+		onlyButton.onClick = function() {
+			document.getElementById("result").innerHTML = numInput;
+		}
+	</script>
+</body>
+</html>
