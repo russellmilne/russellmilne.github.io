@@ -1,5 +1,3 @@
-import { sum } from "mathjs"
-
 function weirdtestfunction() {
 	document.getElementById("testground").innerHTML = "I changed a paragraph";
 }
