@@ -56,7 +56,7 @@
 
 			var dumpText = "Testing in progress ";
 
-			for (i = 0; i < tempInputs.length; i++) {
+			for (i = 0; i <= tempInputs.length; i++) {
 				tempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+1].value);
 				dumpText = dumpText.concat(tempInputs[i]);
 			}
