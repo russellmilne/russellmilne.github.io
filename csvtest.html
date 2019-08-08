@@ -7,12 +7,18 @@
 	<form>
 		<p>Enter a number here: <input type="number" id="myNumber"></p>
 		<input type="button" value="How many animals are there?">
-		<p id="result"></p>
+		<p id="animalResult"></p>
+	</form>
+	<form>
+		<p>January temperature: <input type="number" id="jantemp"></p>
+		<input type="button" value="Where should you live?">
+		<p id="weatherResult"></p>
 	</form>
 	<script type="text/javascript">
-		var onlyButton = document.querySelector('input[type="button"]');
+		var animalButton = document.querySelectorAll('input[type="button"]')[0];
+		var weatherTestButton = document.querySelectorAll('input[type="button"]')[1];
 
-		onlyButton.onclick = function() {
+		animalButton.onclick = function() {
 			var numInput = parseFloat(document.querySelectorAll('input[type="number"]')[0].value);
 
 			var uploaded_book;
@@ -36,9 +42,13 @@
 					if (out_sentence === null) {
 						out_sentence = "There aren't that many of any animal"
 					}
-					document.getElementById("result").innerHTML = out_sentence;
+					document.getElementById("animalResult").innerHTML = out_sentence;
 				}
 			})
+		}
+
+		weatherTestButton.onclick = function() {
+			document.getElementById("weatherResult").innerHTML = "I haven't done that yet";
 		}
 	</script>
 </body>
