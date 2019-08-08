@@ -48,7 +48,30 @@
 		}
 
 		weatherTestButton.onclick = function() {
-			document.getElementById("weatherResult").innerHTML = "I haven't done that yet";
+			var jantemp = parseFloat(document.querySelectorAll('input[type="number"]')[1].value)
+
+			Papa.parse("weather_noprecip_full.csv", {
+				header: true,
+				dynamicTyping: true,
+				download: true,
+				delimiter: ",",
+				complete: function(results) {
+					var stations = results.data;
+					var closest_station = null;
+
+					for (i = 0; i < stations.length; i++) {
+						if (stations[i].jan_temp === jantemp) {
+							closest_station = stations[i].city_nominal;
+						}
+					}
+
+					if (closest_station === null) {
+						closest_station = "It doesn't get that hot in January anywhere"
+					}
+
+					document.getElementById("weatherResult").innerHTML = closest_station;
+				}
+			})
 		}
 	</script>
 </body>
