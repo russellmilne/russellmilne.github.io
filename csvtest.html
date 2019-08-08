@@ -10,9 +10,11 @@
 		<p id="animalResult"></p>
 	</form>
 	<form>
-		<p>January temperature (Integers only): <input type="number" min="-459" max="212" id="jantemp"></p>
+		<p>Input temperatures:</p>
+		<p>Jan:<input type="number" min="-459" max="212" id="jantemp"> Feb:<input type="number"> Mar:<input type="number"> Apr:<input type="number"> May:<input type="number"> Jun:<input type="number"> Jul:<input type="number"> Aug:<input type="number"> Sep:<input type="number"> Oct:<input type="number"> Nov:<input type="number"> Dec:<input type="number"></p>
 		<input type="button" value="Where should you live?">
 		<p id="weatherResult"></p>
+		<p id="dump"></p>
 	</form>
 	<script type="text/javascript">
 		var animalButton = document.querySelectorAll('input[type="button"]')[0];
@@ -48,7 +50,18 @@
 		}
 
 		weatherTestButton.onclick = function() {
-			var jantemp = parseFloat(document.querySelectorAll('input[type="number"]')[1].value)
+			var jantemp = parseFloat(document.querySelectorAll('input[type="number"]')[1].value);
+
+			var tempInputs = new Array(11);
+
+			var dumpText = "Testing in progress ";
+
+			for (i = 0; i < tempInputs.length; i++) {
+				tempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+1].value);
+				dumpText = dumpText.concat(tempInputs[i]);
+			}
+
+			document.getElementById("dump").innerHTML = dumpText;
 
 			Papa.parse("weather_noprecip_full.csv", {
 				header: true,
