@@ -6,7 +6,7 @@
 </head>
 <body>
 	<form>
-		<p>Enter a number: <input type="number" id="myNumber"></p>
+		<p>Enter a number here: <input type="number" id="myNumber"></p>
 		<input type="button" value="How many animals are there?">
 		<p id="animalResult"></p>
 	</form>
@@ -60,16 +60,25 @@
 		weatherTestButton.onclick = function() {
 			var jantemp = parseFloat(document.querySelectorAll('input[type="number"]')[1].value);
 
+			var farTempInputs = new Array(12);
+			var celTempInputs = new Array(12);
 			var tempInputs = new Array(12);
 
 			var dumpText = "Testing in progress ";
 
 			for (i = 0; i < tempInputs.length; i++) {
-				tempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+1].value);
-				if (document.getElementById("degreebuttonc").checked === true) {
-					tempInputs[i] = (tempInputs[i] - 32) * (5 / 9);
-				}
-				dumpText = dumpText.concat(tempInputs[i]);
+				farTempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+1].value);
+				celTempInputs[i] = ((parseFloat(document.querySelectorAll('input[type="number"]')[i+1].value) - 32) * (5 / 9))
+				dumpText = dumpText.concat(farTempInputs[i],celTempInputs[i]);
+			}
+
+			if (document.getElementById("degreebuttonc").checked = true) {
+				tempInputs = celTempInputs;
+				dumpText = dumpText.concat(" Celsius");
+			}
+			else {
+				tempInputs = farTempInputs;
+				dumpText = dumpText.concat(" Fahrenheit");
 			}
 
 			document.getElementById("dump").innerHTML = dumpText;
