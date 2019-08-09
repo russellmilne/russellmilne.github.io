@@ -6,7 +6,7 @@
 </head>
 <body>
 	<form>
-		<p>Enter a number here: <input type="number" id="myNumber"></p>
+		<p>Enter a number: <input type="number" id="myNumber"></p>
 		<input type="button" value="How many animals are there?">
 		<p id="animalResult"></p>
 	</form>
@@ -72,7 +72,7 @@
 				dumpText = dumpText.concat(farTempInputs[i],celTempInputs[i]);
 			}
 
-			if (document.getElementById("degreebuttonc").checked = true) {
+			if (document.getElementById("degreebuttonc").checked === true) {
 				tempInputs = celTempInputs;
 				dumpText = dumpText.concat(" Celsius");
 			}
