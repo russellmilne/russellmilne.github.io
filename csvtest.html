@@ -20,7 +20,7 @@
 			<input type="radio" id="degreebuttonc" name="degreescale" value="celsius">
 			<label for="degreebuttonc">Celsius</label>
 		</div>
-		<input type="button" value="Where should you live?">
+		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
 	</form>
@@ -100,7 +100,7 @@
 
 						for (j = 0; j < stationTemps.length; j++) {
 							if (document.getElementById("degreebuttonc").checked === true) {
-								tempInputs[j] = (tempinputs[j] - 32) * (5 / 9);
+								tempInputs[j] = (tempInputs[j] - 32) * (5 / 9);
 							}
 							comparisonArray[j] = tempInputs[j] - stationTemps[j]
 						}
