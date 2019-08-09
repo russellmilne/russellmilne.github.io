@@ -6,13 +6,20 @@
 </head>
 <body>
 	<form>
-		<p>Enter a number: <input type="number" id="myNumber"></p>
+		<p>Enter a number here: <input type="number" id="myNumber"></p>
 		<input type="button" value="How many animals are there?">
 		<p id="animalResult"></p>
 	</form>
 	<form>
 		<p>Input temperatures:</p>
 		<p>Jan:<input type="number" min="-459" max="212" id="jantemp"> Feb:<input type="number"> Mar:<input type="number"> Apr:<input type="number"> May:<input type="number"> Jun:<input type="number"> Jul:<input type="number"> Aug:<input type="number"> Sep:<input type="number"> Oct:<input type="number"> Nov:<input type="number"> Dec:<input type="number"></p>
+		<p>Which degree scale are your temperatures in?</p>
+		<div>
+			<input type="radio" id="degreebuttonf" name="degreescale" value="fahrenheit" checked>
+			<label for="degreebuttonf">Fahrenheit</label>
+			<input type="radio" id="degreebuttonc" name="degreescale" value="celsius">
+			<label for="degreebuttonc">Celsius</label>
+		</div>
 		<input type="button" value="Where should you live?">
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
@@ -92,6 +99,9 @@
 						stationTemps[11] = stations[i].dec_temp;
 
 						for (j = 0; j < stationTemps.length; j++) {
+							if (document.getElementById("degreebuttonc").checked === true) {
+								tempInputs[j] = (tempinputs[j] - 32) * (5 / 9);
+							}
 							comparisonArray[j] = tempInputs[j] - stationTemps[j]
 						}
 
