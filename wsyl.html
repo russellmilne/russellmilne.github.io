@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="papaparse.min.js" type="text/javascript"></script>
+	<script src="math.js" type="text/javascript"></script>
+</head>
+<body>
+	<form>
+		<p>Input temperatures:</p>
+		<div>
+			Jan:<input type="number" min="-459" max="212"> Feb:<input type="number"> Mar:<input type="number"> Apr:<input type="number"> May:<input type="number"> Jun:<input type="number"> Jul:<input type="number"> Aug:<input type="number"> Sep:<input type="number"> Oct:<input type="number"> Nov:<input type="number"> Dec:<input type="number">
+		</div>
+		<p>Which degree scale are your temperatures in?</p>
+		<div>
+			<input type="radio" id="degreebuttonf" name="degreescale" value="fahrenheit" checked>
+			<label for="degreebuttonf">Fahrenheit</label>
+			<input type="radio" id="degreebuttonc" name="degreescale" value="celsius">
+			<label for="degreebuttonc">Celsius</label>
+		</div>
+		<p><input type="button" value="Where should you live?"></p>
+		<p id="weatherResult"></p>
+		<p id="dump"></p>
+	</form>
+	<script type="text/javascript">
+		var weatherTestButton = document.querySelector('input[type="button"]');
+
+		weatherTestButton.onclick = function() {
+
+			var farTempInputs = new Array(12);
+			var celTempInputs = new Array(12);
+			var tempInputs = new Array(12);
+
+			for (i = 0; i < tempInputs.length; i++) {
+				farTempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+1].value);
+				celTempInputs[i] = ((parseFloat(document.querySelectorAll('input[type="number"]')[i+1].value) * (9 / 5)) + 32)
+			}
+
+			if (document.getElementById("degreebuttonc").checked === true) {
+				tempInputs = celTempInputs;
+			}
+			else {
+				tempInputs = farTempInputs;
+			}
+
+			Papa.parse("weather_noprecip_full.csv", {
+				header: true,
+				dynamicTyping: true,
+				download: true,
+				delimiter: ",",
+				complete: function(results) {
+					var stations = results.data;
+					var closest_station = null;
+					var stationTemps = new Array(12);
+					var comparisonArray = new Array(12);
+					var tempNorm = 9999999999;
+
+					for (i = 0; i < stations.length; i++) {
+
+						stationTemps[0] = stations[i].jan_temp;
+						stationTemps[1] = stations[i].feb_temp;
+						stationTemps[2] = stations[i].mar_temp;
+						stationTemps[3] = stations[i].apr_temp;
+						stationTemps[4] = stations[i].may_temp;
+						stationTemps[5] = stations[i].jun_temp;
+						stationTemps[6] = stations[i].jul_temp;
+						stationTemps[7] = stations[i].aug_temp;
+						stationTemps[8] = stations[i].sep_temp;
+						stationTemps[9] = stations[i].oct_temp;
+						stationTemps[10] = stations[i].nov_temp;
+						stationTemps[11] = stations[i].dec_temp;
+
+						for (j = 0; j < stationTemps.length; j++) {
+							comparisonArray[j] = tempInputs[j] - stationTemps[j]
+						}
+
+						if (math.norm(comparisonArray) < tempNorm) {
+							tempNorm = math.norm(comparisonArray);
+							closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference score ",tempNorm,")");
+						}
+					}
+
+					if (closest_station === null) {
+						closest_station = "It doesn't get that hot in January anywhere"
+					}
+
+					document.getElementById("weatherResult").innerHTML = closest_station;
+				}
+			})
+		}
+	</script>
+</body>
+</html>
