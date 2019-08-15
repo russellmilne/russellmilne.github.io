@@ -85,7 +85,14 @@
 			<input type="radio" id="degreebuttonc" name="degreescale" value="celsius">
 			<label for="degreebuttonc">Celsius</label>
 		</div>
-		<p>Optional: If you're unfamiliar with what a particular percentage humidity feels like, you can select from this list of presets:<select>
+		<p>Which hemisphere are you in?</p>
+		<div>
+			<input type="radio" id="hemispherebutton_n" name="whichhemisphere" value="nhemis" checked>
+			<label for="hemispherebutton_n">Northern hemisphere (January is in the winter)</label><br>
+			<input type="radio" id="hemispherebutton_s" name="whichhemisphere" value="shemis">
+			<label for="hemispherebutton_s">Southern hemisphere (January is in the summer)</label>
+		</div>
+		<p>Optional: If you're unfamiliar with what a particular percentage humidity feels like, you can select from this list of presets: <select>
 			<option value="own" selected>(I'm imputting my own humidity values)</option>
 			<option value="yazd">Extreme desert</option>
 			<option value="dubai">Arid</option>
@@ -114,6 +121,8 @@
 
 			var humidInputs = new Array(12);
 
+			var hemisphereInput = null;
+
 			for (i = 0; i < tempInputs.length; i++) {
 				farTempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[2*i].value);
 				celTempInputs[i] = ((parseFloat(document.querySelectorAll('input[type="number"]')[2*i].value) * (9 / 5)) + 32)
@@ -126,6 +135,13 @@
 			}
 			else {
 				tempInputs = farTempInputs;
+			}
+
+			if (document.getElementById("hemispherebutton_s").checked === true) {
+				hemisphereInput = "S";
+			}
+			else {
+				hemisphereInput = "N";
 			}
 
 			Papa.parse("weather_noprecip_full.csv", {
@@ -148,33 +164,66 @@
 					var humidNorm_current = tempNorm_overallBest;
 					var overallNorm_overallBest = tempNorm_overallBest;
 
+					var stationHemisphere = null;
+
 					for (i = 0; i < stations.length; i++) {
 
-						stationTemps[0] = stations[i].jan_temp;
-						stationTemps[1] = stations[i].feb_temp;
-						stationTemps[2] = stations[i].mar_temp;
-						stationTemps[3] = stations[i].apr_temp;
-						stationTemps[4] = stations[i].may_temp;
-						stationTemps[5] = stations[i].jun_temp;
-						stationTemps[6] = stations[i].jul_temp;
-						stationTemps[7] = stations[i].aug_temp;
-						stationTemps[8] = stations[i].sep_temp;
-						stationTemps[9] = stations[i].oct_temp;
-						stationTemps[10] = stations[i].nov_temp;
-						stationTemps[11] = stations[i].dec_temp;
+						stationHemisphere = stations[i].lat_hemisphere;
 
-						stationHumids[0] = stations[i].jan_humid;
-						stationHumids[1] = stations[i].feb_humid;
-						stationHumids[2] = stations[i].mar_humid;
-						stationHumids[3] = stations[i].apr_humid;
-						stationHumids[4] = stations[i].may_humid;
-						stationHumids[5] = stations[i].jun_humid;
-						stationHumids[6] = stations[i].jul_humid;
-						stationHumids[7] = stations[i].aug_humid;
-						stationHumids[8] = stations[i].sep_humid;
-						stationHumids[9] = stations[i].oct_humid;
-						stationHumids[10] = stations[i].nov_humid;
-						stationHumids[11] = stations[i].dec_humid;
+						if (stationHemisphere === hemisphereInput) {
+							stationTemps[0] = stations[i].jan_temp;
+							stationTemps[1] = stations[i].feb_temp;
+							stationTemps[2] = stations[i].mar_temp;
+							stationTemps[3] = stations[i].apr_temp;
+							stationTemps[4] = stations[i].may_temp;
+							stationTemps[5] = stations[i].jun_temp;
+							stationTemps[6] = stations[i].jul_temp;
+							stationTemps[7] = stations[i].aug_temp;
+							stationTemps[8] = stations[i].sep_temp;
+							stationTemps[9] = stations[i].oct_temp;
+							stationTemps[10] = stations[i].nov_temp;
+							stationTemps[11] = stations[i].dec_temp;
+
+							stationHumids[0] = stations[i].jan_humid;
+							stationHumids[1] = stations[i].feb_humid;
+							stationHumids[2] = stations[i].mar_humid;
+							stationHumids[3] = stations[i].apr_humid;
+							stationHumids[4] = stations[i].may_humid;
+							stationHumids[5] = stations[i].jun_humid;
+							stationHumids[6] = stations[i].jul_humid;
+							stationHumids[7] = stations[i].aug_humid;
+							stationHumids[8] = stations[i].sep_humid;
+							stationHumids[9] = stations[i].oct_humid;
+							stationHumids[10] = stations[i].nov_humid;
+							stationHumids[11] = stations[i].dec_humid;
+						}
+						else {
+							stationTemps[0] = stations[i].jul_temp;
+							stationTemps[1] = stations[i].aug_temp;
+							stationTemps[2] = stations[i].sep_temp;
+							stationTemps[3] = stations[i].oct_temp;
+							stationTemps[4] = stations[i].nov_temp;
+							stationTemps[5] = stations[i].dec_temp;
+							stationTemps[6] = stations[i].jan_temp;
+							stationTemps[7] = stations[i].feb_temp;
+							stationTemps[8] = stations[i].mar_temp;
+							stationTemps[9] = stations[i].apr_temp;
+							stationTemps[10] = stations[i].may_temp;
+							stationTemps[11] = stations[i].jun_temp;
+
+							stationHumids[0] = stations[i].jul_humid;
+							stationHumids[1] = stations[i].aug_humid;
+							stationHumids[2] = stations[i].sep_humid;
+							stationHumids[3] = stations[i].oct_humid;
+							stationHumids[4] = stations[i].nov_humid;
+							stationHumids[5] = stations[i].dec_humid;
+							stationHumids[6] = stations[i].jan_humid;
+							stationHumids[7] = stations[i].feb_humid;
+							stationHumids[8] = stations[i].mar_humid;
+							stationHumids[9] = stations[i].apr_humid;
+							stationHumids[10] = stations[i].may_humid;
+							stationHumids[11] = stations[i].jun_humid;
+						}
 
 						for (j = 0; j < stationTemps.length; j++) {
 							comparisonTempArray[j] = tempInputs[j] - stationTemps[j];
