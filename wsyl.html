@@ -17,6 +17,10 @@
 			<input type="radio" id="degreebuttonc" name="degreescale" value="celsius">
 			<label for="degreebuttonc">Celsius</label>
 		</div>
+		<p>Input percentage humidity per month:</p>
+		<div>
+			Jan:<input type="number" min="0" max="100"> Feb:<input type="number"> Mar:<input type="number"> Apr:<input type="number"> May:<input type="number"> Jun:<input type="number"> Jul:<input type="number"> Aug:<input type="number"> Sep:<input type="number"> Oct:<input type="number"> Nov:<input type="number"> Dec:<input type="number">
+		</div>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
@@ -30,9 +34,13 @@
 			var celTempInputs = new Array(12);
 			var tempInputs = new Array(12);
 
+			var humidInputs = new Array(12);
+
 			for (i = 0; i < tempInputs.length; i++) {
 				farTempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i].value);
 				celTempInputs[i] = ((parseFloat(document.querySelectorAll('input[type="number"]')[i].value) * (9 / 5)) + 32)
+
+				humidInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+12].value);
 			}
 
 			if (document.getElementById("degreebuttonc").checked === true) {
@@ -50,9 +58,17 @@
 				complete: function(results) {
 					var stations = results.data;
 					var closest_station = null;
+
 					var stationTemps = new Array(12);
-					var comparisonArray = new Array(12);
-					var tempNorm = 9999999999;
+					var comparisonTempArray = new Array(12);
+					var stationHumids = new Array(12);
+					var comparisonHumidArray = new Array(12);
+
+					var tempNorm_overallBest = 9999999999;
+					var tempNorm_current = tempNorm_overallBest
+					var humidNorm_overallBest = tempNorm_overallBest;
+					var humidNorm_current = tempNorm_overallBest;
+					var overallNorm_overallBest = tempNorm_overallBest;
 
 					for (i = 0; i < stations.length; i++) {
 
@@ -69,13 +85,33 @@
 						stationTemps[10] = stations[i].nov_temp;
 						stationTemps[11] = stations[i].dec_temp;
 
+						stationHumids[0] = stations[i].jan_humid;
+						stationHumids[1] = stations[i].feb_humid;
+						stationHumids[2] = stations[i].mar_humid;
+						stationHumids[3] = stations[i].apr_humid;
+						stationHumids[4] = stations[i].may_humid;
+						stationHumids[5] = stations[i].jun_humid;
+						stationHumids[6] = stations[i].jul_humid;
+						stationHumids[7] = stations[i].aug_humid;
+						stationHumids[8] = stations[i].sep_humid;
+						stationHumids[9] = stations[i].oct_humid;
+						stationHumids[10] = stations[i].nov_humid;
+						stationHumids[11] = stations[i].dec_humid;
+
 						for (j = 0; j < stationTemps.length; j++) {
-							comparisonArray[j] = tempInputs[j] - stationTemps[j]
+							comparisonTempArray[j] = tempInputs[j] - stationTemps[j];
+							comparisonHumidArray[j] = humidInputs[j] - stationHumids[j];
 						}
 
-						if (math.norm(comparisonArray) < tempNorm) {
-							tempNorm = math.norm(comparisonArray);
-							closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference score ",tempNorm,")");
+						tempNorm_current = math.norm(comparisonTempArray);
+						humidNorm_current = math.norm(comparisonHumidArray);
+						var comparisonOverallArray = [tempNorm_current, humidNorm_current];
+
+						if (math.norm(comparisonOverallArray) < overallNorm_overallBest) {
+							overallNorm_overallBest = math.norm(comparisonOverallArray);
+							tempNorm_overallBest = tempNorm_current;
+							humidNorm_overallBest = humidNorm_current;
+							closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference scores ",tempNorm_overallBest," temperature, ",humidNorm_overallBest," humidity)");
 						}
 					}
 
