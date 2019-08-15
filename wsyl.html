@@ -92,7 +92,7 @@
 			<input type="radio" id="hemispherebutton_s" name="whichhemisphere" value="shemis">
 			<label for="hemispherebutton_s">Southern hemisphere (January is in the summer)</label>
 		</div>
-		<p>Optional: If you're unfamiliar with what a particular percentage humidity feels like, you can select from this list of presets: <select>
+		<p>Optional: If you're unfamiliar with what a particular percentage humidity feels like, you can select from this list of presets: <select id="humiditypresets">
 			<option value="own" selected>(I'm inputting my own humidity values)</option>
 			<option value="yazd">Extreme desert</option>
 			<option value="dubai">Arid</option>
@@ -247,6 +247,11 @@
 					}
 
 					document.getElementById("weatherResult").innerHTML = closest_station;
+
+					if (document.getElementById("humiditypresets").value !== "own") {
+						document.getElementById("dump").innerHTML = "I told you that didn't do anything yet!"
+					}
+
 				}
 			})
 		}
