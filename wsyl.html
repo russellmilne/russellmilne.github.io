@@ -238,7 +238,7 @@
 							overallNorm_overallBest = math.norm(comparisonOverallArray);
 							tempNorm_overallBest = tempNorm_current;
 							humidNorm_overallBest = humidNorm_current;
-							closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference scores ",tempNorm_overallBest," temperature, ",humidNorm_overallBest," humidity)");
+							closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference scores ",math.round(tempNorm_overallBest,3)," temperature, ",math.round(humidNorm_overallBest,3)," humidity)");
 						}
 					}
 
