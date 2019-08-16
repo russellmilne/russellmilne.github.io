@@ -103,16 +103,16 @@
 			<option value="colwood">Vancouver Island</option>
 			<option value="atlanta">Humid year-round</option>
 			<option value="rainforest">Rainforest</option>
-		</select> (Note that only some of these work right now)</p>
+		</select> (Note that only some of these work right now)<input type="button" value="Select preset"></p>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
 	</form>
 	<script type="text/javascript">
-		var weatherTestButton = document.querySelector('input[type="button"]');
+		var presetSelectButton = document.querySelectorAll('input[type="button"]')[0];
+		var weatherTestButton = document.querySelectorAll('input[type="button"]')[1];
 
-		weatherTestButton.onclick = function() {
-
+		presetSelectButton.onclick = function() {
 			if (document.getElementById("humiditypresets").value === "yazd") {
 				document.querySelectorAll('input[type="number"]')[1].value == 45.6;
 				document.querySelectorAll('input[type="number"]')[3].value == 39.4;
@@ -183,6 +183,9 @@
 				document.querySelectorAll('input[type="number"]')[21].value == 70.8;
 				document.querySelectorAll('input[type="number"]')[23].value == 72.6;
 			}
+		}
+
+		weatherTestButton.onclick = function() {
 
 			var farTempInputs = new Array(12);
 			var celTempInputs = new Array(12);
