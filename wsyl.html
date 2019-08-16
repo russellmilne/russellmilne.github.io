@@ -103,7 +103,7 @@
 			<option value="colwood">Vancouver Island</option>
 			<option value="atlanta">Humid year-round</option>
 			<option value="rainforest">Rainforest</option>
-		</select> (Note that this doesn't do anything yet)</p>
+		</select> (Note that only some of these work right now)</p>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
@@ -112,6 +112,77 @@
 		var weatherTestButton = document.querySelector('input[type="button"]');
 
 		weatherTestButton.onclick = function() {
+
+			if (document.getElementById("humiditypresets").value === "yazd") {
+				document.querySelectorAll('input[type="number"]')[1].value == 45.6;
+				document.querySelectorAll('input[type="number"]')[3].value == 39.4;
+				document.querySelectorAll('input[type="number"]')[5].value == 29.8;
+				document.querySelectorAll('input[type="number"]')[7].value == 24.4;
+				document.querySelectorAll('input[type="number"]')[9].value == 21.4;
+				document.querySelectorAll('input[type="number"]')[11].value == 19;
+				document.querySelectorAll('input[type="number"]')[13].value == 20.4;
+				document.querySelectorAll('input[type="number"]')[15].value == 22.6;
+				document.querySelectorAll('input[type="number"]')[17].value == 24.8;
+				document.querySelectorAll('input[type="number"]')[19].value == 28.2;
+				document.querySelectorAll('input[type="number"]')[21].value == 38;
+				document.querySelectorAll('input[type="number"]')[23].value == 47.2;
+			}
+			else if (document.getElementById("humiditypresets").value === "dubai") {
+				document.querySelectorAll('input[type="number"]')[1].value == 63.4;
+				document.querySelectorAll('input[type="number"]')[3].value == 58.6;
+				document.querySelectorAll('input[type="number"]')[5].value == 52;
+				document.querySelectorAll('input[type="number"]')[7].value == 46.2;
+				document.querySelectorAll('input[type="number"]')[9].value == 43;
+				document.querySelectorAll('input[type="number"]')[11].value == 44;
+				document.querySelectorAll('input[type="number"]')[13].value == 45;
+				document.querySelectorAll('input[type="number"]')[15].value == 49;
+				document.querySelectorAll('input[type="number"]')[17].value == 54.2;
+				document.querySelectorAll('input[type="number"]')[19].value == 55.8;
+				document.querySelectorAll('input[type="number"]')[21].value == 60.6;
+				document.querySelectorAll('input[type="number"]')[23].value == 65;
+			}
+			else if (document.getElementById("humiditypresets").value === "mongolia") {
+				document.querySelectorAll('input[type="number"]')[1].value == 82.4;
+				document.querySelectorAll('input[type="number"]')[3].value == 78.8;
+				document.querySelectorAll('input[type="number"]')[5].value == 70;
+				document.querySelectorAll('input[type="number"]')[7].value == 58;
+				document.querySelectorAll('input[type="number"]')[9].value == 54.2;
+				document.querySelectorAll('input[type="number"]')[11].value == 50.6;
+				document.querySelectorAll('input[type="number"]')[13].value == 48.8;
+				document.querySelectorAll('input[type="number"]')[15].value == 51;
+				document.querySelectorAll('input[type="number"]')[17].value == 55.8;
+				document.querySelectorAll('input[type="number"]')[19].value == 66.6;
+				document.querySelectorAll('input[type="number"]')[21].value == 78;
+				document.querySelectorAll('input[type="number"]')[23].value == 83.2;
+			}
+			else if (document.getElementById("humiditypresets").value === "ukraine") {
+				document.querySelectorAll('input[type="number"]')[1].value == 83.8;
+				document.querySelectorAll('input[type="number"]')[3].value == 79.8;
+				document.querySelectorAll('input[type="number"]')[5].value == 73.6;
+				document.querySelectorAll('input[type="number"]')[7].value == 65.2;
+				document.querySelectorAll('input[type="number"]')[9].value == 64.4;
+				document.querySelectorAll('input[type="number"]')[11].value == 64.2;
+				document.querySelectorAll('input[type="number"]')[13].value == 62.2;
+				document.querySelectorAll('input[type="number"]')[15].value == 60.8;
+				document.querySelectorAll('input[type="number"]')[17].value == 66.8;
+				document.querySelectorAll('input[type="number"]')[19].value == 73.8;
+				document.querySelectorAll('input[type="number"]')[21].value == 81.4;
+				document.querySelectorAll('input[type="number"]')[23].value == 84.6;
+			}
+			else if (document.getElementById("humiditypresets").value === "med") {
+				document.querySelectorAll('input[type="number"]')[1].value == 72.4;
+				document.querySelectorAll('input[type="number"]')[3].value == 69;
+				document.querySelectorAll('input[type="number"]')[5].value == 63.4;
+				document.querySelectorAll('input[type="number"]')[7].value == 59.2;
+				document.querySelectorAll('input[type="number"]')[9].value == 55.4;
+				document.querySelectorAll('input[type="number"]')[11].value == 50.8;
+				document.querySelectorAll('input[type="number"]')[13].value == 47;
+				document.querySelectorAll('input[type="number"]')[15].value == 48.8;
+				document.querySelectorAll('input[type="number"]')[17].value == 55.6;
+				document.querySelectorAll('input[type="number"]')[19].value == 62.6;
+				document.querySelectorAll('input[type="number"]')[21].value == 70.8;
+				document.querySelectorAll('input[type="number"]')[23].value == 72.6;
+			}
 
 			var farTempInputs = new Array(12);
 			var celTempInputs = new Array(12);
@@ -245,11 +316,6 @@
 					}
 
 					document.getElementById("weatherResult").innerHTML = closest_station;
-
-					if (document.getElementById("humiditypresets").value !== "own") {
-						document.getElementById("dump").innerHTML = "I told you that didn't do anything yet!"
-					}
-
 				}
 			})
 		}
