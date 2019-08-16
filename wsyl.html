@@ -20,62 +20,62 @@
 			<tr>
 				<td>January</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="janh"></td>
 			</tr>
 			<tr>
 				<td>February</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="febh"></td>
 			</tr>
 			<tr>
 				<td>March</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="marh"></td>
 			</tr>
 			<tr>
 				<td>April</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="aprh"></td>
 			</tr>
 			<tr>
 				<td>May</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="mayh"></td>
 			</tr>
 			<tr>
 				<td>June</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="junh"></td>
 			</tr>
 			<tr>
 				<td>July</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="julh"></td>
 			</tr>
 			<tr>
 				<td>August</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="augh"></td>
 			</tr>
 			<tr>
 				<td>September</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="seph"></td>
 			</tr>
 			<tr>
 				<td>October</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="octh"></td>
 			</tr>
 			<tr>
 				<td>November</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="novh"></td>
 			</tr>
 			<tr>
 				<td>December</td>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="dech"></td>
 			</tr>
 		</table>
 		<p><div>Which degree scale are your temperatures in?<br>
@@ -114,74 +114,74 @@
 
 		presetSelectButton.onclick = function() {
 			if (document.getElementById("humiditypresets").value === "yazd") {
-				document.querySelectorAll('input[type="number"]')[1].value == "45.6";
-				document.querySelectorAll('input[type="number"]')[3].value == "39.4";
-				document.querySelectorAll('input[type="number"]')[5].value == "29.8";
-				document.querySelectorAll('input[type="number"]')[7].value == "24.4";
-				document.querySelectorAll('input[type="number"]')[9].value == "21.4";
-				document.querySelectorAll('input[type="number"]')[11].value == "19";
-				document.querySelectorAll('input[type="number"]')[13].value == "20.4";
-				document.querySelectorAll('input[type="number"]')[15].value == "22.6";
-				document.querySelectorAll('input[type="number"]')[17].value == "24.8";
-				document.querySelectorAll('input[type="number"]')[19].value == "28.2";
-				document.querySelectorAll('input[type="number"]')[21].value == "38";
-				document.querySelectorAll('input[type="number"]')[23].value == "47.2";
+				document.getElementById("janh").value == "45.6";
+				document.getElementById("febh").value == "39.4";
+				document.getElementById("marh").value == "29.8";
+				document.getElementById("aprh").value == "24.4";
+				document.getElementById("mayh").value == "21.4";
+				document.getElementById("junh").value == "19";
+				document.getElementById("julh").value == "20.4";
+				document.getElementById("augh").value == "22.6";
+				document.getElementById("seph").value == "24.8";
+				document.getElementById("octh").value == "28.2";
+				document.getElementById("novh").value == "38";
+				document.getElementById("dech").valuee == "47.2";
 			}
 			else if (document.getElementById("humiditypresets").value === "dubai") {
-				document.querySelectorAll('input[type="number"]')[1].value == 63.4;
-				document.querySelectorAll('input[type="number"]')[3].value == 58.6;
-				document.querySelectorAll('input[type="number"]')[5].value == 52;
-				document.querySelectorAll('input[type="number"]')[7].value == 46.2;
-				document.querySelectorAll('input[type="number"]')[9].value == 43;
-				document.querySelectorAll('input[type="number"]')[11].value == 44;
-				document.querySelectorAll('input[type="number"]')[13].value == 45;
-				document.querySelectorAll('input[type="number"]')[15].value == 49;
-				document.querySelectorAll('input[type="number"]')[17].value == 54.2;
-				document.querySelectorAll('input[type="number"]')[19].value == 55.8;
-				document.querySelectorAll('input[type="number"]')[21].value == 60.6;
-				document.querySelectorAll('input[type="number"]')[23].value == 65;
+				document.getElementById("janh").value == 63.4;
+				document.getElementById("febh").value == 58.6;
+				document.getElementById("marh").value == 52;
+				document.getElementById("aprh").value == 46.2;
+				document.getElementById("mayh").value == 43;
+				document.getElementById("junh").value == 44;
+				document.getElementById("julh").value == 45;
+				document.getElementById("augh").value == 49;
+				document.getElementById("seph").value == 54.2;
+				document.getElementById("octh").value == 55.8;
+				document.getElementById("novh").value == 60.6;
+				document.getElementById("dech").value == 65;
 			}
 			else if (document.getElementById("humiditypresets").value === "mongolia") {
-				document.querySelectorAll('input[type="number"]')[1].value == 82.4;
-				document.querySelectorAll('input[type="number"]')[3].value == 78.8;
-				document.querySelectorAll('input[type="number"]')[5].value == 70;
-				document.querySelectorAll('input[type="number"]')[7].value == 58;
-				document.querySelectorAll('input[type="number"]')[9].value == 54.2;
-				document.querySelectorAll('input[type="number"]')[11].value == 50.6;
-				document.querySelectorAll('input[type="number"]')[13].value == 48.8;
-				document.querySelectorAll('input[type="number"]')[15].value == 51;
-				document.querySelectorAll('input[type="number"]')[17].value == 55.8;
-				document.querySelectorAll('input[type="number"]')[19].value == 66.6;
-				document.querySelectorAll('input[type="number"]')[21].value == 78;
-				document.querySelectorAll('input[type="number"]')[23].value == 83.2;
+				document.getElementById("janh").value == 82.4;
+				document.getElementById("febh").value == 78.8;
+				document.getElementById("marh").value == 70;
+				document.getElementById("aprh").value == 58;
+				document.getElementById("mayh").value == 54.2;
+				document.getElementById("junh").value == 50.6;
+				document.getElementById("julh").value == 48.8;
+				document.getElementById("augh").value == 51;
+				document.getElementById("seph").value == 55.8;
+				document.getElementById("octh").value == 66.6;
+				document.getElementById("novh").value == 78;
+				document.getElementById("dech").value == 83.2;
 			}
 			else if (document.getElementById("humiditypresets").value === "ukraine") {
-				document.querySelectorAll('input[type="number"]')[1].value == 83.8;
-				document.querySelectorAll('input[type="number"]')[3].value == 79.8;
-				document.querySelectorAll('input[type="number"]')[5].value == 73.6;
-				document.querySelectorAll('input[type="number"]')[7].value == 65.2;
-				document.querySelectorAll('input[type="number"]')[9].value == 64.4;
-				document.querySelectorAll('input[type="number"]')[11].value == 64.2;
-				document.querySelectorAll('input[type="number"]')[13].value == 62.2;
-				document.querySelectorAll('input[type="number"]')[15].value == 60.8;
-				document.querySelectorAll('input[type="number"]')[17].value == 66.8;
-				document.querySelectorAll('input[type="number"]')[19].value == 73.8;
-				document.querySelectorAll('input[type="number"]')[21].value == 81.4;
-				document.querySelectorAll('input[type="number"]')[23].value == 84.6;
+				document.getElementById("janh").value == 83.8;
+				document.getElementById("febh").value == 79.8;
+				document.getElementById("marh").value == 73.6;
+				document.getElementById("aprh").value == 65.2;
+				document.getElementById("mayh").value == 64.4;
+				document.getElementById("junh").value == 64.2;
+				document.getElementById("julh").value == 62.2;
+				document.getElementById("augh").value == 60.8;
+				document.getElementById("seph").value == 66.8;
+				document.getElementById("octh").value == 73.8;
+				document.getElementById("novh").value == 81.4;
+				document.getElementById("dech").value == 84.6;
 			}
 			else if (document.getElementById("humiditypresets").value === "med") {
-				document.querySelectorAll('input[type="number"]')[1].value == 72.4;
-				document.querySelectorAll('input[type="number"]')[3].value == 69;
-				document.querySelectorAll('input[type="number"]')[5].value == 63.4;
-				document.querySelectorAll('input[type="number"]')[7].value == 59.2;
-				document.querySelectorAll('input[type="number"]')[9].value == 55.4;
-				document.querySelectorAll('input[type="number"]')[11].value == 50.8;
-				document.querySelectorAll('input[type="number"]')[13].value == 47;
-				document.querySelectorAll('input[type="number"]')[15].value == 48.8;
-				document.querySelectorAll('input[type="number"]')[17].value == 55.6;
-				document.querySelectorAll('input[type="number"]')[19].value == 62.6;
-				document.querySelectorAll('input[type="number"]')[21].value == 70.8;
-				document.querySelectorAll('input[type="number"]')[23].value == 72.6;
+				document.getElementById("janh").value == 72.4;
+				document.getElementById("febh").value == 69;
+				document.getElementById("marh").value == 63.4;
+				document.getElementById("aprh").value == 59.2;
+				document.getElementById("mayh").value == 55.4;
+				document.getElementById("junh").value == 50.8;
+				document.getElementById("julh").value == 47;
+				document.getElementById("augh").value == 48.8;
+				document.getElementById("seph").value == 55.6;
+				document.getElementById("octh").value == 62.6;
+				document.getElementById("novh").value == 70.8;
+				document.getElementById("dech").value == 72.6;
 			}
 		}
 
