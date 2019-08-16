@@ -101,7 +101,7 @@
 			<option value="monsoon">Monsoon once per year</option>
 			<option value="invertedsteppe">Dry winter, humid summer</option>
 			<option value="colwood">Vancouver Island</option>
-			<option value="dublin">Wet year-round</option>
+			<option value="oceanic">Wet year-round</option>
 			<option value="rainforest">Rainforest</option>
 		</select> (Note that only some of these work right now)<input type="button" value="Select preset"></p>
 		<p><input type="button" value="Where should you live?"></p>
@@ -196,6 +196,20 @@
 				document.getElementById("octh").value = "83.7";
 				document.getElementById("novh").value = "88.5";
 				document.getElementById("dech").value = "90.2";
+			}
+			else if (document.getElementById("humiditypresets").value === "oceanic") {
+				document.getElementById("janh").value = "86";
+				document.getElementById("febh").value = "84";
+				document.getElementById("marh").value = "81.6";
+				document.getElementById("aprh").value = "79.6";
+				document.getElementById("mayh").value = "78.8";
+				document.getElementById("junh").value = "79.2";
+				document.getElementById("julh").value = "80.4";
+				document.getElementById("augh").value = "81.6";
+				document.getElementById("seph").value = "82.6";
+				document.getElementById("octh").value = "84.4";
+				document.getElementById("novh").value = "85.8";
+				document.getElementById("dech").value = "96.8";
 			}
 			else if (document.getElementById("humiditypresets").value === "rainforest") {
 				document.getElementById("janh").value = "82.8";
