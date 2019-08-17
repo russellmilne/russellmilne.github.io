@@ -90,7 +90,7 @@
 			<input type="radio" id="hemispherebutton_s" name="whichhemisphere" value="shemis">
 			<label for="hemispherebutton_s">Southern hemisphere (January is in the summer)</label>
 		</div></p>
-		<p>Optional: If you're unfamiliar with what a particular percentage humidity feels like, you can select from this list of presets: <select id="humiditypresets">
+		<p>If you're unfamiliar with what a particular percentage humidity feels like, you can select from this list of presets: <select id="humiditypresets">
 			<option value="own" selected>(I'm inputting my own humidity values)</option>
 			<option value="yazd">Desert</option>
 			<option value="dubai">Arid</option>
@@ -104,18 +104,17 @@
 			<option value="rainforest">Tropical rainforest</option>
 		</select> <input type="button" value="Select preset"> <input type="button" value="More info on humidity"></p>
 		<div id="presethelp" style="display:none">
-			<p>In this tool, monthly humidity is calculated by comparing a city's average dew point to its average temperature. The result of this approximates humidity in the morning; humidity in the afternoon is ordinarily much lower (up to 30 points lower than the morning value). Due to the high values used, a monthly average below 40 on this scale is typical of a desert, the 40s and 50s are dry, the 60s are moderate, the 70s are fairly humid, and anything above 80 is considered very humid.</p>
-			<p><b>Desert</b> climate is very dry all year round. This preset was constructed using the average monthly humidity values for the following cities: Phoenix, Arizona; Yazd, Iran; Riyadh, Saudi Arabia; Ouarzazate, Morocco; Hotan, China.</p>
-			<p><b>Arid</b> climate represents a desert or otherwise dry climate where there is some moisture in the air, often due to being adjacent to an ocean. Cities used to create this preset: Cabo San Lucas, Mexico; Sharjah, UAE; Marrakesh, Morocco; Rawson, Argentina*; Kashgar, China.</p>
-			<p><b>Dry steppe</b> climate features snowy or rainy winters and dry, dusty summers. Cities used to create this preset: Spokane, Washington; Astrakhan, Russia; Almaty, Kazakhstan; Ulaanbaatar, Mongolia; Albury, Australia*.</p>
-			<p><b>Moderate steppe</b> climate is similar to dry steppe climate, but slightly wetter in the summer. Cities used to create this preset: Fargo, North Dakota; Dnipro, Ukraine; Szeged, Hungary; Stavropol, Russia; Pamplona, Spain.</p>
-			<p><b>Mediterranean</b> climate represents the weather conditions common around the Mediterranean Sea: dry in the summer and moderate in the winter. Cities used to create this preset: Adelaide, Australia*; Constantine, Algeria; Split, Croatia; Kayseri, Turkey; Viedma, Argentina*.</p>
-			<p><b>Monsoon</b> climate has a dry spring, wet summer and moderate winter, so that humidity is relatively uncorrelated with temperature. Cities used to create this preset: Hyderabad, India; Lucknow, India; Beijing, China; Seoul, South Korea; Kathmandu, Nepal.</p>
-			<p><b>Dry winter, humid summer</b> climate is exactly what it sounds like. It is common in the southeastern United States and southern China. Cities used to create this preset: Pietermaritzburg, South Africa*; Atlanta, Georgia; Raleigh, North Carolina; Shenzhen, China; Xiamen, China.</p>
-			<p><b>Vancouver Island</b>, at least the east coast of it, is very rainy and foggy in the winter and has Mediterranean or steppe-like conditions in the summer. (The west coast of Vancouver Island is extremely rainy all year round, and is often referred to as a "temperate rainforest"; it is more accurately described by an oceanic climate.) Cities used to create this preset (all on Vancouver Island, Canada): Victoria, Chemainus, Nanaimo, Port Alberni, Comox, Campbell River.</p>
-			<p><b>Oceanic</b> climate is rainy all year, but especially so in the winter, and typically mild as a result. Cities used to create this preset: Dublin, Ireland; Stavanger, Norway; Puerto Montt, Chile*; Prince Rupert, Canada; Porto Alegre, Brazil*.</p>
-			<p><b>Tropical rainforest</b> climate is also wet all year. Unlike oceanic climate, a tropical rainforest has little variation in humidity throughout the year. Cities used to create this preset: Santo Domingo, Dominican Republic; Davao, Philippines; Abidjan, Ivory Coast; Belem, Brazil*; Suva, Fiji*.</p>
-			<p>Note: Cities marked with a * are in the Southern Hemisphere. Hence, when creating the presets, the monthly humidity averages of these cities have been advanced by 6 months each to harmonize them with those of Northern Hemisphere cities.</p>
+			<p>In this tool, monthly humidity is calculated by comparing a city's average dew point to its average temperature. The result of this approximates humidity in the morning; humidity is ordinarily lower than this in the afternoon (by up to 30 points!) and higher at night. A monthly average below 40 on this scale is typical of a desert, the 40s and 50s are dry, the 60s are moderate, the 70s are fairly humid, and anything above 80 is considered very humid.</p>
+			<p><b>Desert</b> climate is very dry all year round, the kind of climate one might find in Las Vegas or Baghdad.</p>
+			<p><b>Arid</b> climate represents a desert or otherwise dry climate where there is some moisture in the air, often due to being adjacent to an ocean.</p>
+			<p><b>Dry steppe</b> climate features snowy or rainy winters and dry, dusty summers. It is common in places like Mongolia and Kazakhstan.</p>
+			<p><b>Moderate steppe</b> climate is similar to dry steppe climate, but slightly wetter in the summer. The North American plains are like this.</p>
+			<p><b>Mediterranean</b> climate represents the weather conditions common around the Mediterranean Sea: dry in the summer and moderate in the winter.</p>
+			<p><b>Monsoon</b> climate has a dry spring, wet summer and moderate winter, so that humidity is relatively uncorrelated with temperature.</p>
+			<p><b>Dry winter, humid summer</b> climate is exactly what it sounds like. It is common in the southeastern United States and southern China.</p>
+			<p><b>Vancouver Island</b>, at least the east coast of it, is very rainy and foggy in the winter and has Mediterranean or steppe-like conditions in the summer.</p>
+			<p><b>Oceanic</b> climate is rainy all year, but especially so in the winter, and typically mild as a result. Great Britain is a good example.</p>
+			<p><b>Tropical rainforest</b> climate is also wet all year. Unlike oceanic climate, a tropical rainforest has little variation in humidity throughout the year.</p>
 		</div>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
