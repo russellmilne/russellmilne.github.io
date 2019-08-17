@@ -103,6 +103,9 @@
 			<option value="oceanic">Wet year-round (Oceanic climate)</option>
 			<option value="rainforest">Tropical rainforest</option>
 		</select> <input type="button" value="Select preset"> <input type="button" value="More info"></p>
+		<div id="presethelp" style="display:none">
+			<p>Test</p>
+		</div>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
@@ -144,9 +147,11 @@
 
 		infoButton.onclick = function() {
 			if (infoButton.value === "More info") {
+				document.getElementById("presethelp").style.display = "block";
 				infoButton.value = "Less info";
 			}
 			else {
+				document.getElementById("presethelp").style.display = "none";
 				infoButton.value = "More info";
 			}
 		}
