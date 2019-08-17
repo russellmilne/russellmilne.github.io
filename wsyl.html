@@ -136,7 +136,7 @@
 			if (document.getElementById("humiditypresets").selectedIndex > 0) {
 				var selectedPreset = document.getElementById("humiditypresets").selectedIndex - 1;
 				for (k = 0; k < 12; k++) {
-					document.querySelectorAll('input[type="number"]')[(2*k)+1].value = presetArray.subset(math.index(selectedPreset,k))
+					document.querySelectorAll('input[type="number"]')[math.mod(((2*(k + rot))+1),24)].value = presetArray.subset(math.index(selectedPreset,k))
 				}
 			}
 		}
