@@ -111,12 +111,7 @@
 		var presetSelectButton = document.querySelectorAll('input[type="button"]')[0];
 		var weatherTestButton = document.querySelectorAll('input[type="button"]')[1];
 
-		if (document.getElementById("hemispherebutton_n").checked === true) {
-			var rot = 0;
-		}
-		else {
-			var rot = 6;
-		}
+		var rot = 0;
 
 		var presetArray = math.matrix([[45.6,39.4,29.8,24.4,21.4,19.0,20.4,22.6,24.8,28.2,38.0,47.2],
 				[63.4,58.6,52.0,46.2,43.0,44.0,45.0,49.0,54.2,55.8,60.6,65.0],
@@ -130,6 +125,14 @@
 				[82.8,82.4,81.4,81.4,82.8,84.0,84.8,86.0,85.6,85.2,84.2,83.0]]);
 
 		presetSelectButton.onclick = function() {
+
+			if (document.getElementById("hemispherebutton_s").checked === true) {
+				rot = 6;
+			}
+			else {
+				rot = 0;
+			}
+
 			if (document.getElementById("humiditypresets").value === "yazd") {
 				if (document.getElementById("hemispherebutton_n").checked === true) {
 					document.getElementById("janh").value = "45.6";
