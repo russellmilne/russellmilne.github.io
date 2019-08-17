@@ -102,16 +102,18 @@
 			<option value="colwood">Vancouver Island</option>
 			<option value="oceanic">Wet year-round (Oceanic climate)</option>
 			<option value="rainforest">Tropical rainforest</option>
-		</select> <input type="button" value="Select preset"></p>
+		</select> <input type="button" value="Select preset"> <input type="button" value=amountOfInfo></p>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
 	</form>
 	<script type="text/javascript">
 		var presetSelectButton = document.querySelectorAll('input[type="button"]')[0];
-		var weatherTestButton = document.querySelectorAll('input[type="button"]')[1];
+		var infoButton = document.querySelectorAll('input[type="button"]')[1];
+		var weatherTestButton = document.querySelectorAll('input[type="button"]')[2];
 
 		var rot = 0;
+		var amountOfInfo = "More info";
 
 		var presetArray = math.matrix([[45.6,39.4,29.8,24.4,21.4,19.0,20.4,22.6,24.8,28.2,38.0,47.2],
 				[63.4,58.6,52.0,46.2,43.0,44.0,45.0,49.0,54.2,55.8,60.6,65.0],
