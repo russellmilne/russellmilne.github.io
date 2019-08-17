@@ -113,144 +113,304 @@
 
 		presetSelectButton.onclick = function() {
 			if (document.getElementById("humiditypresets").value === "yazd") {
-				document.getElementById("janh").value = "45.6";
-				document.getElementById("febh").value = "39.4";
-				document.getElementById("marh").value = "29.8";
-				document.getElementById("aprh").value = "24.4";
-				document.getElementById("mayh").value = "21.4";
-				document.getElementById("junh").value = "19";
-				document.getElementById("julh").value = "20.4";
-				document.getElementById("augh").value = "22.6";
-				document.getElementById("seph").value = "24.8";
-				document.getElementById("octh").value = "28.2";
-				document.getElementById("novh").value = "38";
-				document.getElementById("dech").value = "47.2";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "45.6";
+					document.getElementById("febh").value = "39.4";
+					document.getElementById("marh").value = "29.8";
+					document.getElementById("aprh").value = "24.4";
+					document.getElementById("mayh").value = "21.4";
+					document.getElementById("junh").value = "19";
+					document.getElementById("julh").value = "20.4";
+					document.getElementById("augh").value = "22.6";
+					document.getElementById("seph").value = "24.8";
+					document.getElementById("octh").value = "28.2";
+					document.getElementById("novh").value = "38";
+					document.getElementById("dech").value = "47.2";
+				}
+				else {
+					document.getElementById("julh").value = "45.6";
+					document.getElementById("augh").value = "39.4";
+					document.getElementById("seph").value = "29.8";
+					document.getElementById("octh").value = "24.4";
+					document.getElementById("novh").value = "21.4";
+					document.getElementById("dech").value = "19";
+					document.getElementById("janh").value = "20.4";
+					document.getElementById("febh").value = "22.6";
+					document.getElementById("marh").value = "24.8";
+					document.getElementById("aprh").value = "28.2";
+					document.getElementById("mayh").value = "38";
+					document.getElementById("junh").value = "47.2";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "dubai") {
-				document.getElementById("janh").value = "63.4";
-				document.getElementById("febh").value = "58.6";
-				document.getElementById("marh").value = "52";
-				document.getElementById("aprh").value = "46.2";
-				document.getElementById("mayh").value = "43";
-				document.getElementById("junh").value = "44";
-				document.getElementById("julh").value = "45";
-				document.getElementById("augh").value = "49";
-				document.getElementById("seph").value = "54.2";
-				document.getElementById("octh").value = "55.8";
-				document.getElementById("novh").value = "60.6";
-				document.getElementById("dech").value = "65";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "63.4";
+					document.getElementById("febh").value = "58.6";
+					document.getElementById("marh").value = "52";
+					document.getElementById("aprh").value = "46.2";
+					document.getElementById("mayh").value = "43";
+					document.getElementById("junh").value = "44";
+					document.getElementById("julh").value = "45";
+					document.getElementById("augh").value = "49";
+					document.getElementById("seph").value = "54.2";
+					document.getElementById("octh").value = "55.8";
+					document.getElementById("novh").value = "60.6";
+					document.getElementById("dech").value = "65";
+				}
+				else {
+					document.getElementById("julh").value = "63.4";
+					document.getElementById("augh").value = "58.6";
+					document.getElementById("seph").value = "52";
+					document.getElementById("octh").value = "46.2";
+					document.getElementById("novh").value = "43";
+					document.getElementById("dech").value = "44";
+					document.getElementById("janh").value = "45";
+					document.getElementById("febh").value = "49";
+					document.getElementById("marh").value = "54.2";
+					document.getElementById("aprh").value = "55.8";
+					document.getElementById("mayh").value = "60.6";
+					document.getElementById("junh").value = "65";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "mongolia") {
-				document.getElementById("janh").value = "82.4";
-				document.getElementById("febh").value = "78.8";
-				document.getElementById("marh").value = "70";
-				document.getElementById("aprh").value = "58";
-				document.getElementById("mayh").value = "54.2";
-				document.getElementById("junh").value = "50.6";
-				document.getElementById("julh").value = "48.8";
-				document.getElementById("augh").value = "51";
-				document.getElementById("seph").value = "55.8";
-				document.getElementById("octh").value = "66.6";
-				document.getElementById("novh").value = "78";
-				document.getElementById("dech").value = "83.2";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "82.4";
+					document.getElementById("febh").value = "78.8";
+					document.getElementById("marh").value = "70";
+					document.getElementById("aprh").value = "58";
+					document.getElementById("mayh").value = "54.2";
+					document.getElementById("junh").value = "50.6";
+					document.getElementById("julh").value = "48.8";
+					document.getElementById("augh").value = "51";
+					document.getElementById("seph").value = "55.8";
+					document.getElementById("octh").value = "66.6";
+					document.getElementById("novh").value = "78";
+					document.getElementById("dech").value = "83.2";
+				}
+				else {
+					document.getElementById("julh").value = "82.4";
+					document.getElementById("augh").value = "78.8";
+					document.getElementById("seph").value = "70";
+					document.getElementById("octh").value = "58";
+					document.getElementById("novh").value = "54.2";
+					document.getElementById("dech").value = "50.6";
+					document.getElementById("janh").value = "48.8";
+					document.getElementById("febh").value = "51";
+					document.getElementById("marh").value = "55.8";
+					document.getElementById("aprh").value = "66.6";
+					document.getElementById("mayh").value = "78";
+					document.getElementById("junh").value = "83.2";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "ukraine") {
-				document.getElementById("janh").value = "83.6";
-				document.getElementById("febh").value = "79.8";
-				document.getElementById("marh").value = "73.4";
-				document.getElementById("aprh").value = "65.2";
-				document.getElementById("mayh").value = "64";
-				document.getElementById("junh").value = "63.8";
-				document.getElementById("julh").value = "62";
-				document.getElementById("augh").value = "60.4";
-				document.getElementById("seph").value = "66.6";
-				document.getElementById("octh").value = "73.2";
-				document.getElementById("novh").value = "81";
-				document.getElementById("dech").value = "84.6";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "83.6";
+					document.getElementById("febh").value = "79.8";
+					document.getElementById("marh").value = "73.4";
+					document.getElementById("aprh").value = "65.2";
+					document.getElementById("mayh").value = "64";
+					document.getElementById("junh").value = "63.8";
+					document.getElementById("julh").value = "62";
+					document.getElementById("augh").value = "60.4";
+					document.getElementById("seph").value = "66.6";
+					document.getElementById("octh").value = "73.2";
+					document.getElementById("novh").value = "81";
+					document.getElementById("dech").value = "84.6";
+				}
+				else {
+					document.getElementById("julh").value = "83.6";
+					document.getElementById("augh").value = "79.8";
+					document.getElementById("seph").value = "73.4";
+					document.getElementById("octh").value = "65.2";
+					document.getElementById("novh").value = "64";
+					document.getElementById("dech").value = "63.8";
+					document.getElementById("janh").value = "62";
+					document.getElementById("febh").value = "60.4";
+					document.getElementById("marh").value = "66.6";
+					document.getElementById("aprh").value = "73.2";
+					document.getElementById("mayh").value = "81";
+					document.getElementById("junh").value = "84.6";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "med") {
-				document.getElementById("janh").value = "72.4";
-				document.getElementById("febh").value = "69";
-				document.getElementById("marh").value = "63.4";
-				document.getElementById("aprh").value = "59.2";
-				document.getElementById("mayh").value = "55.4";
-				document.getElementById("junh").value = "50.8";
-				document.getElementById("julh").value = "47";
-				document.getElementById("augh").value = "48.8";
-				document.getElementById("seph").value = "55.6";
-				document.getElementById("octh").value = "62.6";
-				document.getElementById("novh").value = "70.8";
-				document.getElementById("dech").value = "72.6";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "72.4";
+					document.getElementById("febh").value = "69";
+					document.getElementById("marh").value = "63.4";
+					document.getElementById("aprh").value = "59.2";
+					document.getElementById("mayh").value = "55.4";
+					document.getElementById("junh").value = "50.8";
+					document.getElementById("julh").value = "47";
+					document.getElementById("augh").value = "48.8";
+					document.getElementById("seph").value = "55.6";
+					document.getElementById("octh").value = "62.6";
+					document.getElementById("novh").value = "70.8";
+					document.getElementById("dech").value = "72.6";
+				}
+				else {
+					document.getElementById("julh").value = "72.4";
+					document.getElementById("augh").value = "69";
+					document.getElementById("seph").value = "63.4";
+					document.getElementById("octh").value = "59.2";
+					document.getElementById("novh").value = "55.4";
+					document.getElementById("dech").value = "50.8";
+					document.getElementById("janh").value = "47";
+					document.getElementById("febh").value = "48.8";
+					document.getElementById("marh").value = "55.6";
+					document.getElementById("aprh").value = "62.6";
+					document.getElementById("mayh").value = "70.8";
+					document.getElementById("junh").value = "72.6";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "monsoon") {
-				document.getElementById("janh").value = "59.4";
-				document.getElementById("febh").value = "54.8";
-				document.getElementById("marh").value = "50";
-				document.getElementById("aprh").value = "47.2";
-				document.getElementById("mayh").value = "51.6";
-				document.getElementById("junh").value = "63.6";
-				document.getElementById("julh").value = "76.2";
-				document.getElementById("augh").value = "78";
-				document.getElementById("seph").value = "74.2";
-				document.getElementById("octh").value = "66.2";
-				document.getElementById("novh").value = "63";
-				document.getElementById("dech").value = "61.6";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "59.4";
+					document.getElementById("febh").value = "54.8";
+					document.getElementById("marh").value = "50";
+					document.getElementById("aprh").value = "47.2";
+					document.getElementById("mayh").value = "51.6";
+					document.getElementById("junh").value = "63.6";
+					document.getElementById("julh").value = "76.2";
+					document.getElementById("augh").value = "78";
+					document.getElementById("seph").value = "74.2";
+					document.getElementById("octh").value = "66.2";
+					document.getElementById("novh").value = "63";
+					document.getElementById("dech").value = "61.6";
+				}
+				else {
+					document.getElementById("julh").value = "59.4";
+					document.getElementById("augh").value = "54.8";
+					document.getElementById("seph").value = "50";
+					document.getElementById("octh").value = "47.2";
+					document.getElementById("novh").value = "51.6";
+					document.getElementById("dech").value = "63.6";
+					document.getElementById("janh").value = "76.2";
+					document.getElementById("febh").value = "78";
+					document.getElementById("marh").value = "74.2";
+					document.getElementById("aprh").value = "66.2";
+					document.getElementById("mayh").value = "63";
+					document.getElementById("junh").value = "61.6";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "invertedsteppe") {
-				document.getElementById("janh").value = "66.6";
-				document.getElementById("febh").value = "67.6";
-				document.getElementById("marh").value = "69.2";
-				document.getElementById("aprh").value = "71.8";
-				document.getElementById("mayh").value = "75.6";
-				document.getElementById("junh").value = "77";
-				document.getElementById("julh").value = "75.6";
-				document.getElementById("augh").value = "75.8";
-				document.getElementById("seph").value = "74.4";
-				document.getElementById("octh").value = "70.4";
-				document.getElementById("novh").value = "67.6";
-				document.getElementById("dech").value = "66.6";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "66.6";
+					document.getElementById("febh").value = "67.6";
+					document.getElementById("marh").value = "69.2";
+					document.getElementById("aprh").value = "71.8";
+					document.getElementById("mayh").value = "75.6";
+					document.getElementById("junh").value = "77";
+					document.getElementById("julh").value = "75.6";
+					document.getElementById("augh").value = "75.8";
+					document.getElementById("seph").value = "74.4";
+					document.getElementById("octh").value = "70.4";
+					document.getElementById("novh").value = "67.6";
+					document.getElementById("dech").value = "66.6";
+				}
+				else {
+					document.getElementById("julh").value = "66.6";
+					document.getElementById("augh").value = "67.6";
+					document.getElementById("seph").value = "69.2";
+					document.getElementById("octh").value = "71.8";
+					document.getElementById("novh").value = "75.6";
+					document.getElementById("dech").value = "77";
+					document.getElementById("janh").value = "75.6";
+					document.getElementById("febh").value = "75.8";
+					document.getElementById("marh").value = "74.4";
+					document.getElementById("aprh").value = "70.4";
+					document.getElementById("mayh").value = "67.6";
+					document.getElementById("junh").value = "66.6";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "colwood") {
-				document.getElementById("janh").value = "90";
-				document.getElementById("febh").value = "84.7";
-				document.getElementById("marh").value = "80.2";
-				document.getElementById("aprh").value = "73.3";
-				document.getElementById("mayh").value = "69.5";
-				document.getElementById("junh").value = "68.3";
-				document.getElementById("julh").value = "65.2";
-				document.getElementById("augh").value = "67.3";
-				document.getElementById("seph").value = "73.5";
-				document.getElementById("octh").value = "83.7";
-				document.getElementById("novh").value = "88.5";
-				document.getElementById("dech").value = "90.2";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "90";
+					document.getElementById("febh").value = "84.7";
+					document.getElementById("marh").value = "80.2";
+					document.getElementById("aprh").value = "73.3";
+					document.getElementById("mayh").value = "69.5";
+					document.getElementById("junh").value = "68.3";
+					document.getElementById("julh").value = "65.2";
+					document.getElementById("augh").value = "67.3";
+					document.getElementById("seph").value = "73.5";
+					document.getElementById("octh").value = "83.7";
+					document.getElementById("novh").value = "88.5";
+					document.getElementById("dech").value = "90.2";
+				}
+				else {
+					document.getElementById("julh").value = "90";
+					document.getElementById("augh").value = "84.7";
+					document.getElementById("seph").value = "80.2";
+					document.getElementById("octh").value = "73.3";
+					document.getElementById("novh").value = "69.5";
+					document.getElementById("dech").value = "68.3";
+					document.getElementById("janh").value = "65.2";
+					document.getElementById("febh").value = "67.3";
+					document.getElementById("marh").value = "73.5";
+					document.getElementById("aprh").value = "83.7";
+					document.getElementById("mayh").value = "88.5";
+					document.getElementById("junh").value = "90.2";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "oceanic") {
-				document.getElementById("janh").value = "86";
-				document.getElementById("febh").value = "84";
-				document.getElementById("marh").value = "81.6";
-				document.getElementById("aprh").value = "79.6";
-				document.getElementById("mayh").value = "78.8";
-				document.getElementById("junh").value = "79.2";
-				document.getElementById("julh").value = "80.4";
-				document.getElementById("augh").value = "81.6";
-				document.getElementById("seph").value = "82.6";
-				document.getElementById("octh").value = "84.4";
-				document.getElementById("novh").value = "85.8";
-				document.getElementById("dech").value = "86.8";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "86";
+					document.getElementById("febh").value = "84";
+					document.getElementById("marh").value = "81.6";
+					document.getElementById("aprh").value = "79.6";
+					document.getElementById("mayh").value = "78.8";
+					document.getElementById("junh").value = "79.2";
+					document.getElementById("julh").value = "80.4";
+					document.getElementById("augh").value = "81.6";
+					document.getElementById("seph").value = "82.6";
+					document.getElementById("octh").value = "84.4";
+					document.getElementById("novh").value = "85.8";
+					document.getElementById("dech").value = "86.8";
+				}
+				else {
+					document.getElementById("julh").value = "86";
+					document.getElementById("augh").value = "84";
+					document.getElementById("seph").value = "81.6";
+					document.getElementById("octh").value = "79.6";
+					document.getElementById("novh").value = "78.8";
+					document.getElementById("dech").value = "79.2";
+					document.getElementById("janh").value = "80.4";
+					document.getElementById("febh").value = "81.6";
+					document.getElementById("marh").value = "82.6";
+					document.getElementById("aprh").value = "84.4";
+					document.getElementById("mayh").value = "85.8";
+					document.getElementById("junh").value = "86.8";
+				}
 			}
 			else if (document.getElementById("humiditypresets").value === "rainforest") {
-				document.getElementById("janh").value = "82.8";
-				document.getElementById("febh").value = "82.4";
-				document.getElementById("marh").value = "81.4";
-				document.getElementById("aprh").value = "81.4";
-				document.getElementById("mayh").value = "82.8";
-				document.getElementById("junh").value = "84";
-				document.getElementById("julh").value = "84.8";
-				document.getElementById("augh").value = "86";
-				document.getElementById("seph").value = "85.6";
-				document.getElementById("octh").value = "85.2";
-				document.getElementById("novh").value = "84.2";
-				document.getElementById("dech").value = "83";
+				if (document.getElementById("hemispherebutton_n").checked === true) {
+					document.getElementById("janh").value = "82.8";
+					document.getElementById("febh").value = "82.4";
+					document.getElementById("marh").value = "81.4";
+					document.getElementById("aprh").value = "81.4";
+					document.getElementById("mayh").value = "82.8";
+					document.getElementById("junh").value = "84";
+					document.getElementById("julh").value = "84.8";
+					document.getElementById("augh").value = "86";
+					document.getElementById("seph").value = "85.6";
+					document.getElementById("octh").value = "85.2";
+					document.getElementById("novh").value = "84.2";
+					document.getElementById("dech").value = "83";
+				}
+				else {
+					document.getElementById("julh").value = "82.8";
+					document.getElementById("augh").value = "82.4";
+					document.getElementById("seph").value = "81.4";
+					document.getElementById("octh").value = "81.4";
+					document.getElementById("novh").value = "82.8";
+					document.getElementById("dech").value = "84";
+					document.getElementById("janh").value = "84.8";
+					document.getElementById("febh").value = "86";
+					document.getElementById("marh").value = "85.6";
+					document.getElementById("aprh").value = "85.2";
+					document.getElementById("mayh").value = "84.2";
+					document.getElementById("junh").value = "83";
+				}
 			}
 		}
 
