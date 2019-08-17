@@ -10,6 +10,7 @@
 	</style>
 </head>
 <body>
+	<p>This is a tool for determining where you should live based on your climate preferences. To use it, simply input your ideal monthly temperatures and humidity levels for each month. If you're not sure what humidity levels you prefer, you can use one of the presets from the drop-down menu. You can also click the "More info" button to see what the presets are like, as well as what different humidity values correspond to in this tool.</p>
 	<form>
 		<table style="width:20%">
 			<tr>
@@ -102,7 +103,7 @@
 			<option value="colwood">Vancouver Island</option>
 			<option value="oceanic">Wet year-round (Oceanic climate)</option>
 			<option value="rainforest">Tropical rainforest</option>
-		</select> <input type="button" value="Select preset"> <input type="button" value="More info on humidity"></p>
+		</select> <input type="button" value="Select preset"> <input type="button" value="More info"></p>
 		<div id="presethelp" style="display:none">
 			<p>In this tool, monthly humidity is calculated by comparing a city's average dew point to its average temperature. The result of this approximates humidity in the morning; humidity is ordinarily lower than this in the afternoon (by up to 30 points!) and higher at night. A monthly average below 40 on this scale is typical of a desert, the 40s and 50s are dry, the 60s are moderate, the 70s are fairly humid, and anything above 80 is considered very humid.</p>
 			<p><b>Desert</b> climate is very dry all year round, the kind of climate one might find in Las Vegas or Baghdad.</p>
@@ -156,13 +157,13 @@
 		}
 
 		infoButton.onclick = function() {
-			if (infoButton.value === "More info on humidity") {
+			if (infoButton.value === "More info") {
 				document.getElementById("presethelp").style.display = "block";
 				infoButton.value = "Less info";
 			}
 			else {
 				document.getElementById("presethelp").style.display = "none";
-				infoButton.value = "More info on humidity";
+				infoButton.value = "More info";
 			}
 		}
 
