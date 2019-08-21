@@ -22,7 +22,7 @@
 					var wordlist = results.data;
 					var ipaRegex = new RegExp('(?:^\/)(\S+)(?:\/)');
 
-					console.log(wordlist[0][1].value);
+					console.log(typeof wordlist[0][1]);
 
 					for (i = 0; i < wordlist.length; i++) {
 						var currentIPA = wordlist[i][1].value;
