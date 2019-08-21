@@ -36,7 +36,7 @@
 			document.getElementById("nchoosek_dump").innerHTML = nchoosek;
 		}
 		function regex_test() {
-			var sentences = document.getElementById("textinput").innerHTML;
+			var sentences = document.getElementById("textinput").value;
 			var secondWordRegex = new RegExp('(?:^\S+\s)(\S+)');
 			var matchArray = secondWordRegex.exec(sentences);
 			var secondWord = null;
