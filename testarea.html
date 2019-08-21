@@ -37,7 +37,7 @@
 		}
 		function regex_test() {
 			var sentences = document.getElementById("textinput").value;
-			var secondWordRegex = /(?:^\S+)(\S+)/;
+			var secondWordRegex = /(?:^\S+\s)(\S+)/;
 			var secondWord = secondWordRegex.exec(sentences);
 			document.getElementById("resultdump").innerHTML = secondWord;
 		}
