@@ -33,21 +33,21 @@
 							currentIPA = "/ /"
 						}
 
-						var currentIPACleaned = ipaRegex.exec(currentIPA)[1];
+						var currentIPACleaned = ipaRegex.exec(currentIPA);
 
 						console.log(currentIPACleaned);
 
-						for (j = 0; j < currentIPACleaned.length; j++) {
+						for (j = 0; j < currentIPA.length; j++) {
 							var not_yet_included = true;
 
 							for (k = 0; k < symbolManifest.length; k++) {
-								if (currentIPACleaned.charAt(j) == symbolManifest.charAt(k)) {
+								if (currentIPA.charAt(j) == symbolManifest.charAt(k)) {
 									not_yet_included = false;
 								}
 							}
 
 							if (not_yet_included == true) {
-								symbolManifest = symbolManifest.concat(currentIPACleaned.charAt(j));
+								symbolManifest = symbolManifest.concat(currentIPA.charAt(j));
 							}
 						}
 					}
