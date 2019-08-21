@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="papaparse.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<p><textarea id="input" style="font-family:sans-serif;" rows="10" cols="75" placeholder="Input some text here"></textarea></p>
+	<p><input type="button" value="This button doesn't do anything right now"></p>
+	<p id="dump"></p>
+	<script type="text/javascript">
+		var onlyButton = document.querySelectorAll("input[type='button']")[0];
+
+		onlyButton.onclick = function() {
+			var symbolManifest = "";
+
+			Papa.parse("csv/en_US.csv", {
+				header: false,
+				dynamicTyping: false,
+				download: true,
+				delimiter: ",",
+				complete: function(results) {
+					var wordlist = results.data;
+					var ipaRegex = new RegExp('(?:^\/)(\S+)(?:\/)');
+
+					for (i = 0; i < wordlist.length; i++) {
+						var currentIPA = ipaRegex.exec(wordlist[i][1].value)[1];
+
+						for (j = 0; j < currentIPA.length; j++) {
+							var not_yet_included = true;
+
+							for (k = 0; k < symbolManifest.length; k++) {
+								if (currentIPA.charAt(j) == symbolManifest.charAt(k)) {
+									not_yet_included = false;
+								}
+							}
+
+							if (not_yet_included == true) {
+								symbolManifest = symbolManifest.concat(currentIPA.charAt(j));
+							}
+						}
+					}
+
+					document.getElementById("dump").innerHTML = symbolManifest;
+				}
+			})
+		}
+	</script>
+</body>
+</html>
