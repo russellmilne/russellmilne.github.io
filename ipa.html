@@ -24,6 +24,24 @@
 
 					console.log(wordlist[0][1]);
 
+					for (i = 0; i < wordlist.length; i++) {
+						var currentIPA = ipaRegex.exec(wordlist[i][1])[1];
+
+						for (j = 0; j < currentIPA.length; j++) {
+							var not_yet_included = true;
+
+							for (k = 0; k < symbolManifest.length; k++) {
+								if (currentIPA.charAt(j) == symbolManifest.charAt(k)) {
+									not_yet_included = false;
+								}
+							}
+
+							if (not_yet_included == true) {
+								symbolManifest = symbolManifest.concat(currentIPA.charAt(j));
+							}
+						}
+					}
+
 					document.getElementById("dump").innerHTML = symbolManifest;
 				}
 			})
