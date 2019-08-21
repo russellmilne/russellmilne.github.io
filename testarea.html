@@ -25,7 +25,8 @@
 	<p><button type="button" onclick="add_these_two_numbers()">Now add them together and see what happens</button></p>
 	<p><button type="button" onclick="test_mathjs_function()">Combinatorics!</button></p>
 	<p id="nchoosek_dump">Test</p>
-	<p><textarea style="font-family:sans-serif;" rows="10" cols="50">Here's a text area, since everything else here is number boxes</textarea></p>
+	<p><textarea id="textinput" style="font-family:sans-serif;" rows="10" cols="50" placeholder="Here's a text area, since everything else here is number boxes"></textarea></p>
+	<p><button type="button" onclick="regex_test()">Let's see just the second word of that</button></p>
 	<script type="text/javascript">
 		function test_mathjs_function() {
 			var n = parseInt(document.getElementById("numone").value);
@@ -33,6 +34,16 @@
 			var k = math.min(k_input,n);
 			var nchoosek = math.combinations(n,k);
 			document.getElementById("nchoosek_dump").innerHTML = nchoosek;
+		}
+		function regex_test() {
+			var sentences = document.getElementById("textinput").innerHTML;
+			var secondWordRegex = new RegExp('(?:^\S+\s)(\S+)');
+			var matchArray = secondWordRegex.exec(sentences);
+			var secondWord = null;
+			if (matchArray.length > 0) {
+				secondWord = matchArray[0].value;
+			}
+			document.getElementById("resultdump").innerHTML = secondWord;
 		}
 	</script>
 </body>
