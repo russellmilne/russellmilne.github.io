@@ -29,7 +29,9 @@
 					for (i = 0; i < wordlist.length; i++) {
 						currentIPA = wordlist[i][1];
 
-						console.log(currentIPA)
+						if (currentIPA == undefined) {
+							currentIPA = ""
+						}
 
 						for (j = 0; j < currentIPA.length; j++) {
 							var not_yet_included = true;
