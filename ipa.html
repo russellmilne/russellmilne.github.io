@@ -22,10 +22,10 @@
 					var wordlist = results.data;
 					var ipaRegex = new RegExp('(?:^\/)(\S+)(?:\/)');
 
-					console.log(typeof wordlist[0][1]);
+					console.log(wordlist[0][1].length);
 
 					for (i = 0; i < wordlist.length; i++) {
-						var currentIPA = wordlist[i][1].value;
+						var currentIPA = wordlist[i][1];
 
 						for (j = 0; j < currentIPA.length; j++) {
 							var not_yet_included = true;
