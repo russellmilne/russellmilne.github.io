@@ -38,14 +38,7 @@
 		function regex_test() {
 			var sentences = document.getElementById("textinput").value;
 			var secondWordRegex = /(?:^\S+)(\S+)/;
-			var matchArray = secondWordRegex.exec(sentences);
-			var secondWord = null;
-			if (matchArray !== null) {
-				secondWord = matchArray[0].value;
-			}
-			else {
-				secondWord = "Only one word, apparently"
-			}
+			var secondWord = secondWordRegex.exec(sentences);
 			document.getElementById("resultdump").innerHTML = secondWord;
 		}
 	</script>
