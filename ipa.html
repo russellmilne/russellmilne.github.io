@@ -20,7 +20,7 @@
 				delimiter: ",",
 				complete: function(results) {
 					var wordlist = results.data;
-					var ipaRegex = new RegExp('(?:^\/)(\S+)(?:\/)');
+					var ipaRegex = new RegExp('(?:\/)(\S+)(?:\/)');
 
 					console.log(wordlist[0][1].length);
 
