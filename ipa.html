@@ -7,7 +7,8 @@
 	<p><textarea id="inputarea" style="font-family:sans-serif;" rows="10" cols="75" placeholder="Input some text here"></textarea></p>
 	<p><input type="button" value="This button doesn't do anything right now"></p>
 	<p><input type="button" value="Get IPA"></p>
-	<p id="dump"></p>
+	<p id="dump1"></p>
+	<p id="dump2"></p>
 	<script type="text/javascript">
 		var manifestButton = document.querySelectorAll("input[type='button']")[0];
 		var ipaButton = document.querySelectorAll("input[type='button']")[1];
@@ -65,7 +66,8 @@
 					}
 
 					console.log(symbolManifest);
-					document.getElementById("dump").innerHTML = letterManifest.concat("\n",symbolManifest);
+					document.getElementById("dump1").innerHTML = letterManifest;
+					document.getElementById("dump2").innerHTML = symbolManifest;
 				}
 			})
 		}
