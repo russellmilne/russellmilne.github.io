@@ -4,11 +4,13 @@
 	<script src="papaparse.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<p><textarea id="input" style="font-family:sans-serif;" rows="10" cols="75" placeholder="Input some text here"></textarea></p>
+	<p><textarea id="inputarea" style="font-family:sans-serif;" rows="10" cols="75" placeholder="Input some text here"></textarea></p>
 	<p><input type="button" value="This button doesn't do anything right now"></p>
+	<p><input type="button" value="Get IPA"></p>
 	<p id="dump"></p>
 	<script type="text/javascript">
 		var manifestButton = document.querySelectorAll("input[type='button']")[0];
+		var ipaButton = document.querySelectorAll("input[type='button']")[1];
 
 		manifestButton.onclick = function() {
 			var symbolManifest = "";
@@ -52,6 +54,11 @@
 					document.getElementById("dump").innerHTML = symbolManifest;
 				}
 			})
+		}
+
+		ipaButton.onclick = function() {
+			var inputText = document.getElementById("inputarea").value;
+			document.getElementById("dump").innerHTML = inputText;
 		}
 	</script>
 </body>
