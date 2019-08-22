@@ -20,7 +20,7 @@
 				delimiter: ",",
 				complete: function(results) {
 					var wordlist = results.data;
-					var ipaRegex = new RegExp('\B+');
+					var ipaRegex = /[^ ,\/]+/;
 
 					console.log(wordlist[0][1].length);
 
