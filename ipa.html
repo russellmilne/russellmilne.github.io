@@ -14,6 +14,7 @@
 
 		manifestButton.onclick = function() {
 			var symbolManifest = "";
+			var letterManifest = "";
 
 			Papa.parse("csv/en_US.csv", {
 				header: false,
@@ -27,7 +28,8 @@
 					console.log(wordlist[0][1].length);
 
 					for (i = 0; i < wordlist.length; i++) {
-						var currentIPA = wordlist[i][0];
+						var currentWord = wordlist[i][0];
+						var currentIPA = wordlist[i][1];
 
 						if (currentIPA !== null) {
 							var currentIPACleaned = ipaRegex.exec(currentIPA)[0];
@@ -45,11 +47,25 @@
 									symbolManifest = symbolManifest.concat(currentIPACleaned.charAt(j));
 								}
 							}
+
+							for (j = 0; j < currentWord.length; j++) {
+								var not_yet_included_word = true;
+
+								for (k = 0; k < letterManifest.length; k++) {
+									if (currentWord.charAt(j) == letterManifest.charAt(k)) {
+										not_yet_included_word = false;
+									}
+								}
+
+								if (not_yet_included_word == true) {
+									letterManifest = letterManifest.concat(currentWord.charAt(j));
+								}
+							}
 						}
 					}
 
 					console.log(symbolManifest);
-					document.getElementById("dump").innerHTML = symbolManifest;
+					document.getElementById("dump").innerHTML = letterManifest.concat("\n",symbolManifest);
 				}
 			})
 		}
