@@ -24,10 +24,8 @@
 
 					console.log(wordlist[0][1].length);
 
-					var currentIPA = "test"
-
 					for (i = 0; i < wordlist.length; i++) {
-						currentIPA = wordlist[i][1];
+						var currentIPA = wordlist[i][1];
 
 						if (currentIPA == undefined) {
 							currentIPA = "/ /"
@@ -35,19 +33,17 @@
 
 						var currentIPACleaned = ipaRegex.exec(currentIPA);
 
-						console.log(currentIPACleaned);
-
-						for (j = 0; j < currentIPA.length; j++) {
+						for (j = 0; j < currentIPACleaned.length; j++) {
 							var not_yet_included = true;
 
 							for (k = 0; k < symbolManifest.length; k++) {
-								if (currentIPA.charAt(j) == symbolManifest.charAt(k)) {
+								if (currentIPACleaned.charAt(j) == symbolManifest.charAt(k)) {
 									not_yet_included = false;
 								}
 							}
 
 							if (not_yet_included == true) {
-								symbolManifest = symbolManifest.concat(currentIPA.charAt(j));
+								symbolManifest = symbolManifest.concat(currentIPACleaned.charAt(j));
 							}
 						}
 					}
