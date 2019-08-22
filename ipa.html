@@ -13,6 +13,8 @@
 		var manifestButton = document.querySelectorAll("input[type='button']")[0];
 		var ipaButton = document.querySelectorAll("input[type='button']")[1];
 
+		var ipaDeslashingRegex = /[^ ,\/]+/;
+
 		manifestButton.onclick = function() {
 			var symbolManifest = "";
 			var letterManifest = "";
@@ -24,7 +26,6 @@
 				delimiter: ",",
 				complete: function(results) {
 					var wordlist = results.data;
-					var ipaRegex = /[^ ,\/]+/;
 
 					console.log(wordlist[0][1].length);
 
@@ -33,7 +34,7 @@
 						var currentIPA = wordlist[i][1];
 
 						if (currentIPA !== null) {
-							var currentIPACleaned = ipaRegex.exec(currentIPA)[0];
+							var currentIPACleaned = ipaDeslashingRegex.exec(currentIPA)[0];
 
 							for (j = 0; j < currentIPACleaned.length; j++) {
 								var not_yet_included = true;
@@ -83,8 +84,25 @@
 				complete: function(results) {
 					var wordlist = results.data;
 					var langToIPARegex = /(\S+)/g;
-					console.log(inputText.match(langToIPARegex))
-					document.getElementById("dump").innerHTML = inputText;
+
+					var inputWordlist = inputText.match(langToIPARegex);
+					console.log(inputText.match(inputWordlist));
+					var inputIPAs = new Array(inputWordlist.length);
+					var outputText = "";
+
+					for (i = 0; i < inputWordlist.length; i++) {
+						for (j = 0; j < wordlist.length; j++) {
+							if (inputWordlist[i] == wordlist[j][0]) {
+								inputIPAs[i] = ipaDeslashingRegex.exec(wordlist[j][1])[0];
+							}
+						}
+					}
+
+					for (k = 0; k < inputIPAs.length; k++) {
+						outputText = outputText.concat(inputIPAs[k]," ");
+					}
+
+					document.getElementById("dump").innerHTML = outputText;
 				}
 			})
 		}
