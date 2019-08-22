@@ -83,16 +83,20 @@
 				delimiter: ",",
 				complete: function(results) {
 					var wordlist = results.data;
-					var langToIPARegex = /(\S+)/gi;
+					var inputWordFindingRegex = /(\S+)/gi;
+					var inputDepunctuationizingRegex = /[A-z\-']+/;
 
-					var inputWordlist = inputText.match(langToIPARegex);
-					console.log(inputText.match(inputWordlist));
+					var inputWordlist = inputText.match(inputWordFindingRegex);
+					console.log(inputWordlist);
+					var inputWordlistCleaned = new Array(inputWordlist.length);
 					var inputIPAs = new Array(inputWordlist.length);
 					var outputText = "";
 
 					for (i = 0; i < inputWordlist.length; i++) {
+						inputWordlistCleaned[i] = inputDepunctuationizingRegex.exec(inputWordlist[i])[0];
+
 						for (j = 0; j < wordlist.length; j++) {
-							if (inputWordlist[i] == wordlist[j][0]) {
+							if (inputWordlistCleaned[i] == wordlist[j][0]) {
 								inputIPAs[i] = ipaDeslashingRegex.exec(wordlist[j][1])[0];
 							}
 						}
