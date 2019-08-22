@@ -29,7 +29,7 @@
 					for (i = 0; i < wordlist.length; i++) {
 						var currentIPA = wordlist[i][0];
 
-						if (currentIPA !== undefined) {
+						if (currentIPA !== null) {
 							var currentIPACleaned = ipaRegex.exec(currentIPA)[0];
 
 							for (j = 0; j < currentIPACleaned.length; j++) {
