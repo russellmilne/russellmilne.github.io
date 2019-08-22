@@ -64,7 +64,7 @@
 				delimiter: ",",
 				complete: function(results) {
 					var wordlist = results.data;
-					var langToIPARegex = /\S+/g;
+					var langToIPARegex = /(\S+)/g;
 					console.log(langToIPARegex.exec(inputText))
 					document.getElementById("dump").innerHTML = inputText;
 				}
