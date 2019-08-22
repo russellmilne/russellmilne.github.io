@@ -8,9 +8,9 @@
 	<p><input type="button" value="This button doesn't do anything right now"></p>
 	<p id="dump"></p>
 	<script type="text/javascript">
-		var onlyButton = document.querySelectorAll("input[type='button']")[0];
+		var manifestButton = document.querySelectorAll("input[type='button']")[0];
 
-		onlyButton.onclick = function() {
+		manifestButton.onclick = function() {
 			var symbolManifest = "";
 
 			Papa.parse("csv/en_US.csv", {
