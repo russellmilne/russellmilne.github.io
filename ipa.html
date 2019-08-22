@@ -65,7 +65,7 @@
 				complete: function(results) {
 					var wordlist = results.data;
 					var langToIPARegex = /(\S+)/g;
-					console.log(langToIPARegex.exec(inputText))
+					console.log(inputText.match(langToIPARegex))
 					document.getElementById("dump").innerHTML = inputText;
 				}
 			})
