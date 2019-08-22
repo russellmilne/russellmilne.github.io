@@ -27,25 +27,23 @@
 					for (i = 0; i < wordlist.length; i++) {
 						var currentIPA = wordlist[i][1];
 
-						if (currentIPA == undefined) {
-							currentIPA = "/ /"
-						}
+						if (currentIPA !== undefined) {
+							var currentIPACleaned = ipaRegex.exec(currentIPA)[0];
 
-						var currentIPACleaned = ipaRegex.exec(currentIPA)[0];
+							console.log(currentIPACleaned);
 
-						console.log(currentIPACleaned);
+							for (j = 0; j < currentIPACleaned.length; j++) {
+								var not_yet_included = true;
 
-						for (j = 0; j < currentIPACleaned.length; j++) {
-							var not_yet_included = true;
-
-							for (k = 0; k < symbolManifest.length; k++) {
-								if (currentIPACleaned.charAt(j) == symbolManifest.charAt(k)) {
-									not_yet_included = false;
+								for (k = 0; k < symbolManifest.length; k++) {
+									if (currentIPACleaned.charAt(j) == symbolManifest.charAt(k)) {
+										not_yet_included = false;
+									}
 								}
-							}
 
-							if (not_yet_included == true) {
-								symbolManifest = symbolManifest.concat(currentIPACleaned.charAt(j));
+								if (not_yet_included == true) {
+									symbolManifest = symbolManifest.concat(currentIPACleaned.charAt(j));
+								}
 							}
 						}
 					}
