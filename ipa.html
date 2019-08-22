@@ -56,7 +56,19 @@
 
 		ipaButton.onclick = function() {
 			var inputText = document.getElementById("inputarea").value;
-			document.getElementById("dump").innerHTML = inputText;
+
+			Papa.parse("csv/en_US.csv", {
+				header: false,
+				dynamicTyping: false,
+				download: true,
+				delimiter: ",",
+				complete: function(results) {
+					var wordlist = results.data;
+					var langToIPARegex = /\S+/;
+					console.log(langToIPARegex.exec(inputText)[0])
+					document.getElementById("dump").innerHTML = inputText;
+				}
+			})
 		}
 	</script>
 </body>
