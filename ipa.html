@@ -27,7 +27,7 @@
 					console.log(wordlist[0][1].length);
 
 					for (i = 0; i < wordlist.length; i++) {
-						var currentIPA = wordlist[i][1];
+						var currentIPA = wordlist[i][0];
 
 						if (currentIPA !== undefined) {
 							var currentIPACleaned = ipaRegex.exec(currentIPA)[0];
