@@ -15,9 +15,14 @@ function to_pl (inputIPAArray) {
 		var tempWord = inputIPAArray[i];
 		var outputWord = "";
 
-		/*
+		//
 
 		for (j = 0; j < tempWord.length; j++) {
+
+			console.log(tempWord.charAt(j));
+
+			/*
+
 			if (tempWord.charAt(j) == "b" || tempWord.charAt(j) == "a" || tempWord.charAt(j) == "k" || tempWord.charAt(j) == "z" || tempWord.charAt(j) == "j" || tempWord.charAt(j) == "g" || tempWord.charAt(j) == "d" || tempWord.charAt(j) == "i" || tempWord.charAt(j) == "p") {
 				outputWord = outputWord.concat(tempWord.charAt(j));
 			}
