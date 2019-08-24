@@ -343,11 +343,12 @@ function to_pl (inputIPAArray) {
 			else {
 				outputWord = outputWord.concat("*");
 			}
+
+			*/
 		}
 
-		translatedArray[i] = outputWord;
+		//translatedArray[i] = outputWord;
 
-		*/
 		translatedArray[i] = tempWord;
 	}
 
