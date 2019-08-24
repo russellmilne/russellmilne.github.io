@@ -80,7 +80,7 @@ function to_pl (inputIPAArray) {
 					outputWord = outputWord.concat("a");
 				}
 			}
-			else if (tempWord.charAt(j) == "ɔ") {
+			else if (tempWord.charAt(j) == "ɔ" || tempWord.charAt(j) == "ɑ") { //Cot-caught merger
 				if ((j + 2) < tempWord.length) {
 					if (tempWord.charAt(j+1) == "n") {
 						if (tempWord.charAt(j+2) == "t" || tempWord.charAt(j+2) == "d") {
@@ -257,9 +257,6 @@ function to_pl (inputIPAArray) {
 			}
 			else if (tempWord.charAt(j) == "w") {
 				outputWord = outputWord.concat("ł");
-			}
-			else if (tempWord.charAt(j) == "ɑ") {
-				outputWord = outputWord.concat("a");
 			}
 			else if (tempWord.charAt(j) == "ɝ") {
 				outputWord = outputWord.concat("er");
