@@ -4,24 +4,19 @@ function to_pl (inputIPAArray) {
 
 	var destressRegex = /[^ ˈˌ]+/g;
 
-	//
-
 	for (i = 0; i < inputIPAArray.length; i++) {
 		var tempWord = "";
 		var syllables = inputIPAArray[i].match(destressRegex);
 		for (h = 0; h < syllables.length; h++) {
 			tempWord = tempWord.concat(syllables[h]);
 		}
-		//var tempWord = inputIPAArray[i];
 		var outputWord = "";
-
-		//
 
 		for (j = 0; j < tempWord.length; j++) {
 
 			console.log(tempWord.charAt(j));
 
-			/*
+			//
 
 			if (tempWord.charAt(j) == "b" || tempWord.charAt(j) == "a" || tempWord.charAt(j) == "k" || tempWord.charAt(j) == "z" || tempWord.charAt(j) == "j" || tempWord.charAt(j) == "g" || tempWord.charAt(j) == "d" || tempWord.charAt(j) == "i" || tempWord.charAt(j) == "p") {
 				outputWord = outputWord.concat(tempWord.charAt(j));
@@ -344,12 +339,12 @@ function to_pl (inputIPAArray) {
 				outputWord = outputWord.concat("*");
 			}
 
-			*/
+			//
 		}
 
-		//translatedArray[i] = outputWord;
+		translatedArray[i] = outputWord;
 
-		translatedArray[i] = tempWord;
+		//translatedArray[i] = tempWord;
 	}
 
 	return translatedArray;
