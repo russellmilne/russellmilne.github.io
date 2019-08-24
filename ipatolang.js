@@ -301,7 +301,7 @@ function to_pl (inputIPAArray) {
 					if (tempWord.charAt(j-1) == "t") {
 						if ((j + 1) < tempWord.length) {
 							if (tempWord.charAt(j+1) == "i") {
-								outputWord = outputWord.concat("c");
+								outputWord = outputWord.concat("cz"); //"ci" and "ć" are a different sound, which is farther away from English
 							}
 							else {
 								outputWord = outputWord.concat("cz");
@@ -314,7 +314,7 @@ function to_pl (inputIPAArray) {
 					else {
 						if ((j + 1) < tempWord.length) {
 							if (tempWord.charAt(j+1) == "i") {
-								outputWord = outputWord.concat("s");
+								outputWord = outputWord.concat("sz"); //Same for "si" and "ś"
 							}
 							else {
 								outputWord = outputWord.concat("sz");
