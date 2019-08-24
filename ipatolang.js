@@ -3,6 +3,8 @@ function to_pl (inputIPAArray) {
 
 	//var destressRegex = /[^ ˈˌ]+/g;
 
+	/*
+
 	for (i = 0; i < inputIPAArray.length; i++) {
 		//var tempWord = "";
 		//var syllables = inputIPAArray[i].match(destressRegex);
@@ -339,4 +341,6 @@ function to_pl (inputIPAArray) {
 	}
 
 	return translatedArray;
+	*/
+	return "test";
 }
