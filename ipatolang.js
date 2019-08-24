@@ -281,19 +281,19 @@ function to_pl (inputIPAArray) {
 								outputWord = outputWord.concat("");
 							}
 							else {
-								outputWord = outputWord.concat("n");
+								outputWord = outputWord.concat("ng");
 							}
 						}
 						else {
-							outputWord = outputWord.concat("n");
+							outputWord = outputWord.concat("ng");
 						}
 					}
 					else {
-						outputWord = outputWord.concat("n");
+						outputWord = outputWord.concat("ng");
 					}
 				}
 				else {
-					outputWord = outputWord.concat("n");
+					outputWord = outputWord.concat("ng");
 				}
 			}
 			else if (tempWord.charAt(j) == "ʃ") {
@@ -340,7 +340,7 @@ function to_pl (inputIPAArray) {
 								outputWord = outputWord.concat("ż");
 							}
 							else {
-								outputWord = outputWord.concat("rz");
+								outputWord = outputWord.concat("ż"); //rz
 							}
 						}
 						else {
