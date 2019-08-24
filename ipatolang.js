@@ -441,5 +441,7 @@ function to_pl (inputIPAArray) {
 					outputWord = outputWord.concat("*");
 			}
 		}
+
+		translatedArray[i] = outputWord;
 	}
 }
