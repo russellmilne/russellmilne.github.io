@@ -1,5 +1,6 @@
 function to_pl (inputIPAArray) {
-	var translatedArray = new Array(inputIPAArray.length);
+	return inputIPAArray.length;
+	//var translatedArray = new Array(inputIPAArray.length);
 
 	//var destressRegex = /[^ ˈˌ]+/g;
 
@@ -342,5 +343,5 @@ function to_pl (inputIPAArray) {
 
 	return translatedArray;
 	*/
-	return "test";
+	//return "test";
 }

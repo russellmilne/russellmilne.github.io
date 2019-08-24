@@ -95,7 +95,6 @@
 
 					for (i = 0; i < inputWordlist.length; i++) {
 						inputWordlistCleaned[i] = inputDepunctuationizingRegex.exec(inputWordlist[i])[0].toLowerCase();
-						console.log(inputWordlistCleaned[i]);
 
 						for (j = 0; j < wordlist.length; j++) {
 							if (inputWordlistCleaned[i] == wordlist[j][0]) {
@@ -106,6 +105,7 @@
 
 					var outputPL = to_pl(inputIPAs);
 					console.log(inputIPAs);
+					console.log(outputPL);
 
 					//for (k = 0; k < inputIPAs.length; k++) {
 					//	outputText = outputText.concat(outputPL[k]," ");
