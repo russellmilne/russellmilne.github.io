@@ -1,10 +1,10 @@
 function to_pl (inputIPAArray) {
-	return inputIPAArray.length;
-	//var translatedArray = new Array(inputIPAArray.length);
+
+	var translatedArray = new Array(inputIPAArray.length);
 
 	//var destressRegex = /[^ ˈˌ]+/g;
 
-	/*
+	//
 
 	for (i = 0; i < inputIPAArray.length; i++) {
 		//var tempWord = "";
@@ -14,6 +14,8 @@ function to_pl (inputIPAArray) {
 		//}
 		var tempWord = inputIPAArray[i];
 		var outputWord = "";
+
+		/*
 
 		for (j = 0; j < tempWord.length; j++) {
 			if (tempWord.charAt(j) == "b" || tempWord.charAt(j) == "a" || tempWord.charAt(j) == "k" || tempWord.charAt(j) == "z" || tempWord.charAt(j) == "j" || tempWord.charAt(j) == "g" || tempWord.charAt(j) == "d" || tempWord.charAt(j) == "i" || tempWord.charAt(j) == "p") {
@@ -339,9 +341,12 @@ function to_pl (inputIPAArray) {
 		}
 
 		translatedArray[i] = outputWord;
+
+		*/
+		translatedArray[i] = i;
 	}
 
 	return translatedArray;
-	*/
-	//return "test";
+	
+	
 }
