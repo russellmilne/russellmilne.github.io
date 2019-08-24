@@ -1,14 +1,15 @@
 function to_pl (inputIPAArray) {
 	var translatedArray = new Array(inputIPAArray.length);
 
-	var destressRegex = /[^ ˈˌ]+/g;
+	//var destressRegex = /[^ ˈˌ]+/g;
 
 	for (i = 0; i < inputIPAArray.length; i++) {
-		var tempWord = "";
-		var syllables = inputIPAArray[i].match(destressRegex);
-		for (h = 0; h < syllables.length; h++) {
-			tempWord = tempWord.concat(syllables[h]);
-		}
+		//var tempWord = "";
+		//var syllables = inputIPAArray[i].match(destressRegex);
+		//for (h = 0; h < syllables.length; h++) {
+		//	tempWord = tempWord.concat(syllables[h]);
+		//}
+		var tempWord = inputIPAArray[i];
 		var outputWord = "";
 
 		for (j = 0; j < tempWord.length; j++) {
