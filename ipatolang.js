@@ -18,20 +18,40 @@ function to_pl (inputIPAArray) {
 
 			//
 
-			if (tempWord.charAt(j) == "b" || tempWord.charAt(j) == "a" || tempWord.charAt(j) == "k" || tempWord.charAt(j) == "z" || tempWord.charAt(j) == "j" || tempWord.charAt(j) == "g" || tempWord.charAt(j) == "d" || tempWord.charAt(j) == "i" || tempWord.charAt(j) == "p") {
+			if (tempWord.charAt(j) == "b" || tempWord.charAt(j) == "a" || tempWord.charAt(j) == "k" || tempWord.charAt(j) == "z" || tempWord.charAt(j) == "j" || tempWord.charAt(j) == "ɡ" || tempWord.charAt(j) == "d" || tempWord.charAt(j) == "i" || tempWord.charAt(j) == "p") {
 				outputWord = outputWord.concat(tempWord.charAt(j));
 			}
 			else if (tempWord.charAt(j) == "ʊ" || tempWord.charAt(j) == "u") {
-				if ((j + 1) < tempWord.length) {
-					if (tempWord.charAt(j+1) == "f" || tempWord.charAt(j+1) == "v") {
-						outputWord = outputWord.concat("ó");
+				if (j > 0) {
+					if (tempWord.charAt(j-1) == "o") {
+						outputWord = outputWord.concat("");
+					}
+					else {
+						if ((j + 1) < tempWord.length) {
+							if (tempWord.charAt(j+1) == "f" || tempWord.charAt(j+1) == "v") {
+								outputWord = outputWord.concat("ó");
+							}
+							else {
+								outputWord = outputWord.concat("u");
+							}
+						}
+						else {
+							outputWord = outputWord.concat("u");
+						}
+					}
+				}
+				else {
+					if ((j + 1) < tempWord.length) {
+						if (tempWord.charAt(j+1) == "f" || tempWord.charAt(j+1) == "v") {
+							outputWord = outputWord.concat("ó");
+						}
+						else {
+							outputWord = outputWord.concat("u");
+						}
 					}
 					else {
 						outputWord = outputWord.concat("u");
 					}
-				}
-				else {
-					outputWord = outputWord.concat("u");
 				}
 			}
 			else if (tempWord.charAt(j) == "t") {
@@ -160,7 +180,17 @@ function to_pl (inputIPAArray) {
 				}
 			}
 			else if (tempWord.charAt(j) == "o") {
-				outputWord = outputWord.concat("oł");
+				if ((j + 1) < tempWord.length) {
+					if (tempWord.charAt(j+1) == "ʊ" || tempWord.charAt(j+1) == "u") {
+						outputWord = outputWord.concat("oł");
+					}
+					else {
+						outputWord = outputWord.concat("o");
+					}
+				}
+				else {
+					outputWord = outputWord.concat("o");
+				}
 			}
 			else if (tempWord.charAt(j) == "ɛ" || tempWord.charAt(j) == "e" || tempWord.charAt(j) == "æ") {
 				if ((j + 2) < tempWord.length) {
@@ -232,7 +262,7 @@ function to_pl (inputIPAArray) {
 				outputWord = outputWord.concat("a");
 			}
 			else if (tempWord.charAt(j) == "ɝ") {
-				outputWord = outputWord.concat("yr");
+				outputWord = outputWord.concat("er");
 			}
 			else if (tempWord.charAt(j) == "θ") {
 				outputWord = outputWord.concat("t");
