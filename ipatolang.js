@@ -18,7 +18,7 @@ function to_pl (inputIPAArray) {
 
 			//
 
-			if (tempWord.charAt(j) == "b" || tempWord.charAt(j) == "a" || tempWord.charAt(j) == "k" || tempWord.charAt(j) == "z" || tempWord.charAt(j) == "j" || tempWord.charAt(j) == "ɡ" || tempWord.charAt(j) == "d" || tempWord.charAt(j) == "i" || tempWord.charAt(j) == "p") {
+			if (tempWord.charAt(j) == "b" || tempWord.charAt(j) == "a" || tempWord.charAt(j) == "k" || tempWord.charAt(j) == "z" || tempWord.charAt(j) == "ɡ" || tempWord.charAt(j) == "d" || tempWord.charAt(j) == "i" || tempWord.charAt(j) == "p") {
 				outputWord = outputWord.concat(tempWord.charAt(j));
 			}
 			else if (tempWord.charAt(j) == "ʊ" || tempWord.charAt(j) == "u") {
@@ -354,7 +354,7 @@ function to_pl (inputIPAArray) {
 							outputWord = outputWord.concat("ż");
 						}
 						else {
-							outputWord = outputWord.concat("rz");
+							outputWord = outputWord.concat("ż"); //rz
 						}
 					}
 					else {
@@ -364,6 +364,19 @@ function to_pl (inputIPAArray) {
 			}
 			else if (tempWord.charAt(j) == "ð") {
 				outputWord = outputWord.concat("d");
+			}
+			else if (tempWord.charAt(j) == "j") {
+				if (j > 0) {
+					if (tempWord.charAt(j-1) == "n") {
+						outputWord = outputWord.concat("");
+					}
+					else {
+						outputWord = outputWord.concat("j");
+					}
+				}
+				else {
+					outputWord = outputWord.concat("j");
+				}
 			}
 			else {
 				outputWord = outputWord.concat("*");
