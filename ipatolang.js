@@ -337,4 +337,6 @@ function to_pl (inputIPAArray) {
 
 		translatedArray[i] = outputWord;
 	}
+
+	return translatedArray;
 }
