@@ -134,7 +134,7 @@ function to_pl (inputIPAArray) {
 				if ((j + 1) < tempWord.length) {
 					if (tempWord.charAt(j+1) == "p" || tempWord.charAt(j+1) == "b") {
 						if (j > 0) {
-							if (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ") {
+							if (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j) == "ɑ") {
 								outputWord = outputWord.concat("");
 							}
 							else {
@@ -155,7 +155,7 @@ function to_pl (inputIPAArray) {
 			}
 			else if (tempWord.charAt(j) == "f") {
 				if (j > 0) {
-					if (tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ʊ" || tempWord.charAt(j-1) == "u" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɪ") {
+					if (tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ʊ" || tempWord.charAt(j-1) == "u" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j) == "ɑ" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɪ") {
 						outputWord = outputWord.concat("w");
 					}
 					else {
@@ -168,7 +168,7 @@ function to_pl (inputIPAArray) {
 			}
 			else if (tempWord.charAt(j) == "ɪ") {
 				if (j > 0) {
-					if (tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ʊ" || tempWord.charAt(j-1) == "u" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "æ") {
+					if (tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ʊ" || tempWord.charAt(j-1) == "u" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j) == "ɑ" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "æ") {
 						outputWord = outputWord.concat("j");
 					}
 					else {
@@ -233,7 +233,7 @@ function to_pl (inputIPAArray) {
 					}
 					else if (tempWord.charAt(j+1) == "t" || tempWord.charAt(j+1) == "d") {
 						if (j > 0) {
-							if (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ") {
+							if (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j) == "ɑ") {
 								outputWord = outputWord.concat("");
 							}
 							else {
@@ -274,7 +274,7 @@ function to_pl (inputIPAArray) {
 				if ((j + 1) < tempWord.length) {
 					if (tempWord.charAt(j+1) == "k" || tempWord.charAt(j+1) == "g") {
 						if (j > 0) {
-							if (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ") {
+							if (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j) == "ɑ") {
 								outputWord = outputWord.concat("");
 							}
 							else {
@@ -333,7 +333,7 @@ function to_pl (inputIPAArray) {
 					}
 					else {
 					if (j > 0) {
-							if (tempWord.charAt(j-1) == "ɫ" || tempWord.charAt(j-1) == "w" || tempWord.charAt(j-1) == "ɹ" || tempWord.charAt(j-1) == "n" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ɑ" || tempWord.charAt(j-1) == "ə" || tempWord.charAt(j-1) == "ɪ") {
+							if (tempWord.charAt(j-1) == "ɫ" || tempWord.charAt(j-1) == "w" || tempWord.charAt(j-1) == "ɹ" || tempWord.charAt(j-1) == "n" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ə" || tempWord.charAt(j-1) == "ɪ") {
 								outputWord = outputWord.concat("ż");
 							}
 							else {
@@ -347,7 +347,7 @@ function to_pl (inputIPAArray) {
 				}
 				else {
 					if (j > 0) {
-						if (tempWord.charAt(j-1) == "ɫ" || tempWord.charAt(j-1) == "w" || tempWord.charAt(j-1) == "ɹ" || tempWord.charAt(j-1) == "n" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ɑ" || tempWord.charAt(j-1) == "ə" || tempWord.charAt(j-1) == "ɪ") {
+						if (tempWord.charAt(j-1) == "ɫ" || tempWord.charAt(j-1) == "w" || tempWord.charAt(j-1) == "ɹ" || tempWord.charAt(j-1) == "n" || tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "a" || tempWord.charAt(j-1) == "ə" || tempWord.charAt(j-1) == "ɪ") {
 							outputWord = outputWord.concat("ż");
 						}
 						else {
