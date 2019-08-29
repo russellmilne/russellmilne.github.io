@@ -12,71 +12,51 @@
 <body>
 	<p>This is a tool for determining where you should live based on your climate preferences. To use it, simply input your ideal temperatures and humidity levels for each month. If you're not sure what humidity levels you prefer, you can use one of the presets from the drop-down menu. You can also click the "More info" button to see what the presets are like, as well as what different humidity values correspond to in this tool.</p>
 	<form>
-		<table style="width:20%">
+		<table style="width:90%">
 			<tr>
 				<th align="left">Month</th>
-				<th>Temperature</th>
-				<th>%Humidity</th>
-			</tr>
-			<tr>
-				<td>January</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="janh"></td>
-			</tr>
-			<tr>
-				<td>February</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="febh"></td>
-			</tr>
-			<tr>
-				<td>March</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="marh"></td>
-			</tr>
-			<tr>
-				<td>April</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="aprh"></td>
-			</tr>
-			<tr>
+				<td>Jan</td>
+				<td>Feb</td>
+				<td>Mar</td>
+				<td>Apr</td>
 				<td>May</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="mayh"></td>
+				<td>Jun</td>
+				<td>Jul</td>
+				<td>Aug</td>
+				<td>Sep</td>
+				<td>Oct</td>
+				<td>Nov</td>
+				<td>Dec</td>
 			</tr>
 			<tr>
-				<td>June</td>
+				<th>Temperature</th>
 				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="junh"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
 			</tr>
 			<tr>
-				<td>July</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="julh"></td>
-			</tr>
-			<tr>
-				<td>August</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="augh"></td>
-			</tr>
-			<tr>
-				<td>September</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="seph"></td>
-			</tr>
-			<tr>
-				<td>October</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="octh"></td>
-			</tr>
-			<tr>
-				<td>November</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="novh"></td>
-			</tr>
-			<tr>
-				<td>December</td>
-				<td class="numinputcell"><input type="number" min="-459" max="212" step="0.1"></td>
-				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1" id="dech"></td>
+				<th>%Humidity</th>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
+				<td class="numinputcell"><input type="number" min="0" max="100" step="0.1"></td>
 			</tr>
 		</table>
 		<p><div>Which degree scale are your temperatures in?<br>
@@ -164,7 +144,7 @@
 			if (document.getElementById("humiditypresets").selectedIndex > 0) {
 				var selectedPreset = document.getElementById("humiditypresets").selectedIndex - 1;
 				for (k = 0; k < 12; k++) {
-					document.querySelectorAll('input[type="number"]')[math.mod(((2*(k + rot))+1),24)].value = presetArray.subset(math.index(selectedPreset,k))
+					document.querySelectorAll('input[type="number"]')[math.mod((k + rot),12) + 12].value = presetArray.subset(math.index(selectedPreset,k))
 				}
 			}
 		}
@@ -191,10 +171,10 @@
 			var hemisphereInput = null;
 
 			for (i = 0; i < tempInputs.length; i++) {
-				farTempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[2*i].value);
-				celTempInputs[i] = ((parseFloat(document.querySelectorAll('input[type="number"]')[2*i].value) * (9 / 5)) + 32)
+				farTempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i].value);
+				celTempInputs[i] = ((parseFloat(document.querySelectorAll('input[type="number"]')[i].value) * (9 / 5)) + 32)
 
-				humidInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[(2*i)+1].value);
+				humidInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+12].value);
 			}
 
 			if (document.getElementById("degreebuttonc").checked === true) {
