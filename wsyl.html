@@ -117,6 +117,18 @@
 			<p>The <b>oceanic</b> preset is rainy all year, but especially so in the winter, and typically mild as a result. Great Britain is a good example of this kind of climate.</p>
 			<p>The <b>tropical rainforest</b> preset is also wet all year. Unlike an oceanic climate, a tropical rainforest has little variation in humidity throughout the year.</p>
 		</div>
+		<p>Optional: You can filter your results geographically. Which region of the world do you want to see results from? <select id="regionselector">
+			<option value="everywhere">Entire world</option>
+			<option value="cee">Central/Eastern Europe and Russia</option>
+			<option value="mena">Middle East, Central Asia and North Africa</option>
+			<option value="subcon">South and Southeast Asia</option>
+			<option value="eastasia">East Asia</option>
+			<option value="oznz">Australia, New Zealand and the Pacific</option>
+			<option value="america">The United States and Canada</option>
+			<option value="latin">Latin America and the Caribbean</option>
+			<option value="westerneurope">Western Europe</option>
+			<option value="africa">Sub-Saharan Africa</option>
+		</select></p>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
@@ -220,10 +232,14 @@
 					var overallNorm_overallBest = tempNorm_overallBest;
 
 					var stationHemisphere = null;
+					var stationRegion = null;
+
+					var inputRegion = document.getElementById("regionselector").selectedIndex;
 
 					for (i = 0; i < stations.length; i++) {
 
 						stationHemisphere = stations[i].lat_hemisphere;
+						stationRegion = stations[i].region;
 
 						if (stationHemisphere === hemisphereInput) {
 							stationTemps[0] = stations[i].jan_temp;
@@ -280,20 +296,22 @@
 							stationHumids[11] = stations[i].jun_humid;
 						}
 
-						for (j = 0; j < stationTemps.length; j++) {
-							comparisonTempArray[j] = tempInputs[j] - stationTemps[j];
-							comparisonHumidArray[j] = humidInputs[j] - stationHumids[j];
-						}
+						if (inputRegion == stationRegion || inputRegion == 0) {
+							for (j = 0; j < stationTemps.length; j++) {
+								comparisonTempArray[j] = tempInputs[j] - stationTemps[j];
+								comparisonHumidArray[j] = humidInputs[j] - stationHumids[j];
+							}
 
-						tempNorm_current = math.norm(comparisonTempArray);
-						humidNorm_current = math.norm(comparisonHumidArray);
-						var comparisonOverallArray = [tempNorm_current, humidNorm_current];
+							tempNorm_current = math.norm(comparisonTempArray);
+							humidNorm_current = math.norm(comparisonHumidArray);
+							var comparisonOverallArray = [tempNorm_current, humidNorm_current];
 
-						if (math.norm(comparisonOverallArray) < overallNorm_overallBest) {
-							overallNorm_overallBest = math.norm(comparisonOverallArray);
-							tempNorm_overallBest = tempNorm_current;
-							humidNorm_overallBest = humidNorm_current;
-							closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference scores ",math.round(tempNorm_overallBest,3)," temperature, ",math.round(humidNorm_overallBest,3)," humidity)");
+							if (math.norm(comparisonOverallArray) < overallNorm_overallBest) {
+								overallNorm_overallBest = math.norm(comparisonOverallArray);
+								tempNorm_overallBest = tempNorm_current;
+								humidNorm_overallBest = humidNorm_current;
+								closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference scores ",math.round(tempNorm_overallBest,3)," temperature, ",math.round(humidNorm_overallBest,3)," humidity)");
+							}
 						}
 					}
 
