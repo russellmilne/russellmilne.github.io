@@ -238,8 +238,8 @@
 
 						stationHemisphere = stations[i].lat_hemisphere;
 						stationRegion = stations[i].region;
-						stationLat = (stations[i].lat_degrees + (stations[i].lat_minutes / 60))*Math.PI()/180;
-						stationLong = (stations[i].long_degrees + (stations[i].long_minutes / 60))*Math.PI()/180;
+						stationLat = (stations[i].lat_degrees + (stations[i].lat_minutes / 60))*Math.PI/180;
+						stationLong = (stations[i].long_degrees + (stations[i].long_minutes / 60))*Math.PI/180;
 
 						if (stationHemisphere === hemisphereInput) {
 							stationTemps[0] = stations[i].jan_temp;
