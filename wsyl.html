@@ -112,6 +112,19 @@
 			<option value="westerneurope">Western Europe</option>
 			<option value="africa">Sub-Saharan Africa</option>
 		</select></p>
+		<div>
+			<input type="checkbox" id="latlongcheck"> Also restrict my results to places close to a given location: 
+			<input type="number" min="0" max="90" id="latinput">
+			<select id="lathemselector">
+				<option value="nhem">N</option>
+				<option value="shem">S</option>
+			</select>, 
+			<input type="number" min="0" max="90" id="longinput">
+			<select id="longhemselector">
+				<option value="ehem">E</option>
+				<option value="whem">W</option>
+			</select>
+		</div>
 		<p><input type="button" value="Where should you live?"></p>
 		<p id="weatherResult"></p>
 		<p id="dump"></p>
@@ -216,6 +229,8 @@
 
 					var stationHemisphere = null;
 					var stationRegion = null;
+					var stationLat = null;
+					var stationLong = null;
 
 					var inputRegion = document.getElementById("regionselector").selectedIndex;
 
@@ -223,6 +238,8 @@
 
 						stationHemisphere = stations[i].lat_hemisphere;
 						stationRegion = stations[i].region;
+						stationLat = (stations[i].lat_degrees + (stations[i].lat_minutes / 60))*Math.PI()/180;
+						stationLong = (stations[i].long_degrees + (stations[i].long_minutes / 60))*Math.PI()/180;
 
 						if (stationHemisphere === hemisphereInput) {
 							stationTemps[0] = stations[i].jan_temp;
