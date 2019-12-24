@@ -217,7 +217,8 @@
 				if (document.getElementById("longhemselector").selectedIndex === 1) {
 					longInput = longInput*(-1);
 				}
-				console.log("Button is checked");
+				console.log(latInput);
+				console.log(longInput);
 			}
 			else {
 				var latInput = 0; var longInput = 0; var maxPhysicalDistance = 999999999999;
@@ -245,6 +246,7 @@
 					var overallNorm_overallBest = tempNorm_overallBest;
 
 					var stationLatHemisphere = null;
+					var stationLongHemisphere = null;
 					var stationRegion = null;
 					var stationLat = null;
 					var stationLong = null;
