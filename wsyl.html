@@ -210,7 +210,7 @@
 			if (document.getElementById("latlongcheck").checked === true) {
 				var latInput = document.getElementById("latbox").value;
 				var longInput = document.getElementById("longbox").value;
-				var maxPhysicalDistance = 200000; // In metres, for haversine formula
+				var maxPhysicalDistance = 500000; // In metres, for haversine formula
 				if (document.getElementById("lathemselector").selectedIndex === 1) {
 					latInput = latInput*(-1); // Southern hemisphere is negative on the latitude axis
 				}
@@ -370,7 +370,12 @@
 					}
 
 					if (closest_station === null) {
-						closest_station = "Make sure you fill in all of the input boxes."
+						if (document.getElementById("latlongcheck").checked === true) {
+							closest_station = "There aren't any cities within 500 km of there in the database."
+						}
+						else {
+							closest_station = "Make sure you fill in all of the input boxes."
+						}
 					}
 
 					document.getElementById("weatherResult").innerHTML = closest_station;
