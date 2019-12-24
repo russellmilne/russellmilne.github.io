@@ -265,8 +265,8 @@
 						// Going station by station, extracting data, and comparing against the current best station
 						stationLatHemisphere = stations[i].lat_hemisphere;
 						stationRegion = stations[i].region;
-						stationLat = (stations[i].lat_degrees + (stations[i].lat_minutes / 60))*Math.PI/180;
-						stationLong = (stations[i].long_degrees + (stations[i].long_minutes / 60))*Math.PI/180;
+						stationLat = (stations[i].lat_degrees + (stations[i].lat_minutes / 60))
+						stationLong = (stations[i].long_degrees + (stations[i].long_minutes / 60))
 						if (stationLatHemisphere === "S") {
 							stationLat = stationLat*(-1);
 						}
