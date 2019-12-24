@@ -217,9 +217,11 @@
 				if (document.getElementById("longhemselector").selectedIndex === 1) {
 					longInput = longInput*(-1);
 				}
+				console.log("Button is checked");
 			}
 			else {
 				var latInput = 0; var longInput = 0; var maxPhysicalDistance = 999999999999;
+				console.log("Button is not checked");
 			}
 
 			Papa.parse("weather_noprecip_full.csv", {
