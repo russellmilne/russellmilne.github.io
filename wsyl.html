@@ -114,12 +114,12 @@
 		</select></p>
 		<div>
 			<input type="checkbox" id="latlongcheck"> Also restrict my results to places close to a given location: 
-			<input type="number" min="0" max="90" id="latinput">
+			<input type="number" min="0" max="90" id="latbox">
 			<select id="lathemselector">
 				<option value="nhem">N</option>
 				<option value="shem">S</option>
 			</select>, 
-			<input type="number" min="0" max="90" id="longinput">
+			<input type="number" min="0" max="90" id="longbox">
 			<select id="longhemselector">
 				<option value="ehem">E</option>
 				<option value="whem">W</option>
@@ -146,12 +146,12 @@
 			 [66.6,67.6,69.2,71.8,75.6,77.0,75.6,75.8,74.4,70.4,67.6,66.6],
 			 [90.0,84.7,80.2,73.3,69.5,68.3,65.2,67.3,73.5,83.7,88.5,90.2],
 			 [86.0,84.0,81.6,79.6,78.8,79.2,80.4,81.6,82.6,84.4,85.8,86.8],
-			 [82.8,82.4,81.4,81.4,82.8,84.0,84.8,86.0,85.6,85.2,84.2,83.0]]);
+			 [82.8,82.4,81.4,81.4,82.8,84.0,84.8,86.0,85.6,85.2,84.2,83.0]]); // Humidity presets (columns are months)
 
 		presetSelectButton.onclick = function() {
 
 			if (document.getElementById("hemispherebutton_s").checked === true) {
-				rot = 6;
+				rot = 6; // Southern hemisphere weather data is rotated by 6 months
 			}
 			else {
 				rot = 0;
@@ -184,12 +184,12 @@
 
 			var humidInputs = new Array(12);
 
-			var hemisphereInput = null;
+			var hemisphereLatInput = null;
 
 			for (i = 0; i < tempInputs.length; i++) {
 				farTempInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i].value);
 				celTempInputs[i] = ((parseFloat(document.querySelectorAll('input[type="number"]')[i].value) * (9 / 5)) + 32)
-
+				// My parsed data in the spreadsheet is in Fahrenheit, so I convert everything to Fahrenheit for calculations
 				humidInputs[i] = parseFloat(document.querySelectorAll('input[type="number"]')[i+12].value);
 			}
 
@@ -201,10 +201,25 @@
 			}
 
 			if (document.getElementById("hemispherebutton_s").checked === true) {
-				hemisphereInput = "S";
+				hemisphereLatInput = "S";
 			}
 			else {
-				hemisphereInput = "N";
+				hemisphereLatInput = "N";
+			}
+
+			if (document.getElementById("latlongcheck").checked === true) {
+				var latInput = document.getElementById("latbox").value;
+				var longInput = document.getElementById("longbox").value;
+				var maxPhysicalDistance = 200000; // In metres, for haversine formula
+				if (document.getElementById("lathemselector").selectedIndex === 1) {
+					latInput = latInput*(-1); // Southern hemisphere is negative on the latitude axis
+				}
+				if (document.getElementById("longhemselector").selectedIndex === 1) {
+					longInput = longInput*(-1);
+				}
+			}
+			else {
+				var latInput = 0; var longInput = 0; var maxPhysicalDistance = 999999999999;
 			}
 
 			Papa.parse("weather_noprecip_full.csv", {
@@ -227,21 +242,38 @@
 					var humidNorm_current = tempNorm_overallBest;
 					var overallNorm_overallBest = tempNorm_overallBest;
 
-					var stationHemisphere = null;
+					var stationLatHemisphere = null;
 					var stationRegion = null;
 					var stationLat = null;
 					var stationLong = null;
 
 					var inputRegion = document.getElementById("regionselector").selectedIndex;
 
-					for (i = 0; i < stations.length; i++) {
+					// Haversine formula
+					var radius = 6371e3; // Earth's radius
+					var phiOrigin = latInput.toRadians();
 
-						stationHemisphere = stations[i].lat_hemisphere;
+					for (i = 0; i < stations.length; i++) {
+						// Going station by station, extracting data, and comparing against the current best station
+						stationLatHemisphere = stations[i].lat_hemisphere;
 						stationRegion = stations[i].region;
 						stationLat = (stations[i].lat_degrees + (stations[i].lat_minutes / 60))*Math.PI/180;
 						stationLong = (stations[i].long_degrees + (stations[i].long_minutes / 60))*Math.PI/180;
+						if (stationLatHemisphere === "S") {
+							stationLat = stationLat*(-1);
+						}
+						if (stationLongHemisphere === "W") {
+							stationLong = stationLong*(-1);
+						}
 
-						if (stationHemisphere === hemisphereInput) {
+						// Haversine formula, continued
+						var phiStation = stationLat.toRadians();
+						var phiDiff = (stationLat - latInput).toRadians();
+						var lambdaDiff = (stationLong - longInput).toRadians();
+						var interStep = (Math.sin(phiDiff/2)*Math.sin(phiDiff/2)) + (Math.cos(phiOrigin)*Math.cos(phiStation)*Math.sin(lambdaDiff/2)*Math.sin(lambdaDiff/2));
+						var distanceStationToOrigin = 2*radius*Math.atan2(Math.sqrt(interStep),Math.sqrt(1 - interStep));
+
+						if (stationLatHemisphere === hemisphereLatInput) {
 							stationTemps[0] = stations[i].jan_temp;
 							stationTemps[1] = stations[i].feb_temp;
 							stationTemps[2] = stations[i].mar_temp;
@@ -269,6 +301,7 @@
 							stationHumids[11] = stations[i].dec_humid;
 						}
 						else {
+							// If the station is in a different hemisphere from the input data, everything needs to be rotated by 6 months
 							stationTemps[0] = stations[i].jul_temp;
 							stationTemps[1] = stations[i].aug_temp;
 							stationTemps[2] = stations[i].sep_temp;
@@ -297,26 +330,30 @@
 						}
 
 						if (inputRegion == stationRegion || inputRegion == 0) {
-							for (j = 0; j < stationTemps.length; j++) {
-								comparisonTempArray[j] = tempInputs[j] - stationTemps[j];
-								comparisonHumidArray[j] = humidInputs[j] - stationHumids[j];
-							}
 
-							tempNorm_current = math.norm(comparisonTempArray);
-							humidNorm_current = math.norm(comparisonHumidArray);
-							var comparisonOverallArray = [tempNorm_current, humidNorm_current];
+							if (distanceStationToOrigin < maxPhysicalDistance) {
 
-							if (math.norm(comparisonOverallArray) < overallNorm_overallBest) {
-								overallNorm_overallBest = math.norm(comparisonOverallArray);
-								tempNorm_overallBest = tempNorm_current;
-								humidNorm_overallBest = humidNorm_current;
-								closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference scores ",math.round(tempNorm_overallBest,3)," temperature, ",math.round(humidNorm_overallBest,3)," humidity)");
+								for (j = 0; j < stationTemps.length; j++) {
+									comparisonTempArray[j] = tempInputs[j] - stationTemps[j]; // Building an array of differences (month by month)
+									comparisonHumidArray[j] = humidInputs[j] - stationHumids[j];
+								}
+
+								tempNorm_current = math.norm(comparisonTempArray); // 2-norm (least squares)
+								humidNorm_current = math.norm(comparisonHumidArray);
+								var comparisonOverallArray = [tempNorm_current, humidNorm_current];
+
+								if (math.norm(comparisonOverallArray) < overallNorm_overallBest) {
+									overallNorm_overallBest = math.norm(comparisonOverallArray);
+									tempNorm_overallBest = tempNorm_current;
+									humidNorm_overallBest = humidNorm_current;
+									closest_station = stations[i].city_nominal.concat(", ",stations[i].country," (difference scores ",math.round(tempNorm_overallBest,3)," temperature, ",math.round(humidNorm_overallBest,3)," humidity)");
+								}
 							}
 						}
 					}
 
 					if (closest_station === null) {
-						closest_station = "Make sure you fill in all of the input boxes"
+						closest_station = "Make sure you fill in all of the input boxes."
 					}
 
 					document.getElementById("weatherResult").innerHTML = closest_station;
