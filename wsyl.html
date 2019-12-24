@@ -217,12 +217,9 @@
 				if (document.getElementById("longhemselector").selectedIndex === 1) {
 					longInput = longInput*(-1);
 				}
-				console.log(latInput);
-				console.log(longInput);
 			}
 			else {
 				var latInput = 0; var longInput = 0; var maxPhysicalDistance = 999999999999;
-				console.log("Button is not checked");
 			}
 
 			Papa.parse("weather_noprecip_full.csv", {
@@ -256,10 +253,6 @@
 					// Haversine formula
 					var radius = 6371e3; // Earth's radius
 					var phiOrigin = latInput*(Math.PI / 180);
-					console.log(phiOrigin);
-
-					// For testing
-					var shortest_distance = 99999999999999999999;
 
 					for (i = 0; i < stations.length; i++) {
 						// Going station by station, extracting data, and comparing against the current best station
@@ -281,14 +274,6 @@
 						var lambdaDiff = (stationLong - longInput)*(Math.PI / 180);
 						var interStep = (Math.sin(phiDiff/2)*Math.sin(phiDiff/2)) + (Math.cos(phiOrigin)*Math.cos(phiStation)*Math.sin(lambdaDiff/2)*Math.sin(lambdaDiff/2));
 						var distanceStationToOrigin = 2*radius*Math.atan2(Math.sqrt(interStep),Math.sqrt(1 - interStep));
-
-						// For testing
-						if (distanceStationToOrigin < shortest_distance) {
-							shortest_distance = distanceStationToOrigin;
-							console.log(shortest_distance);
-							console.log(stationLat);
-							console.log(stations[i].city_nominal);
-						}
 
 						if (stationLatHemisphere === hemisphereLatInput) {
 							stationTemps[0] = stations[i].jan_temp;
