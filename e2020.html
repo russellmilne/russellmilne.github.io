@@ -20,17 +20,17 @@
 		<li>All other candidates: 0 delegates, no county wins</li>
 	</ul>
 	<p><input type="button" value="Show these predictions on a map"></p>
-	<div id="sc_map" style="display:none"><img src="sc_predictions.png" alt="South Carolina model predictions"></div>
+	<div id="sc_map" style="display:none"><img src="sc_predictions.png" alt="South Carolina model predictions" style="width:500px; height:398.5px;"></div>
 	<script type="text/javascript">
 		var scMapButton = document.querySelectorAll('input[type="button"]')[0];
 		scMapButton.onclick = function() {
 			if (scMapButton.value === "Show these predictions on a map") {
 				document.getElementById("sc_map").style.display = "block";
-				infoButton.value = "Hide the map";
+				scMapButton.value = "Hide the map";
 			}
 			else {
 				document.getElementById("sc_map").style.display = "none";
-				infoButton.value = "Show these predictions on a map";
+				scMapButton.value = "Show these predictions on a map";
 			}
 		}
 	</script>
