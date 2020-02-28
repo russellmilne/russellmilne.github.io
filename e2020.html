@@ -4,20 +4,35 @@
 	<title>2020 election prediction</title>
 </head>
 <body>
-<p>For the 2020 Democratic primaries, I have decided to predict results using a simple regression based on demographics. To accomplish this, I performed the following steps:</p>
-<ul>
-	<li>Download data tables full of demographic estimates (specifically, the most recent edition of the American Community Survey) from the United States Census Bureau website. I did this for counties (to generate county-level result maps) and congressional districts (to predict delegate totals, as delegates are awarded according to results in each congressional district of a state).</li>
-	<li>Use principal component analysis to distill the data down to its most important features.</li>
-	<li>Obtain results from the primaries/caucuses that have already happened (from Dave Leip's election atlas) to use as fitting data. I normalized the results for each candidate in a given state by that candidate's statewide average, in order to remove the confounding factor of changing poll numbers and get results that would just reflect demographic strengths and weaknesses.</li>
-	<li>For each candidate, do a quadratic multivariate regression utilizing the most important principal components (in my case the first six, which together explained about 96% of the variance). This generates a surface representing that candidate's support as a function of demographics.</li>
-	<li>Use these surfaces to estimate support for each candidate relative to their statewide support in each county or congressional district being predicted. Then, multiply by each candidate's current polling numbers and scale to 100% to get raw support in percentage points.</li>
-</ul>
-<p>To test my model, I decided to predict the results in South Carolina using those from Iowa, New Hampshire and Nevada. The model predicted the following outcome:</p>
-<ul>
-	<li>Joe Biden: 27 delegates, wins in all counties not mentioned below</li>
-	<li>Bernie Sanders: 15 delegates, wins in Aiken, Anderson, Georgetown, Greenville, Horry, Lancaster, Oconee, Pickens and Spartanburg Counties</li>
-	<li>Tom Steyer: 12 delegates, wins in Abbeville, Berkeley, Cherokee, Dorchester, Greenwood, Lexington and York Counties</li>
-	<li>All other candidates: 0 delegates, no county wins</li>
-</ul>
+	<p>For the 2020 Democratic primaries, I have decided to predict results using a simple regression based on demographics. To accomplish this, I performed the following steps:</p>
+	<ul>
+		<li>Download data tables full of demographic estimates (specifically, the most recent edition of the American Community Survey) from the United States Census Bureau website. I did this for counties (to generate county-level result maps) and congressional districts (to predict delegate totals, as delegates are awarded according to results in each congressional district of a state).</li>
+		<li>Use principal component analysis to distill the data down to its most important features.</li>
+		<li>Obtain results from the primaries/caucuses that have already happened (from Dave Leip's election atlas) to use as fitting data. I normalized the results for each candidate in a given state by that candidate's statewide average, in order to remove the confounding factor of changing poll numbers and get results that would just reflect demographic strengths and weaknesses.</li>
+		<li>For each candidate, do a quadratic multivariate regression utilizing the most important principal components (in my case the first six, which together explained about 96% of the variance). This generates a surface representing that candidate's support as a function of demographics.</li>
+		<li>Use these surfaces to estimate support for each candidate relative to their statewide support in each county or congressional district being predicted. Then, multiply by each candidate's current polling numbers and scale to 100% to get raw support in percentage points.</li>
+	</ul>
+	<p>To test my model, I decided to predict the results in South Carolina using those from Iowa, New Hampshire and Nevada. The model predicted the following outcome:</p>
+	<ul>
+		<li>Joe Biden: 27 delegates, wins in all counties not mentioned below</li>
+		<li>Bernie Sanders: 15 delegates, wins in Aiken, Anderson, Georgetown, Greenville, Horry, Lancaster, Oconee, Pickens and Spartanburg Counties</li>
+		<li>Tom Steyer: 12 delegates, wins in Abbeville, Berkeley, Cherokee, Dorchester, Greenwood, Lexington and York Counties</li>
+		<li>All other candidates: 0 delegates, no county wins</li>
+	</ul>
+	<p><input type="button" value="Show these predictions on a map"></p>
+	<div id="sc_map" style="display:none"><img src="sc_predictions.png" alt="South Carolina model predictions"></div>
+	<script type="text/javascript">
+		var scMapButton = document.querySelectorAll('input[type="button"]')[0];
+		scMapButton.onclick = function() {
+			if (scMapButton.value === "Show these predictions on a map") {
+				document.getElementById("presethelp").style.display = "block";
+				infoButton.value = "Hide the map";
+			}
+			else {
+				document.getElementById("presethelp").style.display = "none";
+				infoButton.value = "Show these predictions on a map";
+			}
+		}
+	</script>
 </body>
 </html>
