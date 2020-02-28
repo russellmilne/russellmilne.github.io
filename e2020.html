@@ -25,11 +25,11 @@
 		var scMapButton = document.querySelectorAll('input[type="button"]')[0];
 		scMapButton.onclick = function() {
 			if (scMapButton.value === "Show these predictions on a map") {
-				document.getElementById("presethelp").style.display = "block";
+				document.getElementById("sc_map").style.display = "block";
 				infoButton.value = "Hide the map";
 			}
 			else {
-				document.getElementById("presethelp").style.display = "none";
+				document.getElementById("sc_map").style.display = "none";
 				infoButton.value = "Show these predictions on a map";
 			}
 		}
