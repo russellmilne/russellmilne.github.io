@@ -12,26 +12,46 @@
 		<li>For each candidate, do a quadratic multivariate regression utilizing the most important principal components (in my case the first six, which together explained about 96% of the variance). This generates a surface representing that candidate's support as a function of demographics. I used <a href="http://www.ahmetcecen.tech/MultiPolyRegress-MatlabCentral/">MATLAB code created by Ahmet Cecen</a> for this.</li>
 		<li>Use these surfaces to estimate support for each candidate relative to their statewide support in each county or congressional district being predicted. Then, multiply by each candidate's current polling numbers and scale to 100% to get raw support in percentage points.</li>
 	</ul>
-	<p>To test my model, I decided to predict the results in South Carolina using those from Iowa, New Hampshire and Nevada. The model predicted the following outcome:</p>
-	<ul>
-		<li>Joe Biden: 27 delegates, wins in all counties not mentioned below</li>
-		<li>Bernie Sanders: 15 delegates, wins in Aiken, Anderson, Georgetown, Greenville, Horry, Lancaster, Oconee, Pickens and Spartanburg Counties</li>
-		<li>Tom Steyer: 12 delegates, wins in Abbeville, Berkeley, Cherokee, Dorchester, Greenwood, Lexington and York Counties</li>
-		<li>All other candidates: 0 delegates, no county wins</li>
-	</ul>
-	<p><input type="button" value="Show these predictions on a map"></p>
-	<div id="sc_map" style="display:none"><img src="sc_predictions.png" alt="South Carolina model predictions" style="width:500px; height:398.5px;"></div>
-	<div><img src="pc3_quintiles_top5.svg" alt="SVG rendering test" style="width:500px; height:398.5px;"></div>
+	<p>To test my model, I decided to predict the results in South Carolina using those from Iowa, New Hampshire and Nevada.</p>
+	<p><input type="button" value="Show the South Carolina predictions"></p>
+	<div id="sc_predictions" style="display:none">
+		The model successfully predicted that Biden would outperform his polls, although it allotted him fewer delegates than he actually received due to having Steyer above the threshold to receive delegates. The model also missed on some county-level predictions, although it performed rather well in terms of predicting which counties each candidate would be strong in. I viewed this test of the model as a success, particularly because the three states that voted previously (IA, NH and NV) are demographically dissimilar to South Carolina, making a prediction based on regression difficult. The model's predictions were as follows:
+		<ul>
+			<li>Joe Biden: 27 delegates, wins in all counties not mentioned below</li>
+			<li>Bernie Sanders: 15 delegates, wins in Aiken, Anderson, Georgetown, Greenville, Horry, Lancaster, Oconee, Pickens and Spartanburg Counties</li>
+			<li>Tom Steyer: 12 delegates, wins in Abbeville, Berkeley, Cherokee, Dorchester, Greenwood, Lexington and York Counties</li>
+			<li>All other candidates: 0 delegates, no county wins</li>
+		</ul>
+		<img src="sc_predictions.png" alt="South Carolina model predictions" style="width:500px; height:398.5px;">
+	</div>
+	<p>While predicting the results for Super Tuesday, I performed analysis on the model output. This included an interpretation of my principal components.</p>
+	<p><input type="button" value="Show analysis of Super Tuesday predictions"></p>
+	<div id="super_tuesday_analysis" style="display:none">
+		<p>There's nothing here yet. Check back tomorrow afternoon.</p>
+	</div>
 	<script type="text/javascript">
-		var scMapButton = document.querySelectorAll('input[type="button"]')[0];
-		scMapButton.onclick = function() {
-			if (scMapButton.value === "Show these predictions on a map") {
-				document.getElementById("sc_map").style.display = "block";
-				scMapButton.value = "Hide the map";
+		var scButton = document.querySelectorAll('input[type="button"]')[0];
+		var analysisButton = document.querySelectorAll('input[type="button"]')[1];
+
+		scButton.onclick = function() {
+			if (scButton.value === "Show the South Carolina predictions") {
+				document.getElementById("sc_predictions").style.display = "block";
+				scButton.value = "Hide the South Carolina predictions";
 			}
 			else {
-				document.getElementById("sc_map").style.display = "none";
-				scMapButton.value = "Show these predictions on a map";
+				document.getElementById("sc_predictions").style.display = "none";
+				scButton.value = "Show the South Carolina predictions";
+			}
+		}
+
+		analysisButton.onclick = function() {
+			if (analysisButton.value === "Show analysis of Super Tuesday predictions") {
+				document.getElementById("sc_predictions").style.display = "block";
+				analysisButton.value = "Hide analysis of Super Tuesday predictions";
+			}
+			else {
+				document.getElementById("sc_predictions").style.display = "none";
+				analysisButton.value = "Show analysis of Super Tuesday predictions";
 			}
 		}
 	</script>
