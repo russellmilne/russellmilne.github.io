@@ -77,6 +77,8 @@
 		ipaButton.onclick = function() {
 			var inputText = document.getElementById("inputarea").value;
 
+			console.log(inputText);
+
 			Papa.parse("csv/en_US.csv", {
 				header: false,
 				dynamicTyping: false,
