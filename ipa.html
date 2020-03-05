@@ -9,6 +9,7 @@
 	<p> Which language is the input text in? <select id="languageselector">
 		<option value="eng" selected>English</option>
 		<option value="fre">French</option>
+		<option value="per">Persian</option>
 	</select></p>
 	<p><input type="button" value="This button doesn't do anything right now"></p>
 	<p><input type="button" value="Get IPA"></p>
@@ -31,6 +32,9 @@
 			}
 			else if (langSelected == "fre") {
 				langDirectory = "csv/fr_QC.csv";
+			}
+			else if (langSelected == "per") {
+				langDirectory = "csv/fa.csv";
 			}
 
 			Papa.parse(langDirectory, {
@@ -97,6 +101,9 @@
 			}
 			else if (langSelected == "fre") {
 				langDirectory = "csv/fr_QC.csv";
+			}
+			else if (langSelected == "per") {
+				langDirectory = "csv/fa.csv";
 			}
 
 			Papa.parse(langDirectory, {
