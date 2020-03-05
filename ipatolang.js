@@ -131,23 +131,8 @@ function to_pl (inputIPAArray) {
 				}
 			}
 			else if (tempWord.charAt(j) == "m") {
-				if ((j + 1) < tempWord.length) {
-					if (tempWord.charAt(j+1) == "p" || tempWord.charAt(j+1) == "b") {
-						if (j > 0) {
-							if (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j-1) == "ɑ") {
-								outputWord = outputWord.concat("");
-							}
-							else {
-								outputWord = outputWord.concat("m");
-							}
-						}
-						else {
-							outputWord = outputWord.concat("m");
-						}
-					}
-					else {
-						outputWord = outputWord.concat("m");
-					}
+				if (((j + 1) < tempWord.length) && (tempWord.charAt(j+1) == "p" || tempWord.charAt(j+1) == "b") && (j > 0) && (tempWord.charAt(j-1) == "e" || tempWord.charAt(j-1) == "ɛ" || tempWord.charAt(j-1) == "æ" || tempWord.charAt(j-1) == "ɔ" || tempWord.charAt(j-1) == "ɑ")) {
+					outputWord = outputWord.concat("");
 				}
 				else {
 					outputWord = outputWord.concat("m");
