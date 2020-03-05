@@ -20,7 +20,7 @@
 			var symbolManifest = "";
 			var letterManifest = "";
 
-			Papa.parse("csv/fr_QC.csv", {
+			Papa.parse("csv/en_US.csv", {
 				header: false,
 				dynamicTyping: false,
 				download: true,
@@ -77,7 +77,7 @@
 		ipaButton.onclick = function() {
 			var inputText = document.getElementById("inputarea").value;
 
-			Papa.parse("csv/fr_QC.csv", {
+			Papa.parse("csv/en_US.csv", {
 				header: false,
 				dynamicTyping: false,
 				download: true,
