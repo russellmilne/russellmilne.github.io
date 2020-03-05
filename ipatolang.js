@@ -2,7 +2,8 @@ function to_pl (inputIPAArray) {
 
 	var translatedArray = new Array(inputIPAArray.length);
 
-	var destressRegex = /[^ ˈˌ]+/g;
+	var destressRegex = /[^͡  ˈˌː]+/g; // This also gets rid of that semicircle above pairs of letters, which may or may not be a good thing
+	// The colon ː right after a vowel means that that vowel is long. Polish doesn't have vowel length (although Czech does), so I remove it.
 
 	for (i = 0; i < inputIPAArray.length; i++) {
 		var tempWord = "";
