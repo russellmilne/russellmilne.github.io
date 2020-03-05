@@ -6,6 +6,10 @@
 </head>
 <body>
 	<p><textarea id="inputarea" style="font-family:sans-serif;" rows="10" cols="75" placeholder="Input some text here"></textarea></p>
+	<p> Which language is the input text in? <select id="languageselector">
+		<option value="eng" selected>English</option>
+		<option value="fre">French</option>
+	</select></p>
 	<p><input type="button" value="This button doesn't do anything right now"></p>
 	<p><input type="button" value="Get IPA"></p>
 	<p id="dump1"></p>
@@ -20,7 +24,16 @@
 			var symbolManifest = "";
 			var letterManifest = "";
 
-			Papa.parse("csv/en_US.csv", {
+			var langSelected = document.getElementById("languageselector").value;
+
+			if (langSelected == "eng") {
+				langDirectory = "csv/en_US.csv";
+			}
+			else if (langSelected == "fre") {
+				langDirectory = "csv/fr_QC.csv";
+			}
+
+			Papa.parse(langDirectory, {
 				header: false,
 				dynamicTyping: false,
 				download: true,
@@ -77,9 +90,16 @@
 		ipaButton.onclick = function() {
 			var inputText = document.getElementById("inputarea").value;
 
-			console.log(inputText);
+			var langSelected = document.getElementById("languageselector").value;
 
-			Papa.parse("csv/en_US.csv", {
+			if (langSelected == "eng") {
+				langDirectory = "csv/en_US.csv";
+			}
+			else if (langSelected == "fre") {
+				langDirectory = "csv/fr_QC.csv";
+			}
+
+			Papa.parse(langDirectory, {
 				header: false,
 				dynamicTyping: false,
 				download: true,
