@@ -57,7 +57,7 @@
 		<p>The model identified Warren's bases of support almost perfectly. These were areas high in both PC1 and PC3 and low in PC6; most of the areas with the lowest values for PC6 contained college towns. For instance, in Minnesota, her best counties both in the model and reality were the suburban ones in the Twin Cities metro area (e.g. Dakota, Scott, Washington), while in Virginia she did relatively well in NoVa. The model also correctly predicted that her best county in North Carolina would be Orange. The correlation coefficients between predicted support for Warren in Super Tuesday counties and PC1 was 0.53, while that between Warren's predicted support and PC3 was 0.42. These were the two strongest correlations between support for any candidate and any of my first six principal components, and largely borne out by the results. Plotting Warren's predicted support as a function of PC1 and PC3 demonstrates this, as well as the differences between her support and Sanders's:</p>
 		<p><img src="proj_warren_supertuesday_pc13.svg" alt="Projected support for Warren as a function of principal components 1 and 3"></p>
 	</div>
-	<p>Super Tuesday gave me a large amount of data to work with. Using this, I predicted the results for the states voting on March 10. Due to the unreliability of state-level polling on Super Tuesday, and the general lack of polls in some states holding elections on March 10, I only used national polling (and regression based on demographics, as before) to make my predictions.</p>
+	<p>My model did very well predicting the results of the March 10 primaries, as the Super Tuesday results gave it a lot of data to work with from all areas of my principal component space. Starting with March 10, I only used national polling (and regression based on demographics, as before) to make my predictions, due to the unreliability of state-level polling on Super Tuesday and the general lack of polls in some states holding elections on March 10.</p>
 	<p><input type="button" value="Show March 10 predictions"></p>
 	<div id="march_10" style="display:none">
 		<p>Using the Super Tuesday results as training data, I predicted the following delegate allocations for the March 10 states on March 10 at 7:14 PM (before polls closed anywhere):</p>
@@ -69,19 +69,33 @@
 			<li>North Dakota: Sanders 8, Biden 6</li>
 			<li>Washington: Sanders 46, Biden 43</li>
 		</ul>
-		<p>A county-level map of my predictions is below. A few observations about it:</p>
+		<p>A county-level map of my predictions is below. A few observations about the model output:</p>
 		<ul>
-			<li>Compared to the Super Tuesday predictions, the model now treats Sanders's support as being higher in urban areas. In Michigan, he wins several mid-size cities such as Lansing, Kalamazoo and Midland, while in North Dakota he has good results in Bismarck and Fargo.</li>
-			<li>The model has Biden winning in King County, Washington (home of Seattle). Sanders has a large support base in Seattle itself; the 7th congressional district (which is mostly made up of the city proper) is his second-best in the state. However, the suburbs in the east of the county, in the 1st and 8th congressional districts, are demographically very similar to the Bay Area and are projected to have good results for Biden.</li>
-			<li>Biden is predicted to sweep Mississippi, as he did with Alabama. Sanders's best shots at winning counties are Hancock (on the Gulf Coast) and Lafayette (home to Ole Miss).</li>
-			<li>The model predicts Sanders to do well in college towns. Aside from Lafayette, Mississippi, other college counties projected to give Sanders good results are Washtenaw, Michigan; Whitman, Washington; Latah, Idaho; and Boone, Missouri.</li>
+			<li>In Michigan, the model correctly predicted the areas of best support for Sanders (college towns, as well as some but not all mid-sized cities). However, the model predicted Wayne County as going to Biden in a landslide, when in reality it voted at approximately the statewide average. This overestimation of Biden in Wayne County caused the model to overestimate Sanders everywhere else in the state, although (as mentioned previously) the model got each candidate's relative patterns of support correct. The counties that Sanders came closest to winning in real life (Houghton, Marquette, Grand Traverse, Isabella, Kent, Ingham, Kalamazoo, Washtenaw) almost exactly matched Sanders's best counties in the model (Sanders was predicted to win 48% in Kent County). Additionally, Sanders performed a few points better in rural areas in the northwestern part of the Lower Peninsula around Grand Traverse compared to rural counties elsewhere in the state, which was successfully picked up by the model. Overall, the real life delegate results were slightly better for Sanders than the model predictions, although the model correctly predicted the delegate breakdowns in most of the congressional districts (for instance, that the 5th district would be very good for Biden).</li>
+			<li>In Missouri, the model exactly predicted the number of delegates awarded to Biden and Sanders (44 and 24), although there was some deviation in the district-level results. As with Wayne County, Michigan, the model predicted Missouri's 1st congressional district to be a Biden landslide (when in reality it was less so) and boosted its prediction for Sanders across the rest of the state to compensate. However, as in Michigan, the model got the relative support levels for each candidate mostly correct. For instance, the model determined that Sanders would be strong in urban Southwest Missouri, as well as in Boone County and to a lesser extent Johnson County. While Biden won every county in Missouri, these predictions do match the relative patterns of support for the candidates.</li>
+			<li>The model predicted that Biden would win Mississippi in a complete landslide, which matched the real-life results. It also was correct in picking out Hancock and Lafayette as Sanders's two best counties, and the 4th as his best congressional district. The model predicted Sanders to win 5 delegates rather than the 2 that he actually received; this is because it predicted Sanders to narrowly pass the 15% delegate threshold statewide, while in reality he was narrowly below it with 14.8% of the vote.</li>
+			<li>The model correctly saw Washington as being very close (in reality, the winner in Washington was not called until a few days after election night), but thought Sanders would narrowly win rather than Biden doing so. This was because Washington is demographically similar to places like Colorado and Utah that Sanders had done well in previously. Nevertheless, the model was correct in terms of the candidates' predicted support patterns. For instance, it determined that Sanders would generally do better east of the Cascades, particularly in rural Hispanic areas, which matched the real-life results. Sanders's two best counties, namely Whitman (home to WSU) and Whatcom (home to WWU), were the same in the model and in real life. The model also correctly had Sanders do well in the urban 7th congressional district but poorly in the suburban 1st and 8th districts (all three are upscale, but in different ways, which my principal component analysis picked up). Hence, the prediction that Biden would win King County off the back of strong performance in the 1st and 8th districts was also proved right. (The 7th congressional district was also very strong for Warren due to mail-in ballots for her from prior to when she dropped out; that district has one of the highest values of PC3 of any district in the country, which was found to heavily correlate with support for Warren while she was in the race.) Around Puget Sound, the counties that Sanders did best in (San Juan, Jefferson, Thurston, and the aforementioned Whatcom) were all predicted by the model as being among his best areas; anecdotally, these areas all have strong artistic/countercultural elements.</li>
+			<li>Idaho was predicted by the model to be reasonably good for Sanders, but Biden won it in the end. As with Washington, this was due to Idaho being statistically close to areas where Sanders did well previously. Sanders's best two counties, Latah and Teton, were called by the model; he also came within a few points of winning many of the other counties that the model had him doing well in (specifically Ada, Bannock, Bingham, Bonneville and Madison). Although Idaho was the model's worst-performing state on March 10, it still predicted most of the candidates' areas of relative strength and wasn't too far off the delegate distribution, despite having no state-level polling to use as an indicator.</li>
+			<li>While North Dakota had a primary election on March 10, it did not report votes by county, so I cannot compare the model output to any final results. However, the model did get the delegate allocation (Sanders 8, Biden 6) exactly right.</li>
 		</ul>
 		<img src="county_predictions_mar10.svg" alt="March 10 county-level predictions">
+	</div>
+	<p>On March 17, I trained the model on results from Super Tuesday and March 10, as well as national polling trends, in order to make predictions. You can see these below:</p>
+	<p><input type="button" value="Show March 17 predictions"></p>
+	<div id="march_17" style="display:none">
+		<p>At 6:39 PM EST, before polls closed anywhere, I made predictions for Arizona, Florida and Illinois. I did not make any for Ohio, since voting there was postponed due to COVID-19. Since the model had Biden winning all but two of the 184 counties voting on March 17, the map below also shows the predicted percentage support for each candidate. In the two green counties, Sanders is projected to win with 50-60 percent of the vote. The blue ones represent wins for Biden, with the shade of blue used indicating Biden's margin of victory. In counties with the lightest shade of blue, Biden is projected to win the county with 50-60%, and hence Sanders is expected to clear 40%; darker shades of blue similarly represent higher deciles of support for Biden and lower ones for Sanders. On a statewide level, the model likes Arizona for Sanders owing to its demographic similarity to some of his best areas among those that have already voted (although Biden is still the clear favourite there). Both Florida and Illinois are predicted to go for Biden by approximately a 2-1 margin. The delegate breakdown by state and a county-level map of predictions are below:</p>
+		<ul>
+			<li>Arizona: Biden 38 delegates, Sanders 29. Best congressional districts for Biden: 4th and 8th. Best for Sanders: 9th and 1st.</li>
+			<li>Florida: Biden 149 delegates, Sanders 70. Best districts for Biden: 5th, 20th, 24th and 2nd. Best for Sanders: 27th, 25th, 7th and 26th.</li>
+			<li>Illinois: Biden 108 delegates, Sanders 47. Best districts for Biden: 1st, 7th and 2nd. Best for Sanders: 4th, 5th and 8th.</li>
+		</ul>
+		<img src="county_predictions_mar17.svg" alt="March 17 county-level predictions">
 	</div>
 	<script type="text/javascript">
 		var scButton = document.querySelectorAll('input[type="button"]')[0];
 		var analysisButton = document.querySelectorAll('input[type="button"]')[1];
 		var mar10Button = document.querySelectorAll('input[type="button"]')[2];
+		var mar17Button = document.querySelectorAll('input[type="button"]')[3];
 
 		scButton.onclick = function() {
 			if (scButton.value === "Show the South Carolina predictions") {
@@ -113,6 +127,17 @@
 			else {
 				document.getElementById("march_10").style.display = "none";
 				mar10Button.value = "Show March 10 predictions";
+			}
+		}
+
+		mar17Button.onclick = function() {
+			if (mar10Button.value === "Show March 17 predictions") {
+				document.getElementById("march_17").style.display = "block";
+				mar10Button.value = "Hide March 17 predictions";
+			}
+			else {
+				document.getElementById("march_17").style.display = "none";
+				mar10Button.value = "Show March 17 predictions";
 			}
 		}
 	</script>
