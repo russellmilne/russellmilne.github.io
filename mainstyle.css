@@ -1,6 +1,5 @@
+/* I use the Overpass font regardless of light or dark mode */
 body {
-	color: #99ffdc; /* Aquamarine */
-	background-color: #005555; /* Teal */
 	font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
 }
 
@@ -28,4 +27,18 @@ body {
 	src: url('font/Overpass-BoldItalic.woff2');
 	font-weight: bold;
 	font-style: italic;
+}
+
+/* Light and dark mode, which I autodetect */
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: #99ffdc; /* Aquamarine */
+		color: #005555; /* Teal */
+	}
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #005555; /* Teal */
+		color: #005555; /* Aquamarine */
+	}
 }
