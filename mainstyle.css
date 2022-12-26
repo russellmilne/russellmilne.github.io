@@ -35,10 +35,22 @@ body {
 		background-color: #99ffdc; /* Aquamarine */
 		color: #005555; /* Teal */
 	}
+	a:link, a:visited {
+		color: #005555; /* Same as ordinary text */
+	}
+	a:hover, a:active {
+		color: #000000; /* There should be enough of a contrast here */
+	}
 }
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: #005555; /* Teal */
-		color: #005555; /* Aquamarine */
+		color: #99ffdc; /* Aquamarine */
+	}
+	a:link, a:visited {
+		color: #99ffdc; /* Same as ordinary text */
+	}
+	a:hover, a:active {
+		color: #ffffff; /* There should be enough of a contrast here */
 	}
 }
