@@ -26,10 +26,12 @@
 
 .leftside {
   float: left;
+  padding-left: 5vh;
 }
 
 .rightside {
   float: right;
+  padding-right: 5vh;
 }
 
 ul {
