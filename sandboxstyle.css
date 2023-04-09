@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
+  margin-inline-start: 10vh;
 }
 
 .nav-item a {
