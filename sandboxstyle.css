@@ -1,11 +1,14 @@
 /* CSS for the sandbox HTML file */
 .navbar {
   width: 100%;
+  background: #123456;
+  color: #abcdef;
 }
 
 .navbar-nav {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
   height: 100%;
 }
 
