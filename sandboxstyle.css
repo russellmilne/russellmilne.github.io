@@ -6,16 +6,7 @@
   color: #abcdef;
 }
 
-.name-list {
-  float: left;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-}
-
 .navbar-elts-list {
-  float: right;
   display: inline-flex;
   align-items: center;
   justify-content: space-evenly;
@@ -31,6 +22,14 @@
 .nav-item a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.leftside {
+  float: left;
+}
+
+.rightside {
+  float: right;
 }
 
 ul {
