@@ -6,13 +6,6 @@
   color: #abcdef;
 }
 
-.name-list {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-}
-
 .navbar-elts-list {
   display: inline-flex;
   align-items: center;
