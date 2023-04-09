@@ -6,10 +6,19 @@
   color: #abcdef;
 }
 
-.navbar-nav {
+.name-list {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 50%;
+  height: 100%;
+}
+
+.navbar-elts-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
   height: 100%;
 }
 
