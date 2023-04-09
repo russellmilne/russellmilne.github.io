@@ -11,7 +11,14 @@
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
+}
+
+#navbar-name {
   margin-inline-start: 10vh;
+}
+
+#navbar-links {
+  margin-inline-end: 10vh;
 }
 
 .nav-item a {
