@@ -1,29 +1,33 @@
 /* CSS for the sandbox HTML file */
-nav {
-  display: flex;
-  justify-content: center;
+.navbar {
+  width: 100%;
 }
 
-nav a {
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.nav-item {
   color: white;
   text-decoration: none;
   padding: 10px;
 }
 
-nav a:hover {
+.nav-item:hover {
   background-color: #ddd;
   color: black;
 }
 
 main {
-  margin: 50px;
+  margin: 5px;
   padding: 0px;
   background-color: lightgray;
 }
 
 body {
   background-color: blue;
-  text-align: center;
   margin: 0px;
   padding: 0px;
 }
