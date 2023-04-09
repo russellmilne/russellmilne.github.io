@@ -1,3 +1,4 @@
+/* CSS for the sandbox HTML file */
 nav {
   display: flex;
   justify-content: center;
@@ -15,8 +16,8 @@ nav a:hover {
 }
 
 main {
-  margin: 5px;
-  padding: 5px;
+  margin: 50px;
+  padding: 0px;
   background-color: lightgray;
 }
 
