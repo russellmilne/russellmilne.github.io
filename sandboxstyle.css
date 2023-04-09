@@ -4,6 +4,8 @@
   height: 10vh;
   background: #123456;
   color: #abcdef;
+  padding-left: 5vh;
+  padding-right: 5vh;
 }
 
 .navbar-elts-list {
@@ -26,12 +28,10 @@
 
 .leftside {
   float: left;
-  margin-left: 5vh;
 }
 
 .rightside {
   float: right;
-  margin-right: 5vh;
 }
 
 ul {
