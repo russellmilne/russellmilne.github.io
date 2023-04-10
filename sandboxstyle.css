@@ -75,11 +75,6 @@ ul {
   transition: opacity .15s ease-out;
 }
 
-/* Attributes of the circle that displays the dropdown */
-#dropdown-button {
-  border-radius: 50%;
-}
-
 .button {
   background-color: #04AA6D;
   border: none;
@@ -88,6 +83,11 @@ ul {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+/* Attributes of the circle that displays the dropdown */
+#dropdown-button {
+  border-radius: 50%;
 }
 
 main {
