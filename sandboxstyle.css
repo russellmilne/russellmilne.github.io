@@ -54,9 +54,13 @@ ul {
   padding: 0;
 }
 
+/* Element that contains the dropdown button and menu */
 .dropdown {
   position: relative;
   display: inline-block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Dropdown menu for theme selection */
@@ -72,11 +76,8 @@ ul {
 }
 
 /* Attributes of the circle that displays the dropdown */
-#dropdown-toggler {
+#dropdown-button {
   border-radius: 50%;
-}
-#dropdown-toggler:hover .dropdown-content {
-  display: block;
 }
 
 .button {
