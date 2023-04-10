@@ -58,7 +58,7 @@ ul {
 #dropdown-toggler {
   border-radius: 50%;
 }
-#dropdown-toggler:hover .dropdown {
+#dropdown-toggler:hover .dropdown-content {
   display: block;
 }
 
