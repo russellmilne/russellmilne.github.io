@@ -54,6 +54,17 @@ ul {
     padding: 0;
 }
 
+/* Dropdown menu for theme selection */
+.dropdown {
+    position: absolute;
+    /* opacity: 0; */
+    z-index: 2;
+   
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+
+    transition: opacity .15s ease-out;
+}
+
 main {
   margin: 10vh;
   padding: 0;
