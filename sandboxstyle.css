@@ -59,6 +59,7 @@ main {
   padding: 0px;
   height: 70vh;
   background-color: lightgray;
+  border-radius: 2vh;
 }
 
 body {
