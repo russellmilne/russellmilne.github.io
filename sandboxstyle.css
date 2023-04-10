@@ -63,7 +63,11 @@ main {
 }
 
 #main-wrapper {
-  padding: 10px 20px; /* First number is top and bottom padding, second number is left and right padding */
+  padding: 20px;
+}
+
+.main-text {
+  margin: 0;
 }
 
 body {
