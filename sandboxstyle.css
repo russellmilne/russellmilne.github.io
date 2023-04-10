@@ -62,6 +62,10 @@ main {
   border-radius: 2vh;
 }
 
+#main-wrapper {
+  padding: 20px;
+}
+
 body {
   background-color: blue;
   margin: 0px;
