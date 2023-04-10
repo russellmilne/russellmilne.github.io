@@ -66,14 +66,21 @@ main {
   padding: 20px;
 }
 
+/* For all paragraphs inside the main text besides the last one,
+I remove the default top margin (because it interacts with the padding of the outside wrapper in an undesirable way),
+but I keep the bottom margin (to maintain spacing between paragraphs). */
 .main-text {
-  margin: 0;
+  margin-top: 0;
+}
+/* For the last paragraph in the main text, I also remove the bottom margin */
+.last-para {
+  margin-bottom: 0;
 }
 
 body {
   background-color: blue;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
 }
 
