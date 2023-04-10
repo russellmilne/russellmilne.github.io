@@ -65,7 +65,7 @@ ul {
 
   transition: opacity .15s ease-out;
 }
-.has-dropdown:focus-within .dropdown   {
+.has-dropdown:hover .dropdown   {
   opacity: 1;
   pointer-events: auto;
 }
