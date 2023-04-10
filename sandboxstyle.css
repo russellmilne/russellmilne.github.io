@@ -24,7 +24,7 @@
 .nav-item a {
   color: white;
   text-decoration: none;
-  padding: 5vh;
+  padding: 2vh 5vh; /* First number is top and bottom padding, second number is left and right padding */
 }
 
 .nav-item a:hover {
