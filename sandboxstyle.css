@@ -65,19 +65,10 @@ ul {
 
   transition: opacity .15s ease-out;
 }
-.has-dropdown:hover .dropdown   {
+/* Attributes of the circle that displays the dropdown */
+#dropdown-toggler:hover .dropdown {
   opacity: 1;
   pointer-events: auto;
-}
-#dropdown-toggler::before {
-  content: ' ';
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
 }
 
 main {
