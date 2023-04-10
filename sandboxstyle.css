@@ -24,12 +24,20 @@
 .nav-item a {
   color: white;
   text-decoration: none;
-  padding: 2vh 5vh; /* First number is top and bottom padding, second number is left and right padding */
+  padding: 1vh 5vh; /* First number is top and bottom padding, second number is left and right padding */
 }
 
 .nav-item a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.nav-text-name {
+  font-size: 1.5em;
+}
+
+.nav-text-notname {
+  font-size: 1.25em;
 }
 
 .leftside {
