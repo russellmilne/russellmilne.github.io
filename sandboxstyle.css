@@ -57,12 +57,16 @@ ul {
 /* Dropdown menu for theme selection */
 .dropdown {
     position: absolute;
-    /* opacity: 0; */
+    opacity: 0;
     z-index: 2;
    
     box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
 
     transition: opacity .15s ease-out;
+}
+.has-dropdown:focus-within .dropdown   {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 main {
