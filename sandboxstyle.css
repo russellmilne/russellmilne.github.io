@@ -24,7 +24,7 @@
 .nav-item a {
   color: white;
   text-decoration: none;
-  padding: 1vh 5vh; /* First number is top and bottom padding, second number is left and right padding */
+  padding: 0.5vh 5vh; /* First number is top and bottom padding, second number is left and right padding */
 }
 
 .nav-item a:hover {
@@ -33,11 +33,11 @@
 }
 
 .nav-text-name {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .nav-text-notname {
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 
 .leftside {
