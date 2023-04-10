@@ -66,8 +66,20 @@ ul {
   transition: opacity .15s ease-out;
 }
 /* Attributes of the circle that displays the dropdown */
+#dropdown-toggler {
+  border-radius: 50%;
+}
 #dropdown-toggler:hover .dropdown {
   display: block;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
 }
 
 main {
