@@ -54,17 +54,6 @@ ul {
   padding: 0;
 }
 
-/* Dropdown menu for theme selection */
-.dropdown {
-  display: none;
-  position: absolute;
-  z-index: 2;
-  background: #ff0000;
-
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
-
-  transition: opacity .15s ease-out;
-}
 /* Attributes of the circle that displays the dropdown */
 #dropdown-toggler {
   border-radius: 50%;
@@ -80,6 +69,19 @@ ul {
   padding: 20px;
   text-align: center;
   text-decoration: none;
+  display: inline-block;
+}
+
+/* Dropdown menu for theme selection */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  background: #ff0000;
+
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+
+  transition: opacity .15s ease-out;
 }
 
 main {
