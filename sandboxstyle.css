@@ -74,4 +74,31 @@ body {
   background-color: blue;
   margin: 0px;
   padding: 0px;
+  font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* Four variations of the Overpass font */
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-Regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-Bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-Italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-BoldItalic.woff2');
+  font-weight: bold;
+  font-style: italic;
 }
