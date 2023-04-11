@@ -33,7 +33,7 @@
 }
 
 .navbar-elts-list div {
-  padding-inline-start: 4vh; /* First number is top and bottom padding, second number is left and right padding */
+  margin-inline-start: 4vh; /* First number is top and bottom padding, second number is left and right padding */
 }
 
 .nav-text-name {
@@ -58,13 +58,11 @@
   display: inline-block;
 }
 .dropdown:hover .dropdown-content {
-  opacity: 1;
   display: block;
 }
 
 /* Dropdown menu for theme selection */
 .dropdown-content {
-  opacity: 0;
   display: none;
   position: absolute;
   z-index: 2;
@@ -79,7 +77,7 @@
   background-color: #04AA6D;
   border: none;
   color: white;
-  padding: 20px;
+  padding: 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -88,6 +86,8 @@
 /* Attributes of the circle that displays the dropdown */
 #dropdown-button {
   border-radius: 50%;
+  height: 6vh;
+  width: 6vh;
 }
 
 main {
