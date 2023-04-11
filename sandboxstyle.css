@@ -73,7 +73,7 @@
   transition: opacity .15s ease-out;
 
   transform: translateX(-36%);
-  width: 13.5vh;
+  min-width: 13.5vh;
 }
 
 .dropdown-content a {
@@ -81,6 +81,7 @@
   padding: 0;
   color: inherit;
   background: inherit;
+  text-decoration: none;
 }
 .dropdown-content a:hover {
   color: inherit;
