@@ -65,6 +65,8 @@
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 2vh;
+  left: -10vh;
   z-index: 2;
   background: #ff0000;
 
@@ -72,7 +74,7 @@
 
   transition: opacity .15s ease-out;
 
-  transform: translateX(-36%);
+  /* transform: translateX(-35%); */
   min-width: 13.5vh;
 }
 
