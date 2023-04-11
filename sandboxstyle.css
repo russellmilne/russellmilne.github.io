@@ -21,13 +21,13 @@
   margin-inline-end: 10vh;
 }
 
-.nav-item a {
+.nav-item {
   color: white;
   text-decoration: none;
   padding: 0.5vh 5vh; /* First number is top and bottom padding, second number is left and right padding */
 }
 
-.nav-item a:hover {
+.nav-item:hover {
   background-color: #ddd;
   color: black;
 }
@@ -46,12 +46,6 @@
 
 .rightside {
   float: right;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 /* Element that contains the dropdown button and menu */
