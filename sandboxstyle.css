@@ -57,7 +57,7 @@
   position: relative;
   display: inline-block;
 }
-.button:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
@@ -87,10 +87,10 @@
 
 /* Attributes of the circle that displays the dropdown */
 #dropdown-button {
-  border: 1px solid white;
-  border-radius: 50%;
-  height: 6vh;
-  width: 6vh;
+  border: 5px solid white;
+  border-radius: 10%;
+  height: 4vh;
+  width: 9vh;
 }
 
 main {
