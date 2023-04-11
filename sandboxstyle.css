@@ -79,7 +79,11 @@
   margin: 0;
   padding: 0;
   color: inherit;
-  background-color: inherit;
+  background: inherit;
+}
+.dropdown-content a:hover {
+  color: inherit;
+  background: inherit;
 }
 
 .button {
