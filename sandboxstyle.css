@@ -32,9 +32,11 @@
   color: black;
 }
 
+/*
 .navbar-elts-list div {
-  margin-inline-start: 4vh; /* First number is top and bottom padding, second number is left and right padding */
+  margin-inline-start: 4vh;
 }
+*/
 
 .nav-text-name {
   font-size: 2em;
@@ -56,6 +58,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  margin-inline-start: 4vh;
 }
 .dropdown:hover .dropdown-content {
   display: block;
