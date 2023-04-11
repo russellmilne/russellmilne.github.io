@@ -72,7 +72,8 @@
 
   transition: opacity .15s ease-out;
 
-  transform: translateX(-35%);
+  transform: translateX(-36%);
+  width: 13.5vh;
 }
 
 .dropdown-content a {
