@@ -67,14 +67,19 @@
   position: absolute;
   z-index: 2;
   background: #ff0000;
-  margin: 0;
-  padding: 0;
 
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
 
   transition: opacity .15s ease-out;
 
   transform: translateX(-35%);
+}
+
+.dropdown-content a {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background-color: inherit;
 }
 
 .button {
