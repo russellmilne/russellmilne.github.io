@@ -67,12 +67,14 @@
   position: absolute;
   z-index: 2;
   background: #ff0000;
+  margin: 0;
+  padding: 0;
 
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
 
   transition: opacity .15s ease-out;
 
-  transform: translateX(-40%);
+  transform: translateX(-35%);
 }
 
 .button {
@@ -85,7 +87,7 @@
   display: inline-block;
 }
 
-/* Attributes of the circle that displays the dropdown */
+/* Attributes of the button that displays the dropdown */
 #dropdown-button {
   border: 2px solid white;
   border-radius: 5px;
