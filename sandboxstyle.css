@@ -59,13 +59,13 @@
 }
 .dropdown:hover .dropdown-content {
   opacity: 1;
-  /* display: block; */
+  display: block;
 }
 
 /* Dropdown menu for theme selection */
 .dropdown-content {
   opacity: 0;
-  /* display: none; */
+  display: none;
   position: absolute;
   z-index: 2;
   background: #ff0000;
