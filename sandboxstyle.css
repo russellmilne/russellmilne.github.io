@@ -87,6 +87,7 @@
 
 /* Attributes of the circle that displays the dropdown */
 #dropdown-button {
+  border: white;
   border-radius: 50%;
   height: 6vh;
   width: 6vh;
