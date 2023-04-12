@@ -60,7 +60,7 @@
   display: inline-block;
   margin-inline-start: 4vh;
   padding-bottom: 1.5vh;
-  transform: translateY(1.5vh);
+  transform: translateY(0.75vh);
 }
 .dropdown:hover .dropdown-content {
   display: block;
