@@ -59,6 +59,7 @@
   position: relative;
   display: inline-block;
   margin-inline-start: 4vh;
+  padding-bottom: 2vh;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -69,7 +70,7 @@
   display: none;
   position: absolute;
   top: 8vh;
-  left: -10vh;
+  left: -2vh;
   z-index: 2;
   background: #ff0000;
 
