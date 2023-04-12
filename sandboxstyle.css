@@ -137,10 +137,10 @@
   background: linear-gradient(-45deg, #004454 0% 35%, #00687f 35% 65%, #18989f 65% 100%);
 }
 #theme-light-grey {
-  background: linear-gradient(-45deg, #404040 0% 35%, #d5d5d5 35% 65%, #99ffdc 65% 100%);
+  background: linear-gradient(-45deg, #404040 0% 35%, #99ffdc 35% 65%, #d5d5d5 65% 100%);
 }
 #theme-dark-grey {
-  background: linear-gradient(-45deg, #101010 0% 35%, #00687f 35% 65%, #99ffdc 65% 100%);
+  background: linear-gradient(-45deg, #101010 0% 35%, #00687f 35% 65%, #65dfc4 65% 100%);
 }
 
 /* Attributes of the text buttons in each dropdown menu position */
