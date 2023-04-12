@@ -59,7 +59,8 @@
   position: relative;
   display: inline-block;
   margin-inline-start: 4vh;
-  padding-bottom: 2vh;
+  padding-bottom: 1.5vh;
+  transform: translateY(1.5vh);
 }
 .dropdown:hover .dropdown-content {
   display: block;
