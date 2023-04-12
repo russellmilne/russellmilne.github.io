@@ -75,7 +75,7 @@
   opacity: 0;
 
   position: absolute;
-  top: 8.4vh;
+  top: 8.35vh;
   left: -6vh;
   z-index: 2;
   background: #ff0000;
@@ -125,7 +125,26 @@
   border-radius: 2.5px;
   height: 3vh;
   width: 6.75vh;
-  background: linear-gradient(-45deg, #ff7f50 0% 35%, #7cfc00 35% 65%, #00bbff 65% 100%);
+}
+
+/* Attributes of specific buttons in the dropdown menu (representing specific themes) */
+#theme-light-sol {
+  background: linear-gradient(-45deg, #e5fff6 0% 35%, #99ffdc 35% 65%, #18989f 65% 100%);
+}
+#theme-dark-sol {
+  background: linear-gradient(-45deg, #18989f 0% 35%, #00687f 35% 65%, #004454 65% 100%);
+}
+#theme-light-grey {
+  background: linear-gradient(-45deg, #f0f0f0 0% 35%, #99ffdc 35% 65%, #404040 65% 100%);
+}
+#theme-dark-grey {
+  background: linear-gradient(-45deg, #99ffdc 0% 35%, #404040 35% 65%, #101010 65% 100%);
+}
+
+/* Attributes of the text buttons in each dropdown menu position */
+.textbutton {
+  border: none;
+  background-color: inherit;
 }
 
 main {
