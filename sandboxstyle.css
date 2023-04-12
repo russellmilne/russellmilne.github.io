@@ -60,7 +60,7 @@
   display: inline-block;
   margin-inline-start: 4vh;
   padding-bottom: 1.5vh;
-  transform: translateY(1.5vh);
+  transform: translateY(0.75vh);
 }
 .dropdown:hover .dropdown-content {
   /* display: block; */
@@ -75,7 +75,7 @@
   opacity: 0;
 
   position: absolute;
-  top: 8.005vh;
+  top: 8.05vh;
   left: -2vh;
   z-index: 2;
   background: #ff0000;
