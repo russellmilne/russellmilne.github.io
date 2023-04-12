@@ -145,6 +145,7 @@
 .textbutton {
   border: none;
   background-color: inherit;
+  font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
 }
 
 main {
