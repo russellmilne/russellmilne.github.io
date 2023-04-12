@@ -75,7 +75,7 @@
   opacity: 0;
 
   position: absolute;
-  top: 8.3vh;
+  top: 8.35vh;
   left: -2vh;
   z-index: 2;
   background: #ff0000;
@@ -116,6 +116,15 @@
   border-radius: 5px;
   height: 6vh;
   width: 13.5vh;
+  background: linear-gradient(-45deg, #ff7f50 0% 35%, #7cfc00 35% 65%, #00bbff 65% 100%);
+}
+
+/* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
+.button-in-menu {
+  border: 1px solid white;
+  border-radius: 2.5px;
+  height: 3vh;
+  width: 6.75vh;
   background: linear-gradient(-45deg, #ff7f50 0% 35%, #7cfc00 35% 65%, #00bbff 65% 100%);
 }
 
