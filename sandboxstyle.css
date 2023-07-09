@@ -5,10 +5,22 @@
   .nav-text-notname {
     display: none;
   }
+  #navbar-name {
+    margin-inline-start: 1vh;
+  }
+  #navbar-links {
+    margin-inline-end: 1vh;
+  }
 }
 @media all and (orientation:landscape) {
-    .nav-text-notname {
+  .nav-text-notname {
     display: block;
+  }
+  #navbar-name {
+    margin-inline-start: 10vh;
+  }
+  #navbar-links {
+    margin-inline-end: 10vh;
   }
 }
 
@@ -24,14 +36,6 @@
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
-}
-
-#navbar-name {
-  margin-inline-start: 10vh;
-}
-
-#navbar-links {
-  margin-inline-end: 10vh;
 }
 
 .nav-item { /* .navbar-elts-list a */
