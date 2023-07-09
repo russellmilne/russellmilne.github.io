@@ -155,7 +155,7 @@ main {
   margin: 10vh;
   padding: 0;
   /* Uncomment this if I want a box of fixed length on the page */
-  /* height: 70vh; */
+  min-height: 70vh;
   background-color: lightgray;
   border-radius: 2vh;
 }
