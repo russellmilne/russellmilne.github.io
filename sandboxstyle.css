@@ -1,4 +1,18 @@
 /* CSS for the sandbox HTML file */
+
+/* Changing what is displayed in the navbar if the user is in portrait or landscape mode */
+@media all and (orientation:portrait) {
+  .nav-text-notname {
+    display: none;
+  }
+}
+@media all and (orientation:landscape) {
+    .nav-text-notname {
+    display: block;
+  }
+}
+}
+
 .navbar {
   width: 100%;
   height: 10vh;
@@ -154,7 +168,6 @@
 main {
   margin: 10vh;
   padding: 0;
-  /* Uncomment this if I want a box of fixed length on the page */
   min-height: 70vh;
   background-color: lightgray;
   border-radius: 2vh;
