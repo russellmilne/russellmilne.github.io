@@ -101,52 +101,6 @@
   float: right;
 }
 
-main {
-  margin: 10vh;
-  padding: 0;
-  min-height: 70vh;
-  background-color: lightgray;
-  border-radius: 2vh;
-  z-index: 1; /* Below the dropdown menu */
-}
-
-.scrollable-area {
-  position: fixed;
-  top: 10vh; /* Same height as the navbar */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1; /* Below the dropdown menu */
-  /* The scrollbar should be enabled in the area below the navbar */
-  overflow-y: scroll;
-}
-
-#main-wrapper {
-  padding: 20px;
-  z-index: 1; /* Below the dropdown menu */
-}
-
-/* For all paragraphs inside the main text besides the last one,
-I remove the default top margin (because it interacts with the padding of the outside wrapper in an undesirable way),
-but I keep the bottom margin (to maintain spacing between paragraphs). */
-.main-text {
-  margin-top: 0;
-  z-index: 1; /* Below the dropdown menu */
-}
-/* For the last paragraph in the main text, I also remove the bottom margin */
-.last-para {
-  margin-bottom: 0;
-  z-index: 1; /* Below the dropdown menu */
-}
-
-body {
-  background-color: blue;
-  margin: 0;
-  padding: 0;
-  font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
-  z-index: 0; /* Below everything */
-}
-
 /* Element that contains the dropdown button and menu */
 .dropdown {
   position: relative;
@@ -225,6 +179,46 @@ body {
   background-color: inherit;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
   font-size: 1em;
+}
+
+main {
+  margin: 10vh;
+  padding: 0;
+  min-height: 70vh;
+  background-color: lightgray;
+  border-radius: 2vh;
+}
+
+.scrollable-area {
+  /* position: fixed; */
+  /* top: 10vh; /* Same height as the navbar */
+  /* left: 0;
+  right: 0;
+  bottom: 0; */
+  /* The scrollbar should be enabled in the area below the navbar */
+  overflow-y: scroll;
+}
+
+#main-wrapper {
+  padding: 20px;
+}
+
+/* For all paragraphs inside the main text besides the last one,
+I remove the default top margin (because it interacts with the padding of the outside wrapper in an undesirable way),
+but I keep the bottom margin (to maintain spacing between paragraphs). */
+.main-text {
+  margin-top: 0;
+}
+/* For the last paragraph in the main text, I also remove the bottom margin */
+.last-para {
+  margin-bottom: 0;
+}
+
+body {
+  background-color: blue;
+  margin: 0;
+  padding: 0;
+  font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
 }
 
 /* Four variations of the Overpass font */
