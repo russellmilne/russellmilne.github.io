@@ -1,17 +1,18 @@
 /* CSS for the sandbox HTML file */
 
-/* Changing what is displayed in the navbar if the user is in portrait or landscape mode */
+/* Settings that depend on whether the user is in portrait or landscape mode */
+
 @media all and (orientation:portrait) {
   .nav-text-notname {
     display: none;
   }
 
   #navbar-name {
-    margin-inline-start: 1vmin;
+    margin-inline-start: 5vmin;
   }
 
   #navbar-links {
-    margin-inline-end: 1vmin;
+    margin-inline-end: 5vmin;
   }
 
   /* Attributes of the button that displays the dropdown */
@@ -62,6 +63,8 @@
   }
 }
 
+/* Settings that are the same regardless of how the page is viewed */
+
 .navbar {
   /* This should have a higher z-index than the main box */
   position: fixed;
@@ -83,7 +86,7 @@
 .nav-item { /* .navbar-elts-list a */
   color: white;
   text-decoration: none;
-  padding: 0.5vh 4vh; /* First number is top and bottom padding, second number is left and right padding */
+  padding: 0.5vh 4vmin; /* First number is top and bottom padding, second number is left and right padding */
 }
 
 .nav-item:hover { /* .navbar-elts-list a:hover */
