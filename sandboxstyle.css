@@ -197,6 +197,8 @@ main {
   bottom: 0;
   /* The scrollbar should be enabled in the area below the navbar */
   overflow-y: scroll;
+  /* Positioning this below the theme selector dropdown menu */
+  z-index: 1;
 }
 
 #main-wrapper {
