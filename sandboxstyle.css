@@ -17,6 +17,8 @@
   height: 10vh;
   background: #123456;
   color: #abcdef;
+  /* Making the scrollbar not appear in the navbar */
+  overflow: hidden;
 }
 
 .navbar-elts-list {
@@ -194,8 +196,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
-  /* Making the scrollbar not appear by default (i.e. in the navbar) */
-  overflow: hidden;
 }
 
 /* Four variations of the Overpass font */
