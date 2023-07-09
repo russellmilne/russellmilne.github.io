@@ -5,22 +5,10 @@
   .nav-text-notname {
     display: none;
   }
-  #navbar-name {
-    margin-inline-start: 1vw;
-  }
-  #navbar-links {
-    margin-inline-start: 1vw;
-  }
 }
 @media all and (orientation:landscape) {
   .nav-text-notname {
     display: block;
-  }
-  #navbar-name {
-    margin-inline-start: 3vw;
-  }
-  #navbar-links {
-    margin-inline-start: 30vw;
   }
 }
 
@@ -38,10 +26,18 @@
   height: 100%;
 }
 
+#navbar-name {
+  margin-inline-start: 10vh;
+}
+
+#navbar-links {
+  margin-inline-end: 10vh;
+}
+
 .nav-item { /* .navbar-elts-list a */
   color: white;
   text-decoration: none;
-  padding: 0.5vh 2vw; /* First number is top and bottom padding, second number is left and right padding */
+  padding: 0.5vh 4vh; /* First number is top and bottom padding, second number is left and right padding */
 }
 
 .nav-item:hover { /* .navbar-elts-list a:hover */
@@ -75,7 +71,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-inline-start: 2vw;
+  margin-inline-start: 4vh;
   padding-bottom: 1.5vh;
   transform: translateY(0.75vh);
 }
@@ -174,6 +170,8 @@ main {
   min-height: 70vh;
   background-color: lightgray;
   border-radius: 2vh;
+  /* The scrollbar should be enabled in the area below the navbar */
+  overflow: auto;
 }
 
 #main-wrapper {
@@ -196,6 +194,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
+  /* Making the scrollbar not appear by default (i.e. in the navbar) */
+  overflow: hidden;
 }
 
 /* Four variations of the Overpass font */
