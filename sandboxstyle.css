@@ -9,7 +9,7 @@
     margin-inline-start: 1vh;
   }
   #navbar-links {
-    margin-inline-end: 1vh;
+    margin-inline-start: 1vh;
   }
 }
 @media all and (orientation:landscape) {
@@ -20,7 +20,7 @@
     margin-inline-start: 10vh;
   }
   #navbar-links {
-    margin-inline-end: 10vh;
+    margin-inline-start: 30vh;
   }
 }
 
