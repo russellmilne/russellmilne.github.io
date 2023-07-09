@@ -6,6 +6,14 @@
     display: none;
   }
 
+  #navbar-name {
+    margin-inline-start: 1vmin;
+  }
+
+  #navbar-links {
+    margin-inline-end: 1vmin;
+  }
+
   /* Attributes of the button that displays the dropdown */
   #dropdown-button {
     border: 2px solid white;
@@ -26,6 +34,14 @@
 @media all and (orientation:landscape) {
   .nav-text-notname {
     display: block;
+  }
+
+  #navbar-name {
+    margin-inline-start: 10vmin;
+  }
+
+  #navbar-links {
+    margin-inline-end: 10vmin;
   }
 
   /* Attributes of the button that displays the dropdown */
@@ -62,14 +78,6 @@
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
-}
-
-#navbar-name {
-  margin-inline-start: 10vmin;
-}
-
-#navbar-links {
-  margin-inline-end: 10vmin;
 }
 
 .nav-item { /* .navbar-elts-list a */
@@ -186,11 +194,11 @@
 }
 
 main {
-  margin: 10vh;
+  margin: 10vmin;
   padding: 0;
   min-height: 70vh;
   background-color: lightgray;
-  border-radius: 2vh;
+  border-radius: 2vmin;
 
   position: relative;
   z-index: 1; /* Below the dropdown menu */
