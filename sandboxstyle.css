@@ -6,10 +6,10 @@
     display: none;
   }
   #navbar-name {
-    margin-inline-start: 1vh;
+    margin-inline-start: 1vw;
   }
   #navbar-links {
-    margin-inline-start: 1vh;
+    margin-inline-start: 1vw;
   }
 }
 @media all and (orientation:landscape) {
@@ -17,10 +17,10 @@
     display: block;
   }
   #navbar-name {
-    margin-inline-start: 10vh;
+    margin-inline-start: 6vw;
   }
   #navbar-links {
-    margin-inline-start: 50vh;
+    margin-inline-start: 30vw;
   }
 }
 
