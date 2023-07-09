@@ -17,7 +17,7 @@
     display: block;
   }
   #navbar-name {
-    margin-inline-start: 6vw;
+    margin-inline-start: 3vw;
   }
   #navbar-links {
     margin-inline-start: 30vw;
@@ -41,7 +41,7 @@
 .nav-item { /* .navbar-elts-list a */
   color: white;
   text-decoration: none;
-  padding: 0.5vh 4vh; /* First number is top and bottom padding, second number is left and right padding */
+  padding: 0.5vh 2vw; /* First number is top and bottom padding, second number is left and right padding */
 }
 
 .nav-item:hover { /* .navbar-elts-list a:hover */
@@ -75,7 +75,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-inline-start: 4vh;
+  margin-inline-start: 2vw;
   padding-bottom: 1.5vh;
   transform: translateY(0.75vh);
 }
