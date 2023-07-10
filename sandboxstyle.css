@@ -117,7 +117,7 @@
 }
 
 /* Theme selector */
-#theme-checkbox{
+#theme-checkbox {
   display: none;
 }
 #navbar-theme-button #theme-menu {
@@ -134,7 +134,7 @@
     visibility: visible;
     left: 80vw;
 }
-.overlay-theme-menu{
+.overlay-theme-menu {
     position: fixed;
     top: 10vh;
     left: 0;
@@ -147,9 +147,13 @@
     background: black;
     z-index: -1;
 }
-#theme-checkbox:checked ~ .overlay-theme-menu{
+#theme-checkbox:checked ~ .overlay-theme-menu {
    visibility: visible;
   opacity: 0.4;
+}
+
+.theme-menu-row {
+  padding: 0.5vmin 0.5vmin;
 }
 
 /* Old code for the element that contains the dropdown button and menu
