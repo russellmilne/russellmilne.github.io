@@ -41,7 +41,7 @@
     height: 4.5vh; /* Same height as the coloured buttons, which is larger in portrait than landscape mode */
     /* text-align: center; */
     font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1.5em; /* The text is also scaled up in portrait mode */
+    font-size: 1.4em; /* The text is also scaled up in portrait mode */
   }
 }
 @media all and (orientation:landscape) {
