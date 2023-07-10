@@ -277,6 +277,10 @@
   background: linear-gradient(-45deg, #101010 0% 35%, #00687f 35% 65%, #65dfc4 65% 100%);
 }
 
+#hamburger-checkbox {
+  display: none;
+}
+
 ul {
   list-style-type: none;
 }
