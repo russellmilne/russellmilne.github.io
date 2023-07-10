@@ -125,14 +125,31 @@
     position: fixed;
     top: 10vh;
     left: 105vw;
-    min-width: 15vw;
+    min-width: 30em;
     height: 90vh;
     transition: 0.3s;
     background: #ff0000;
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
     visibility: visible;
-    left: 85vw;
+    right: 100vw;
+}
+.overlay-theme-menu{
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+#theme-checkbox:checked ~ .overlay-theme-menu{
+   visibility: visible;
+  opacity: 0.4;
 }
 
 /* Old code for the element that contains the dropdown button and menu
