@@ -53,6 +53,7 @@
     height: 6vh;
     width: 6vh;
     background: #dddddd;
+    padding: 0;
   }
 }
 @media all and (orientation:landscape) {
@@ -99,7 +100,14 @@
 
   /* The hamburger should be visible only in portrait mode */
   .hamburger {
-    display: none;
+    display: inline;
+    margin-inline-start: 4vh;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 6vh;
+    width: 6vh;
+    background: #dddddd;
+    padding: 0;
   }
 }
 
