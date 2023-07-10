@@ -127,7 +127,7 @@
     position: fixed;
     top: 10vh;
     left: 105vw;
-    min-width: 300px;
+    width: 300px;
     height: 90vh;
     transition: 0.3s;
     background: #ff0000;
@@ -135,7 +135,7 @@
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
     visibility: visible;
-    left: 80vw;
+    left: calc(100vw - 300px);
 }
 .overlay-theme-menu {
     position: fixed;
@@ -235,6 +235,7 @@
 .textbutton {
   border: none;
   background-color: inherit;
+  height: 4vh;
   text-align: center;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
   font-size: 1em;
