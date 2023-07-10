@@ -50,8 +50,8 @@
     margin-inline-start: 4vh;
     border: 2px solid white;
     border-radius: 5px;
-    height: 4.5vh;
-    width: 4.5vh;
+    height: 6vh;
+    width: 6vh;
     background: #dddddd;
   }
 }
@@ -294,7 +294,7 @@ main {
   bottom: 0;
   z-index: 1; /* Below the dropdown menu */
   /* The scrollbar should be enabled in the area below the navbar */
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 #main-wrapper {
