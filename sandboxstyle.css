@@ -22,7 +22,7 @@
     height: 6vh;
     width: 6vh; /* If the user is in portrait mode, the theme buttons should be square */
     background: linear-gradient(-45deg, #ff7f50 0% 35%, #7cfc00 35% 65%, #00bbff 65% 100%);
-    margin-inline-start: 4vh;
+    margin-inline-start: 4vmin;
   }
 
   /* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
@@ -52,7 +52,7 @@
     height: 6vh;
     width: 6vh;
     background: #dddddd;
-    margin-inline-start: 4vh;
+    margin-inline-start: 4vmin;
   }
 }
 @media all and (orientation:landscape) {
@@ -169,7 +169,6 @@
 /* Theme selector */
 #theme-checkbox {
   display: none;
-  margin: 0;
 }
 #navbar-theme-button #theme-menu {
     visibility: hidden;
@@ -284,7 +283,6 @@
 
 #hamburger-checkbox {
   display: none;
-  margin: 0;
 }
 
 ul {
