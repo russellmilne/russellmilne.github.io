@@ -80,7 +80,7 @@
 
 .navbar-elts-list {
   display: inline-flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-evenly;
   height: 100%;
 }
@@ -210,7 +210,7 @@
   border: none;
   color: white;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
   text-decoration: none;
   display: inline-block;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
@@ -235,6 +235,7 @@
 .textbutton {
   border: none;
   background-color: inherit;
+  text-align: center;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
   font-size: 1em;
 }
