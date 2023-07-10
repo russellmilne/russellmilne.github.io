@@ -123,10 +123,10 @@
 #navbar-theme-button #theme-menu {
     visibility: hidden;
     position: fixed;
-    top: 0;
+    top: 10vh;
     left: 105vw;
     min-width: 15vw;
-    height: 100%;
+    height: 90vh;
     transition: 0.3s;
     background: #ff0000;
 }
