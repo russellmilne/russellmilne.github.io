@@ -38,10 +38,10 @@
   .textbutton {
     border: none;
     background-color: inherit;
-    height: 4.5vh;
+    height: 4.5vh; /* Same height as the coloured buttons, which is larger in portrait than landscape mode */
     /* text-align: center; */
     font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 1em;
+    font-size: 1.5em; /* The text is also scaled up in portrait mode */
   }
 }
 @media all and (orientation:landscape) {
@@ -80,7 +80,7 @@
   .textbutton {
     border: none;
     background-color: inherit;
-    height: 4vh;
+    height: 4vh; /* Same height as the coloured buttons */
     /* text-align: center; */
     font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1em;
@@ -149,7 +149,7 @@
     position: fixed;
     top: 10vh;
     left: 105vw;
-    width: 150px;
+    width: 175px;
     height: 90vh;
     transition: 0.3s;
     background: #ff0000;
@@ -157,7 +157,7 @@
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
     visibility: visible;
-    left: calc(100vw - 150px);
+    left: calc(100vw - 175px);
 }
 .overlay-theme-menu {
     position: fixed;
