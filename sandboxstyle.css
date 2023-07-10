@@ -43,6 +43,17 @@
     font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1.4em; /* The text is also scaled up in portrait mode */
   }
+
+  /* The hamburger should be visible only in portrait mode */
+  .hamburger {
+    display: inline;
+    margin-inline-start: 4vh;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 12vh;
+    width: 12vh;
+    background: #dddddd;
+  }
 }
 @media all and (orientation:landscape) {
   .nav-text-notname {
@@ -85,6 +96,11 @@
     font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1em;
   }
+
+  /* The hamburger should be visible only in portrait mode */
+  .hamburger {
+    display: none;
+  }
 }
 
 /* Settings that are the same regardless of how the page is viewed */
@@ -114,7 +130,7 @@
 }
 
 .nav-item:hover { /* .navbar-elts-list a:hover */
-  background-color: #ddd;
+  background-color: #dddddd;
   color: black;
 }
 
@@ -152,7 +168,7 @@
     width: 175px;
     height: 90vh;
     transition: 0.3s;
-    background: #ff0000;
+    background: #123456;
     align-items: left;
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
