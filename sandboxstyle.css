@@ -125,14 +125,14 @@
     position: fixed;
     top: 10vh;
     left: 105vw;
-    min-width: 30em;
+    min-width: 300px;
     height: 90vh;
     transition: 0.3s;
     background: #ff0000;
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
     visibility: visible;
-    right: 100vw;
+    left: 80vw;
 }
 .overlay-theme-menu{
     position: fixed;
