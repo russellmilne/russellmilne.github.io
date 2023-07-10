@@ -243,7 +243,7 @@
 
 /* Attributes of specific buttons in the dropdown menu (representing specific themes) */
 #theme-light-sol {
-  background: linear-gradient(-45deg, #18989f 0% 35%, #99ffdc 35% 65%, #e5fff6 65% 100%);
+  background: linear-gradient(-45deg, #18989f 0% 35%, #e5fff6 35% 65%, #99ffdc 65% 100%);
 }
 #theme-dark-sol {
   background: linear-gradient(-45deg, #004454 0% 35%, #00687f 35% 65%, #18989f 65% 100%);
