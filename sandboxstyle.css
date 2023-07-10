@@ -132,7 +132,11 @@
 .nav-item { /* .navbar-elts-list a */
   color: white;
   text-decoration: none;
-  padding: 0.5vh 4vmin; /* First number is top and bottom padding, second number is left and right padding */
+  /* padding: 0.5vh 4vmin; /* First number is top and bottom padding, second number is left and right padding */
+  padding-top: 1vh;
+  padding-right: 4vmin;
+  padding-bottom: 0;
+  padding-left: 4vmin;
 }
 
 .nav-item:hover { /* .navbar-elts-list a:hover */
@@ -165,6 +169,7 @@
 /* Theme selector */
 #theme-checkbox {
   display: none;
+  margin: 0;
 }
 #navbar-theme-button #theme-menu {
     visibility: hidden;
@@ -279,6 +284,7 @@
 
 #hamburger-checkbox {
   display: none;
+  margin: 0;
 }
 
 ul {
