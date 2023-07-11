@@ -118,13 +118,13 @@
 
   /* The hamburger should be visible only in portrait mode */
   #hamburger {
-    display: inline;
-    border: 2px solid white;
+    display: none;
+    /* border: 2px solid white;
     border-radius: 5px;
     height: 6vh;
     width: 6vh;
     background: #dddddd;
-    margin-inline-start: 4vh;
+    margin-inline-start: 4vh; */
   }
 }
 
