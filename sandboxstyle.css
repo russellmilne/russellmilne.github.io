@@ -293,7 +293,7 @@
     width: 175px;
     height: 90vh;
     transition: 0.3s;
-    background: #ffffff;
+    background: #ff0000;
     align-items: left;
 }
 #hamburger-checkbox:checked + #hamburger #hamburger-menu {
