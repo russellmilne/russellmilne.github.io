@@ -285,13 +285,13 @@
   background: linear-gradient(-45deg, #99ffdc 0% 35%, #e5fff6 35% 65%, #18989f 65% 100%);
 }
 #theme-dark-sol {
-  background: linear-gradient(-45deg, #004454 0% 35%, #00687f 35% 65%, #18989f 65% 100%);
+  background: linear-gradient(-45deg, #18989f 0% 35%, #00687f 35% 65%, #004454 65% 100%);
 }
 #theme-light-grey {
-  background: linear-gradient(-45deg, #404040 0% 35%, #99ffdc 35% 65%, #d5d5d5 65% 100%);
+  background: linear-gradient(-45deg, #d5d5d5 0% 35%, #99ffdc 35% 65%, #404040 65% 100%);
 }
 #theme-dark-grey {
-  background: linear-gradient(-45deg, #101010 0% 35%, #65dfc4 35% 65%, #404040 65% 100%);
+  background: linear-gradient(-45deg, #404040 0% 35%, #65dfc4 35% 65%, #101010 65% 100%);
 }
 
 /* Stuff related to the hamburger menu */
