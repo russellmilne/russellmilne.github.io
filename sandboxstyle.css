@@ -318,6 +318,11 @@
   opacity: 0.4;
 }
 
+.hamburger-menu-row {
+  padding: 1.5vmin 1.5vmin;
+  display: block;
+  align-items: center;
+}
 .hamburger-item {
   color: white;
   text-decoration: none;
