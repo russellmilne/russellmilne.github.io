@@ -25,6 +25,13 @@
     margin-inline-start: 4vmin;
   }
 
+  /* Attributes of each row in the theme selector menu */
+  .theme-menu-row {
+    padding: 5vmin 5vmin;
+    display: inline-flex;
+    align-items: center;
+  }
+
   /* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
   .button-in-menu {
     border: 1px solid white;
@@ -76,6 +83,13 @@
     width: 13.5vh;
     background: linear-gradient(-45deg, #ff7f50 0% 35%, #7cfc00 35% 65%, #00bbff 65% 100%);
     margin-inline-start: 4vh;
+  }
+
+  /* Attributes of each row in the theme selector menu */
+  .theme-menu-row {
+    padding: 1.5vmin 1.5vmin;
+    display: inline-flex;
+    align-items: center;
   }
 
   /* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
@@ -175,7 +189,7 @@
     position: fixed;
     top: 10vh;
     left: 105vw;
-    width: 175px;
+    width: 180px;
     height: 90vh;
     transition: 0.3s;
     background: #123456;
@@ -183,7 +197,7 @@
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
     visibility: visible;
-    left: calc(100vw - 175px);
+    left: calc(100vw - 180px);
 }
 .overlay-theme-menu {
     position: fixed;
@@ -201,12 +215,6 @@
 #theme-checkbox:checked ~ .overlay-theme-menu {
    visibility: visible;
   opacity: 0.4;
-}
-
-.theme-menu-row {
-  padding: 1.5vmin 1.5vmin;
-  display: inline-flex;
-  align-items: center;
 }
 
 /* Old code for the element that contains the dropdown button and menu
