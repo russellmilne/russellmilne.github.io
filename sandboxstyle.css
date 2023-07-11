@@ -27,7 +27,9 @@
 
   /* Attributes of each row in the theme selector menu */
   .theme-menu-row {
-    padding: 5vmin 5vmin;
+    /* More padding on mobile (only on the top and left though) */
+    padding-top: 5vmin;
+    padding-left: 5vmin;
     display: inline-flex;
     align-items: center;
   }
@@ -87,7 +89,8 @@
 
   /* Attributes of each row in the theme selector menu */
   .theme-menu-row {
-    padding: 1.5vmin 1.5vmin;
+    padding-top: 3vmin;
+    padding-left: 3vmin;
     display: inline-flex;
     align-items: center;
   }
@@ -301,7 +304,7 @@
     width: 175px;
     height: 90vh;
     transition: 0.3s;
-    background: #ff0000;
+    background: #000000;
     align-items: left;
 }
 #hamburger-checkbox:checked + #hamburger #hamburger-menu {
