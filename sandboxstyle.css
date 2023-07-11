@@ -281,8 +281,41 @@
   background: linear-gradient(-45deg, #101010 0% 35%, #00687f 35% 65%, #65dfc4 65% 100%);
 }
 
+/* Stuff related to the hamburger menu */
 #hamburger-checkbox {
   display: none;
+}
+#hamburger #hamburger-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 10vh;
+    left: 105vw;
+    width: 175px;
+    height: 90vh;
+    transition: 0.3s;
+    background: #ffffff;
+    align-items: left;
+}
+#hamburger-checkbox:checked + #hamburger #hamburger-menu {
+    visibility: visible;
+    left: calc(100vw - 175px);
+}
+.overlay-hamburger-menu {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+#hamburger-checkbox:checked ~ .overlay-hamburger-menu {
+   visibility: visible;
+  opacity: 0.4;
 }
 
 ul {
