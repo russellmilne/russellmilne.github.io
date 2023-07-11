@@ -318,6 +318,11 @@
   opacity: 0.4;
 }
 
+.hamburger-item {
+  color: white;
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
 }
