@@ -194,7 +194,7 @@
     position: fixed;
     top: 10vh;
     left: 105vw;
-    width: 180px;
+    width: 200px;
     height: 90vh;
     transition: 0.3s;
     background: #123456;
@@ -202,7 +202,7 @@
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
     visibility: visible;
-    left: calc(100vw - 180px);
+    left: calc(100vw - 200px);
 }
 .overlay-theme-menu {
     position: fixed;
@@ -303,7 +303,7 @@
     position: fixed;
     top: 10vh;
     left: 105vw;
-    width: 175px;
+    width: 200px;
     height: 90vh;
     transition: 0.3s;
     background: #000000;
@@ -311,7 +311,7 @@
 }
 #hamburger-checkbox:checked + #hamburger #hamburger-menu {
     visibility: visible;
-    left: calc(100vw - 175px);
+    left: calc(100vw - 200px);
 }
 .overlay-hamburger-menu {
     position: fixed;
