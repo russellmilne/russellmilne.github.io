@@ -113,7 +113,7 @@
     /* text-align: center; */
     font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1em;
-    color: #ffffff;
+    color: var(--headertext);
   }
 
   /* The hamburger should be visible only in portrait mode */
