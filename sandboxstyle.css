@@ -36,7 +36,7 @@
 
   /* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
   .button-in-menu {
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 2.5px;
     height: 4.5vh;
     width: 4.5vh; /* If the user is in portrait mode, the theme buttons should be square */
@@ -51,7 +51,7 @@
     /* text-align: center; */
     font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1.4em; /* The text is also scaled up in portrait mode */
-    color: #ffffff;
+    color: var(--headertext);
   }
 
   /* The hamburger should be visible only in portrait mode */
@@ -199,7 +199,7 @@
     width: 200px;
     height: 90vh;
     transition: 0.3s;
-    background: #123456;
+    background: var(--header);
     align-items: left;
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
