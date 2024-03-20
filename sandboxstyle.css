@@ -137,8 +137,8 @@
 
   width: 100%;
   height: 10vh;
-  background: #123456;
-  color: #abcdef;
+  background: var(--header);
+  /* color: #abcdef; */
 }
 
 .navbar-elts-list {
@@ -149,7 +149,7 @@
 }
 
 .nav-item { /* .navbar-elts-list a */
-  color: white;
+  /* color: white; */
   text-decoration: none;
   /* padding: 0.5vh 4vmin; /* First number is top and bottom padding, second number is left and right padding */
   padding-top: 1vh;
@@ -170,10 +170,12 @@
 */
 
 .nav-text-name {
+  color: var(--headername);
   font-size: 2em;
 }
 
 .nav-text-notname {
+  color: var(--headertext);
   font-size: 1.5em;
 }
 
@@ -349,11 +351,13 @@ main {
   margin: 10vmin;
   padding: 0;
   min-height: 70vh;
-  background-color: lightgray;
+  background-color: var(--container);
   border-radius: 2vmin;
 
   position: relative;
   z-index: 1; /* Below the dropdown menu */
+
+  color: var(--containertext);
 }
 
 .scrollable-area {
@@ -383,7 +387,7 @@ but I keep the bottom margin (to maintain spacing between paragraphs). */
 }
 
 body {
-  background-color: blue;
+  background-color: var(--bg);
   margin: 0;
   padding: 0;
   font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
@@ -413,4 +417,69 @@ body {
   src: url('font/Overpass-BoldItalic.woff2');
   font-weight: bold;
   font-style: italic;
+}
+
+/* Links */
+a {
+  color: var(--textaccents);
+}
+
+/* Theme colours, and colour schemes that can be toggled between */
+:root {
+  --white: #ffffff;
+  --grey1: #f0f0f0;
+  --grey2: #d5d5d5;
+  --grey3: #404040;
+  --grey4: #252525;
+  --notblack: #101010;
+  --lightaquamarine: #e5fff6;
+  --aquamarine: #99ffdc;
+  --intermediary1: #65dfc4;
+  --intermediary2: #18989f;
+  --teal: #00687f;
+  --darkteal: #004454;
+}
+
+.light-sol {
+  --header: var(--intermediary1);
+  --headertext: var(--teal);
+  --bg: var(--intermediary2);
+  --container: var(--aquamarine);
+  --containertext: var(--darkteal);
+  --headername: var(--darkteal);
+  --textaccents: var(--teal);
+  --buttons: var(--teal);
+}
+
+.dark-sol {
+  --header: var(--intermediary2);
+  --headertext: var(--aquamarine);
+  --bg: var(--darkteal);
+  --container: var(--teal);
+  --containertext: var(--lightaquamarine);
+  --headername: var(--lightaquamarine);
+  --textaccents: var(--intermediary1);
+  --buttons: var(--intermediary1);
+}
+
+.light-grey {
+  --header: var(--grey3);
+  --headertext: var(--white);
+  --bg: var(--grey1);
+  --container: var(--grey2);
+  --containertext: var(--grey4);
+  --headername: var(--aquamarine);
+  --textaccents: var(--teal);
+  --buttons: var(--aquamarine);
+}
+
+.dark-grey {
+  --header: var(--notblack);
+  --headertext: var(--white);
+  --bg: var(--grey4);
+  --container: var(--grey3);
+  --containertext: var(--grey1);
+  --headername: var(--aquamarine);
+  --textaccents: var(--aquamarine);
+  --buttons: var(--teal);
 }
