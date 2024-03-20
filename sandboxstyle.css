@@ -21,7 +21,7 @@
     border-radius: 5px;
     height: 6vh;
     width: 6vh; /* If the user is in portrait mode, the theme buttons should be square */
-    background: linear-gradient(-45deg, #ff7f50 0% 35%, #7cfc00 35% 65%, #00bbff 65% 100%);
+    background: linear-gradient(-45deg, var(--themebuttonright) 0% 35%, var(--themebuttonmiddle) 35% 65%, var(--themebuttonleft) 65% 100%);
     margin-inline-start: 4vmin;
   }
 
@@ -84,7 +84,7 @@
     border-radius: 5px;
     height: 6vh;
     width: 13.5vh;
-    background: linear-gradient(-45deg, #ff7f50 0% 35%, #7cfc00 35% 65%, #00bbff 65% 100%);
+    background: linear-gradient(-45deg, var(--themebuttonright) 0% 35%, var(--themebuttonmiddle) 35% 65%, var(--themebuttonleft) 65% 100%);
     margin-inline-start: 4vh;
   }
 
@@ -461,6 +461,9 @@ a {
   --headername: var(--darkteal);
   --textaccents: var(--teal);
   --buttons: var(--teal);
+  --themebuttonright: var(--aquamarine);
+  --themebuttonmiddle: var(--lightaquamarine);
+  --themebuttonleft: var(--intermediary2);
 }
 
 .dark-sol {
@@ -472,6 +475,9 @@ a {
   --headername: var(--lightaquamarine);
   --textaccents: var(--intermediary1);
   --buttons: var(--intermediary1);
+  --themebuttonright: var(--intermediary2);
+  --themebuttonmiddle: var(--teal);
+  --themebuttonleft: var(--darkteal);
 }
 
 .light-grey {
@@ -483,6 +489,9 @@ a {
   --headername: var(--aquamarine);
   --textaccents: var(--teal);
   --buttons: var(--aquamarine);
+  --themebuttonright: var(--grey2);
+  --themebuttonmiddle: var(--aquamarine);
+  --themebuttonleft: var(--grey3);
 }
 
 .dark-grey {
@@ -494,4 +503,7 @@ a {
   --headername: var(--aquamarine);
   --textaccents: var(--aquamarine);
   --buttons: var(--teal);
+  --themebuttonright: var(--grey3);
+  --themebuttonmiddle: var(--intermediary1);
+  --themebuttonleft: var(--notblack);
 }
