@@ -98,7 +98,7 @@
 
   /* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
   .button-in-menu {
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 2.5px;
     height: 4vh;
     width: 9vh;
