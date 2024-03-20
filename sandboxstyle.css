@@ -360,7 +360,7 @@ ul {
 }
 
 main {
-  margin: 10vmin;
+  margin: 5vmin;
   padding: 0;
   min-height: 70vh;
   background-color: var(--container);
