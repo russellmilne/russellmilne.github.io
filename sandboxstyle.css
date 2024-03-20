@@ -158,10 +158,12 @@
   padding-left: 4vmin;
 }
 
-.nav-item:hover { /* .navbar-elts-list a:hover */
+/*
+.nav-item:hover { /* .navbar-elts-list a:hover
   background-color: #dddddd;
   color: black;
 }
+*/
 
 /*
 .navbar-elts-list div {
@@ -174,9 +176,19 @@
   font-size: 2em;
 }
 
+.nav-text-name:hover {
+  background-color: var(--headername);
+  color: var(--header);
+}
+
 .nav-text-notname {
   color: var(--headertext);
   font-size: 1.5em;
+}
+
+.nav-text-notname:hover {
+  background-color: var(--headertext);
+  color: var(--header);
 }
 
 .leftside {
