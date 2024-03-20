@@ -453,10 +453,10 @@ a {
 }
 
 .light-sol {
-  --header: var(--intermediary1);
+  --header: var(--aquamarine);
   --headertext: var(--teal);
   --bg: var(--intermediary2);
-  --container: var(--aquamarine);
+  --container: var(--lightaquamarine);
   --containertext: var(--darkteal);
   --headername: var(--darkteal);
   --textaccents: var(--teal);
