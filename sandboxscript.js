@@ -6,6 +6,12 @@ const greenButton = document.getElementById('theme-green');
 const lightGreyButton = document.getElementById('theme-light-grey');
 const darkGreyButton = document.getElementById('theme-dark-grey');
 
+const lightSolTextButton = document.getElementById('theme-light-sol-text');
+const darkSolTextButton = document.getElementById('theme-dark-sol-text');
+const greenTextButton = document.getElementById('theme-green-text');
+const lightGreyTextButton = document.getElementById('theme-light-grey-text');
+const darkGreyTextButton = document.getElementById('theme-dark-grey-text');
+
 // Selecting a theme based on what the user has in their browser's local storage
 
 const theme = localStorage.getItem('theme');
@@ -74,6 +80,68 @@ lightGreyButton.onclick = () => {
 }
 
 darkGreyButton.onclick = () => {
+	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.green,.light-grey');
+	for (var i = 0; i < allThemedElements.length; i++) {
+		allThemedElements[i].classList.remove('light-sol');
+		allThemedElements[i].classList.remove('dark-sol');
+		allThemedElements[i].classList.remove('green');
+		allThemedElements[i].classList.remove('light-grey');
+		allThemedElements[i].classList.add('dark-grey');
+	}
+	localStorage.setItem('theme','dark-grey');
+}
+
+// Event handlers for the text buttons (the ones featuring the theme names), which do the same things
+
+lightSolTextButton.onclick = () => {
+	var allThemedElements = document.querySelectorAll('.dark-sol,.green,.light-grey,.dark-grey');
+	for (var i = 0; i < allThemedElements.length; i++) {
+		allThemedElements[i].classList.remove('dark-sol');
+		allThemedElements[i].classList.remove('green');
+		allThemedElements[i].classList.remove('light-grey');
+		allThemedElements[i].classList.remove('dark-grey');
+		allThemedElements[i].classList.add('light-sol');
+	}
+	localStorage.setItem('theme','light-sol');
+}
+
+darkSolTextButton.onclick = () => {
+	var allThemedElements = document.querySelectorAll('.light-sol,.green,.light-grey,.dark-grey');
+	for (var i = 0; i < allThemedElements.length; i++) {
+		allThemedElements[i].classList.remove('light-sol');
+		allThemedElements[i].classList.remove('green');
+		allThemedElements[i].classList.remove('light-grey');
+		allThemedElements[i].classList.remove('dark-grey');
+		allThemedElements[i].classList.add('dark-sol');
+	}
+	localStorage.setItem('theme','dark-sol');
+}
+
+greenTextButton.onclick = () => {
+	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.light-grey,.dark-grey');
+	for (var i = 0; i < allThemedElements.length; i++) {
+		allThemedElements[i].classList.remove('light-sol');
+		allThemedElements[i].classList.remove('dark-sol');
+		allThemedElements[i].classList.remove('light-grey');
+		allThemedElements[i].classList.remove('dark-grey');
+		allThemedElements[i].classList.add('green');
+	}
+	localStorage.setItem('theme','green');
+}
+
+lightGreyTextButton.onclick = () => {
+	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.green,.dark-grey');
+	for (var i = 0; i < allThemedElements.length; i++) {
+		allThemedElements[i].classList.remove('light-sol');
+		allThemedElements[i].classList.remove('dark-sol');
+		allThemedElements[i].classList.remove('green');
+		allThemedElements[i].classList.remove('dark-grey');
+		allThemedElements[i].classList.add('light-grey');
+	}
+	localStorage.setItem('theme','light-grey');
+}
+
+darkGreyTextButton.onclick = () => {
 	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.green,.light-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('light-sol');
