@@ -11,7 +11,7 @@ const darkGreyButton = document.getElementById('theme-dark-grey');
 const theme = localStorage.getItem('theme');
 
 if (theme) {
-	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.light-grey,.dark-grey');
+	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.green,.light-grey,.dark-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('light-sol');
 		allThemedElements[i].classList.remove('dark-sol');
@@ -26,7 +26,7 @@ if (theme) {
 // These change all items that vary based on the theme to whichever theme was selected, and save the theme to local storage
 
 lightSolButton.onclick = () => {
-	var allThemedElements = document.querySelectorAll('.dark-sol,.light-grey,.dark-grey');
+	var allThemedElements = document.querySelectorAll('.dark-sol,.green,.light-grey,.dark-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('dark-sol');
 		allThemedElements[i].classList.remove('green');
@@ -38,7 +38,7 @@ lightSolButton.onclick = () => {
 }
 
 darkSolButton.onclick = () => {
-	var allThemedElements = document.querySelectorAll('.light-sol,.light-grey,.dark-grey');
+	var allThemedElements = document.querySelectorAll('.light-sol,.green,.light-grey,.dark-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('light-sol');
 		allThemedElements[i].classList.remove('green');
@@ -50,7 +50,7 @@ darkSolButton.onclick = () => {
 }
 
 greenButton.onclick = () => {
-	var allThemedElements = document.querySelectorAll('.dark-sol,.light-grey,.dark-grey');
+	var allThemedElements = document.querySelectorAll('.lightsol,.dark-sol,.light-grey,.dark-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('light-sol');
 		allThemedElements[i].classList.remove('dark-sol');
@@ -62,7 +62,7 @@ greenButton.onclick = () => {
 }
 
 lightGreyButton.onclick = () => {
-	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.dark-grey');
+	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.green,.dark-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('light-sol');
 		allThemedElements[i].classList.remove('dark-sol');
@@ -74,7 +74,7 @@ lightGreyButton.onclick = () => {
 }
 
 darkGreyButton.onclick = () => {
-	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.light-grey');
+	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.green,.light-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('light-sol');
 		allThemedElements[i].classList.remove('dark-sol');
