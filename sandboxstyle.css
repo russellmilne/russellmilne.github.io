@@ -211,7 +211,7 @@
     width: 200px;
     height: 90vh;
     transition: 0.3s;
-    background: var(--header);
+    background: var(--thememenu);
     align-items: left;
 }
 #theme-checkbox:checked + #navbar-theme-button #theme-menu {
@@ -472,6 +472,7 @@ a {
   --themebuttonright: var(--aquamarine);
   --themebuttonmiddle: var(--lightaquamarine);
   --themebuttonleft: var(--intermediary2);
+  --thememenu: var(--lightaquamarine);
 }
 
 .dark-sol {
@@ -486,6 +487,7 @@ a {
   --themebuttonright: var(--intermediary2);
   --themebuttonmiddle: var(--teal);
   --themebuttonleft: var(--darkteal);
+  --thememenu: var(--header);
 }
 
 .green {
@@ -500,6 +502,7 @@ a {
   --themebuttonright: var(--aquamarine);
   --themebuttonmiddle: var(--intermediary1);
   --themebuttonleft: var(--intermediary2);
+  --thememenu: var(--header);
 }
 
 .light-grey {
@@ -514,6 +517,7 @@ a {
   --themebuttonright: var(--grey2);
   --themebuttonmiddle: var(--grey3);
   --themebuttonleft: var(--aquamarine);
+  --thememenu: var(--header);
 }
 
 .dark-grey {
@@ -528,4 +532,5 @@ a {
   --themebuttonright: var(--grey4);
   --themebuttonmiddle: var(--intermediary1);
   --themebuttonleft: var(--grey4);
+  --thememenu: var(--header);
 }
