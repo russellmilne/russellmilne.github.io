@@ -436,6 +436,11 @@ a {
   color: var(--textaccents);
 }
 
+a.light-grey:hover {
+  background-color: var(--aquamarine);
+  color: var(--grey4);
+}
+
 /* Theme colours, and colour schemes that can be toggled between */
 :root {
   --white: #ffffff;
@@ -487,7 +492,7 @@ a {
   --container: var(--grey2);
   --containertext: var(--grey4);
   --headername: var(--aquamarine);
-  --textaccents: var(--intermediary1);
+  --textaccents: var(--teal);
   --buttons: var(--aquamarine);
   --themebuttonright: var(--grey2);
   --themebuttonmiddle: var(--aquamarine);
