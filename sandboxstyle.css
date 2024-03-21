@@ -436,7 +436,7 @@ a {
   color: var(--textaccents);
 }
 
-a.light-grey:hover {
+.hover-highlight.light-grey:hover {
   background-color: var(--aquamarine);
   color: var(--grey4);
 }
