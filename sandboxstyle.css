@@ -301,11 +301,14 @@
 #theme-dark-sol {
   background: linear-gradient(-45deg, #18989f 0% 35%, #00687f 35% 65%, #004454 65% 100%);
 }
+#theme-green {
+  background: linear-gradient(-45deg, #99ffdc 0% 35%, #18989f 35% 65%, #65dfc4 65% 100%);
+}
 #theme-light-grey {
-  background: linear-gradient(-45deg, #d5d5d5 0% 35%, #99ffdc 35% 65%, #404040 65% 100%);
+  background: linear-gradient(-45deg, #404040 0% 35%, #99ffdc 35% 65%, #d5d5d5 65% 100%);
 }
 #theme-dark-grey {
-  background: linear-gradient(-45deg, #404040 0% 35%, #65dfc4 35% 65%, #101010 65% 100%);
+  background: linear-gradient(-45deg, #101010 0% 35%, #65dfc4 35% 65%, #404040 65% 100%);
 }
 
 /* Stuff related to the hamburger menu */
@@ -458,10 +461,10 @@ a {
 }
 
 .light-sol {
-  --header: var(--intermediary1);
+  --header: var(--aquamarine);
   --headertext: var(--teal);
   --bg: var(--intermediary2);
-  --container: var(--aquamarine);
+  --container: var(--lightaquamarine);
   --containertext: var(--darkteal);
   --headername: var(--darkteal);
   --textaccents: var(--notblack);
@@ -485,6 +488,20 @@ a {
   --themebuttonleft: var(--darkteal);
 }
 
+.green {
+  --header: var(--intermediary1);
+  --headertext: var(--teal);
+  --bg: var(--intermediary2);
+  --container: var(--aquamarine);
+  --containertext: var(--darkteal);
+  --headername: var(--darkteal);
+  --textaccents: var(--notblack);
+  --buttons: var(--teal);
+  --themebuttonright: var(--intermediary1);
+  --themebuttonmiddle: var(--intermediary2);
+  --themebuttonleft: var(--aquamarine);
+}
+
 .light-grey {
   --header: var(--grey3);
   --headertext: var(--white);
@@ -494,9 +511,9 @@ a {
   --headername: var(--aquamarine);
   --textaccents: var(--teal);
   --buttons: var(--aquamarine);
-  --themebuttonright: var(--grey2);
+  --themebuttonright: var(--grey3);
   --themebuttonmiddle: var(--aquamarine);
-  --themebuttonleft: var(--grey3);
+  --themebuttonleft: var(--grey2);
 }
 
 .dark-grey {
@@ -508,7 +525,7 @@ a {
   --headername: var(--aquamarine);
   --textaccents: var(--aquamarine);
   --buttons: var(--teal);
-  --themebuttonright: var(--grey3);
+  --themebuttonright: var(--notblack);
   --themebuttonmiddle: var(--intermediary1);
-  --themebuttonleft: var(--notblack);
+  --themebuttonleft: var(--grey3);
 }
