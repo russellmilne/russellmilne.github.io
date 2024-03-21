@@ -487,8 +487,8 @@ a {
   --container: var(--grey2);
   --containertext: var(--grey4);
   --headername: var(--aquamarine);
-  --textaccents: var(--aquamarine);
-  --buttons: var(--teal);
+  --textaccents: var(--intermediary1);
+  --buttons: var(--aquamarine);
   --themebuttonright: var(--grey2);
   --themebuttonmiddle: var(--aquamarine);
   --themebuttonleft: var(--grey3);
