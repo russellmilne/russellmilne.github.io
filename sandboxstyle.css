@@ -302,7 +302,7 @@
   background: linear-gradient(-45deg, var(--intermediary2) 0% 35%, var(--teal) 35% 65%, var(--darkteal) 65% 100%);
 }
 #theme-green {
-  background: linear-gradient(-45deg, var(--aquamarine) 0% 35%, var(--intermediary1) 35% 65%, var(--intermediary2) 65% 100%);
+  background: linear-gradient(-45deg, var(--intermediary2) 0% 35%, var(--intermediary1) 35% 65%, var(--aquamarine) 65% 100%);
 }
 #theme-light-grey {
   background: linear-gradient(-45deg, var(--grey2) 0% 35%, var(--grey3) 35% 65%, var(--aquamarine) 65% 100%);
@@ -497,9 +497,9 @@ a {
   --headername: var(--darkteal);
   --textaccents: var(--notblack);
   --buttons: var(--teal);
-  --themebuttonright: var(--aquamarine);
+  --themebuttonright: var(--intermediary2);
   --themebuttonmiddle: var(--intermediary1);
-  --themebuttonleft: var(--intermediary2);
+  --themebuttonleft: var(--aquamarine);
 }
 
 .light-grey {
