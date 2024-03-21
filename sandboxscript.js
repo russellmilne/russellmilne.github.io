@@ -50,7 +50,7 @@ darkSolButton.onclick = () => {
 }
 
 greenButton.onclick = () => {
-	var allThemedElements = document.querySelectorAll('.lightsol,.dark-sol,.light-grey,.dark-grey');
+	var allThemedElements = document.querySelectorAll('.light-sol,.dark-sol,.light-grey,.dark-grey');
 	for (var i = 0; i < allThemedElements.length; i++) {
 		allThemedElements[i].classList.remove('light-sol');
 		allThemedElements[i].classList.remove('dark-sol');
