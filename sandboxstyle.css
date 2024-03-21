@@ -296,10 +296,10 @@
 
 /* Attributes of specific buttons in the dropdown menu (representing specific themes) */
 #theme-light-sol {
-  background: linear-gradient(-45deg, #99ffdc 0% 35%, #e5fff6 35% 65%, #18989f 65% 100%);
+  background: linear-gradient(-45deg, var(--aquamarine) 0% 35%, var(--lightaquamarine) 35% 65%, var(--intermediary2) 65% 100%);
 }
 #theme-dark-sol {
-  background: linear-gradient(-45deg, #18989f 0% 35%, #00687f 35% 65%, #004454 65% 100%);
+  background: linear-gradient(-45deg, var(--intermediary2) 0% 35%, var(--teal) 35% 65%, var(--darkteal) 65% 100%);
 }
 #theme-green {
   background: linear-gradient(-45deg, #65dfc4 0% 35%, #18989f 35% 65%, #99ffdc 65% 100%);
@@ -497,9 +497,9 @@ a {
   --headername: var(--darkteal);
   --textaccents: var(--notblack);
   --buttons: var(--teal);
-  --themebuttonright: var(--intermediary1);
-  --themebuttonmiddle: var(--intermediary2);
-  --themebuttonleft: var(--aquamarine);
+  --themebuttonright: var(--aquamarine);
+  --themebuttonmiddle: var(--intermediary1);
+  --themebuttonleft: var(--intermediary2);
 }
 
 .light-grey {
@@ -512,8 +512,8 @@ a {
   --textaccents: var(--teal);
   --buttons: var(--aquamarine);
   --themebuttonright: var(--grey2);
-  --themebuttonmiddle: var(--aquamarine);
-  --themebuttonleft: var(--grey3);
+  --themebuttonmiddle: var(--grey3);
+  --themebuttonleft: var(--aquamarine);
 }
 
 .dark-grey {
@@ -525,7 +525,7 @@ a {
   --headername: var(--aquamarine);
   --textaccents: var(--aquamarine);
   --buttons: var(--teal);
-  --themebuttonright: var(--grey3);
+  --themebuttonright: var(--grey4);
   --themebuttonmiddle: var(--intermediary1);
-  --themebuttonleft: var(--notblack);
+  --themebuttonleft: var(--grey4);
 }
