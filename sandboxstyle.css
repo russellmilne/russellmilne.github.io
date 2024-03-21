@@ -459,7 +459,7 @@ a {
   --container: var(--lightaquamarine);
   --containertext: var(--darkteal);
   --headername: var(--darkteal);
-  --textaccents: var(--teal);
+  --textaccents: var(--notblack);
   --buttons: var(--teal);
   --themebuttonright: var(--aquamarine);
   --themebuttonmiddle: var(--lightaquamarine);
@@ -487,8 +487,8 @@ a {
   --container: var(--grey2);
   --containertext: var(--grey4);
   --headername: var(--aquamarine);
-  --textaccents: var(--teal);
-  --buttons: var(--aquamarine);
+  --textaccents: var(--aquamarine);
+  --buttons: var(--teal);
   --themebuttonright: var(--grey2);
   --themebuttonmiddle: var(--aquamarine);
   --themebuttonleft: var(--grey3);
