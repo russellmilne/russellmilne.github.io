@@ -308,7 +308,7 @@
   background: linear-gradient(-45deg, var(--grey2) 0% 35%, var(--grey3) 35% 65%, var(--aquamarine) 65% 100%);
 }
 #theme-dark-grey {
-  background: linear-gradient(-45deg, var(--grey3) 0% 35%, var(--intermediary1) 35% 65%, var(--grey3) 65% 100%);
+  background: linear-gradient(-45deg, var(--grey4) 0% 35%, var(--intermediary1) 35% 65%, var(--grey4) 65% 100%);
 }
 
 /* Stuff related to the hamburger menu */
@@ -529,8 +529,8 @@ a {
   --headername: var(--aquamarine);
   --textaccents: var(--aquamarine);
   --buttons: var(--teal);
-  --themebuttonright: var(--grey3);
+  --themebuttonright: var(--grey4);
   --themebuttonmiddle: var(--intermediary1);
-  --themebuttonleft: var(--grey3);
+  --themebuttonleft: var(--grey4);
   --thememenu: var(--header);
 }
