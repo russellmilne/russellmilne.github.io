@@ -61,7 +61,7 @@
     border-radius: 5px;
     height: 6vh;
     width: 6vh;
-    background: #var(--headername);
+    background: var(--headername);
     margin-inline-start: 4vmin;
   }
 
