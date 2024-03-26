@@ -496,7 +496,7 @@ a {
   --themebuttonleft: var(--darkteal);
   --thememenu: var(--header);
   --hamburgerbutton: var(--teal);
-  --hamburgersvg: var(--intermediary2);
+  --hamburgersvg: var(--lightaquamarine);
 }
 
 .green {
@@ -529,8 +529,8 @@ a {
   --themebuttonmiddle: var(--grey3);
   --themebuttonleft: var(--aquamarine);
   --thememenu: var(--header);
-  --hamburgerbutton: var(--aquamarine);
-  --hamburgersvg: var(--grey3);
+  --hamburgerbutton: #8a8a8a;
+  --hamburgersvg: var(--aquamarine);
 }
 
 .dark-grey {
