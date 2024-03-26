@@ -478,8 +478,8 @@ a {
   --themebuttonmiddle: var(--lightaquamarine);
   --themebuttonleft: var(--intermediary2);
   --thememenu: var(--lightaquamarine);
-  --hamburgerbutton: var(--intermediary2);
-  --hamburgersvg: var(--intermediary1);
+  --hamburgerbutton: var(--intermediary1);
+  --hamburgersvg: var(--intermediary2);
 }
 
 .dark-sol {
@@ -495,8 +495,8 @@ a {
   --themebuttonmiddle: var(--teal);
   --themebuttonleft: var(--darkteal);
   --thememenu: var(--header);
-  --hamburgerbutton: var(--darkteal);
-  --hamburgersvg: var(--teal);
+  --hamburgerbutton: var(--teal);
+  --hamburgersvg: var(--darkteal);
 }
 
 .green {
@@ -512,8 +512,8 @@ a {
   --themebuttonmiddle: var(--intermediary1);
   --themebuttonleft: var(--intermediary2);
   --thememenu: var(--header);
-  --hamburgerbutton: var(--intermediary2);
-  --hamburgersvg: var(--intermediary1);
+  --hamburgerbutton: var(--aquamarine);
+  --hamburgersvg: var(--intermediary2);
 }
 
 .light-grey {
@@ -529,8 +529,8 @@ a {
   --themebuttonmiddle: var(--grey3);
   --themebuttonleft: var(--aquamarine);
   --thememenu: var(--header);
-  --hamburgerbutton: var(--aquamarine);
-  --hamburgersvg: var(--grey3);
+  --hamburgerbutton: var(--grey4);
+  --hamburgersvg: var(--aquamarine);
 }
 
 .dark-grey {
@@ -546,6 +546,6 @@ a {
   --themebuttonmiddle: var(--aquamarine);
   --themebuttonleft: var(--grey4);
   --thememenu: var(--header);
-  --hamburgerbutton: var(--aquamarine);
-  --hamburgersvg: var(--grey4);
+  --hamburgerbutton: var(--grey4);
+  --hamburgersvg: var(--aquamarine);
 }
