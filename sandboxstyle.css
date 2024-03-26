@@ -61,8 +61,13 @@
     border-radius: 5px;
     height: 6vh;
     width: 6vh;
-    background: #dddddd;
+    background: #var(--headername);
     margin-inline-start: 4vmin;
+  }
+
+  /* I also style the SVG lines within the hamburger (this is unnecessary in landscape mode) */
+  #hamburger-svg {
+    stroke: var(--header);
   }
 }
 @media all and (orientation:landscape) {
