@@ -61,13 +61,13 @@
     border-radius: 5px;
     height: 6vh;
     width: 6vh;
-    background: var(--headertext);
+    background: var(--hamburgerbutton);
     margin-inline-start: 4vmin;
   }
 
   /* I also style the SVG lines within the hamburger (this is unnecessary in landscape mode) */
   #hamburger-svg {
-    stroke: var(--header);
+    stroke: var(--hamburgersvg);
   }
 }
 @media all and (orientation:landscape) {
@@ -478,6 +478,8 @@ a {
   --themebuttonmiddle: var(--lightaquamarine);
   --themebuttonleft: var(--intermediary2);
   --thememenu: var(--lightaquamarine);
+  --hamburgerbutton: var(--intermediary2);
+  --hamburgersvg: var(--intermediary1);
 }
 
 .dark-sol {
@@ -493,6 +495,8 @@ a {
   --themebuttonmiddle: var(--teal);
   --themebuttonleft: var(--darkteal);
   --thememenu: var(--header);
+  --hamburgerbutton: var(--darkteal);
+  --hamburgersvg: var(--teal);
 }
 
 .green {
@@ -508,6 +512,8 @@ a {
   --themebuttonmiddle: var(--intermediary1);
   --themebuttonleft: var(--intermediary2);
   --thememenu: var(--header);
+  --hamburgerbutton: var(--intermediary2);
+  --hamburgersvg: var(--intermediary1);
 }
 
 .light-grey {
@@ -523,6 +529,8 @@ a {
   --themebuttonmiddle: var(--grey3);
   --themebuttonleft: var(--aquamarine);
   --thememenu: var(--header);
+  --hamburgerbutton: var(--aquamarine);
+  --hamburgersvg: var(--grey3);
 }
 
 .dark-grey {
@@ -538,4 +546,6 @@ a {
   --themebuttonmiddle: var(--aquamarine);
   --themebuttonleft: var(--grey4);
   --thememenu: var(--header);
+  --hamburgerbutton: var(--aquamarine);
+  --hamburgersvg: var(--grey4);
 }
