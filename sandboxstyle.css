@@ -179,6 +179,7 @@
 .nav-text-name {
   color: var(--headername);
   font-size: 2em;
+  font-weight: bold;
 }
 
 .nav-text-name:hover {
