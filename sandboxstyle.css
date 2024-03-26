@@ -328,7 +328,7 @@
     width: 200px;
     height: 90vh;
     transition: 0.3s;
-    background: #000000;
+    background: var(--thememenu);
     align-items: left;
 }
 #hamburger-checkbox:checked + #hamburger #hamburger-menu {
@@ -496,7 +496,7 @@ a {
   --themebuttonleft: var(--darkteal);
   --thememenu: var(--header);
   --hamburgerbutton: var(--teal);
-  --hamburgersvg: var(--lightaquamarine);
+  --hamburgersvg: var(--aquamarine);
 }
 
 .green {
