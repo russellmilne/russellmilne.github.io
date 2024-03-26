@@ -529,8 +529,8 @@ a {
   --themebuttonmiddle: var(--grey3);
   --themebuttonleft: var(--aquamarine);
   --thememenu: var(--header);
-  --hamburgerbutton: var(--grey2);
-  --hamburgersvg: var(--aquamarine);
+  --hamburgerbutton: var(--aquamarine);
+  --hamburgersvg: var(--grey3);
 }
 
 .dark-grey {
