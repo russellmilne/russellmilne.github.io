@@ -12,6 +12,11 @@ const greenTextButton = document.getElementById('theme-green-text');
 const lightGreyTextButton = document.getElementById('theme-light-grey-text');
 const darkGreyTextButton = document.getElementById('theme-dark-grey-text');
 
+// Defining the two overlays
+
+const themeSelectorOverlay = document.getElementById('theme-overlay');
+const hamburgerOverlay = document.getElementById('hamburger-overlay');
+
 // Selecting a theme based on what the user has in their browser's local storage
 
 const theme = localStorage.getItem('theme');
@@ -151,4 +156,15 @@ darkGreyTextButton.onclick = () => {
 		allThemedElements[i].classList.add('dark-grey');
 	}
 	localStorage.setItem('theme','dark-grey');
+}
+
+// Event handlers for the overlays.
+// They should uncheck their associated checkboxes when clicked
+
+themeSelectorOverlay.onclick = () => {
+	document.getElementById('theme-checkbox').checked = false;
+}
+
+hamburgerOverlay.onclick = () => {
+	document.getElementById('hamburger-checkbox').checked = false;
 }
