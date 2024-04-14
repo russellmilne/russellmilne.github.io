@@ -241,6 +241,21 @@
   opacity: 0.4;
 }
 
+/* Making it so that the theme button changes the cursor to a pointer when you hover over it,
+the theme menu (which is within the theme button) does not, and the elements within the theme menu do */
+#navbar-theme-button:hover {
+  cursor: pointer;
+}
+#theme-menu:hover {
+  cursor: default;
+}
+.button-in-menu:hover {
+  cursor: pointer;
+}
+.textbutton:hover {
+  cursor: pointer;
+}
+
 /* Old code for the element that contains the dropdown button and menu
 .dropdown {
   position: relative;
