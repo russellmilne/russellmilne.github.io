@@ -3,26 +3,39 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Research</title>
+	<title>Research performed by Russell</title>
 	<link rel="stylesheet" href="sandboxstyle.css">
-	<script src="sandboxscript.js" type="text/javascript"></script>
+	<script defer src="sandboxscript.js" type="text/javascript"></script>
+
+	<!-- Favicons -->
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+	<link rel="icon" href="/favicon-16.png" sizes="16x16">
+	<link rel="icon" href="/favicon-32.png" sizes="32x32">
+	<link rel="icon" href="/favicon-128.png" sizes="128x128">
+	<link rel="icon" href="/favicon-192.png" sizes="192x192">
+
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 </head>
-<body>
+<body class="green">
 
 	<div id="entire-page">
 
-		<nav class="navbar">
+		<nav class="navbar green">
 
 			<div class="navbar-elts-list leftside" id="navbar-name">
-				<a href="index.html" class="nav-item nav-text-name">Russell Milne</a>
+				<a href="russellmilne.com" class="nav-item nav-text-name">Russell Milne</a>
 			</div>
 
 			<!-- Navbar items -->
 			<div class="navbar-elts-list rightside" id="navbar-links">
 				
-				<a href="#" class="nav-item nav-text-notname">About</a>
-				<a href="#" class="nav-item nav-text-notname">Research</a>
-				<a href="#" class="nav-item nav-text-notname">Hobbies</a>
+				<a href="about.html" class="nav-item nav-text-notname">About</a>
+				<a href="research.html" class="nav-item nav-text-notname">Research</a>
+				<a href="#" class="nav-item nav-text-notname">Teaching</a>
+				<a href="hobbies.html" class="nav-item nav-text-notname">Hobbies</a>
 
 				<!-- Theme selector -->
 				<input type="checkbox" id="theme-checkbox" class="menu-shower" />
@@ -30,23 +43,27 @@
 				  <nav id="theme-menu">
 				  	<div class="theme-menu-row">
 				  		<button class="button-in-menu" id="theme-light-sol"></button>
-				  		<button class="textbutton">Haibian</button>
+				  		<button class="textbutton" id="theme-light-sol-text">Haibian</button>
 				  	</div>
 				  	<div class="theme-menu-row">
 				  		<button class="button-in-menu" id="theme-dark-sol"></button>
-				  		<button class="textbutton">Primorye</button>
+				  		<button class="textbutton" id="theme-dark-sol-text">Primorye</button>
+				  	</div>
+				  	<div class="theme-menu-row">
+				  		<button class="button-in-menu" id="theme-green"></button>
+				  		<button class="textbutton" id="theme-green-text">Thetis</button>
 				  	</div>
 				  	<div class="theme-menu-row">
 				  		<button class="button-in-menu" id="theme-light-grey"></button>
-				  		<button class="textbutton">Calx</button>
+				  		<button class="textbutton" id="theme-light-grey-text">Calx</button>
 				  	</div>
 				  	<div class="theme-menu-row">
 				  		<button class="button-in-menu" id="theme-dark-grey"></button>
-				  		<button class="textbutton">Strobe</button>
+				  		<button class="textbutton" id="theme-dark-grey-text">Strobe</button>
 				  	</div>
 				  </nav>
 				</label>
-				<div class="overlay-theme-menu"></div>
+				<div class="overlay-theme-menu" id="theme-overlay"></div>
 
 				<!-- Old dropdown code, which worked (in case I need to return to it)
 				<div class="dropdown">
@@ -97,11 +114,14 @@
 				    		<button class="textbutton">Research</button>
 				    	</div>
 				    	<div class="hamburger-menu-row">
+				    		<button class="textbutton">Teaching</button>
+				    	</div>
+				    	<div class="hamburger-menu-row">
 				    		<button class="textbutton">Hobbies</button>
 				    	</div>
 				    </nav>
 				</label>
-				<div class="overlay-hamburger-menu"></div>
+				<div class="overlay-hamburger-menu" id="hamburger-overlay"></div>
 
 			</div>
 
@@ -109,11 +129,21 @@
 
 		<div class="scrollable-area">
 
-			<main>
+			<main class="green">
 				<div class="wrapper" id="main-wrapper">
-					<p class="main-text">I'm an applied mathematician, which means that I enjoy using mathematical techniques to solve real-world problems. Most of my work is in the broad field of ecology, with a particular focus on aquatic habitats (e.g. coral reefs, lakes) and spatially explicit problems. I have additionally published a few epidemiological papers. Mathematically, my work sits at the interface of nonlinear dynamics, data science, and machine learning; I'm very interested in mathematical modelling that incorporates both mechanistic and data-driven components. Below is a list of all of my publications, with a short description of each.</p>
-					<p class="main-text">I'll put the list of my publications here when I create it.</p>
-					<p class="main-text last-para">My publications can also be viewed on <a href="https://www.researchgate.net/profile/Russell-Milne">ResearchGate</a> or <a href="https://scholar.google.com/citations?user=Jw41HA8AAAAJ&hl=en&oi=sra">Google Scholar</a>. If you would like a PDF copy of one of them but it isn't available online, you can email me and I'll send it to you.</p>
+					<p class="main-text">I'm an applied mathematician, which means that I enjoy using mathematical techniques to solve real-world problems. Most of my work is in the broad field of ecology, with a particular focus on aquatic habitats (e.g. coral reefs, lakes) and spatially explicit problems. I have additionally published a few epidemiological papers. Mathematically, my work incorporates nonlinear dynamics, data science, and machine learning.</p> <!-- Mathematically, my work sits at the interface of nonlinear dynamics, data science, and machine learning; I'm very interested in mathematical modelling that incorporates both mechanistic and data-driven components. -->
+					<p class="main-text">Below is a list of all of my publications. They can also be viewed on <a href="https://www.researchgate.net/profile/Russell-Milne">ResearchGate</a> or <a href="https://scholar.google.com/citations?user=Jw41HA8AAAAJ&hl=en&oi=sra">Google Scholar</a>. An asterisk (*) denotes co-first authors. If you would like a PDF copy of one of them but it isn't available online, you can email me and I'll send it to you.</p> <!-- TODO: Add short descriptions of each -->
+					<p class="main-text">H Cui, J Li, YT Sun, RA Milne, YW Tao, JL Ren. 2024. <a href="https://doi.org/10.1016/j.scitotenv.2024.171910">A novel framework for quantitative attribution of particulate matter pollution mitigation to natural and socioeconomic drivers</a>. Science of the Total Environment, 926:171910.</p>
+					<p class="main-text">H Cui, YW Tao, J Li, JH Zhang, H Xiao, RA Milne. 2024. <a href="https://doi.org/10.1016/j.jenvman.2024.120394">Predicting and analyzing the algal population dynamics of a grass-type lake with explainable machine learning</a>. Journal of Environmental Management, 354:120394.</p>
+					<p class="main-text">T Feng, RA Milne, H Wang. 2023. <a href="https://doi.org/10.1016/j.mbs.2023.109075">Variation in environmental stochasticity dramatically affects viability and extinction time in a predator-prey system with high prey group cohesion</a>. Mathematical Biosciences, 365:109075.</p>
+					<p class="main-text">RA Milne, M Anand, CT Bauch. 2023. <a href="https://doi.org/10.1016/j.ecolmodel.2023.110443">Preparing for and managing crown-of-thorns starfish outbreaks on reefs under threat from interacting anthropogenic stressors</a>. Ecological Modelling, 484:110443.</p>
+					<p class="main-text">SL Jing*, RA Milne*, H Wang, L Xue. 2023. <a href="https://doi.org/10.1016/j.jtbi.2023.111522">Vaccine hesitancy promotes emergence of new SARS-CoV-2 variants</a>. Journal of Theoretical Biology, 570:111522.</p>
+					<p class="main-text">JP Ji, RA Milne, H Wang. 2023. <a href="https://doi.org/10.1007/s00285-023-01866-z">Stoichiometry and environmental change drive dynamical complexity and unpredictable switches in an intraguild predation model</a>. Journal of Mathematical Biology, 86:31.</p>
+					<p class="main-text">L Xue, SL Jing, K Zhang, RA Milne, H Wang. 2022. <a href="https://doi.org/10.1016/j.ijid.2022.05.031">Infectivity versus fatality of SARS-CoV-2 mutations and influenza</a>. International Journal of Infectious Diseases, 121:195-202.</p>
+					<p class="main-text">RA Milne, CT Bauch, M Anand. 2022. <a href="https://doi.org/10.1007/s11538-022-01000-y">Local overfishing patterns have regional effects on health of coral, and economic transitions can promote its recovery</a>. Bulletin of Mathematical Biology, 84:46.</p>
+					<p class="main-text">RA Milne, F Guichard. 2021. <a href="https://doi.org/10.1016/j.jtbi.2021.110676">Coupled phase-amplitude dynamics in heterogeneous metacommunities</a>. Journal of Theoretical Biology, 523:110676.</p>
+					<p class="main-text">JO Negrín Dastis, RA Milne, F Guichard, AM Derry. 2019. <a href="https://doi.org/10.1111/eva.12833">Phenotype–environment mismatch in metapopulations — Implications for the maintenance of maladaptation at the regional scale</a>. Evolutionary Applications, 12(7):1475-1486.</p>
+					<p class="main-text last-para">In addition to these papers, I have also reviewed a mathematical ecology textbook for SIAM. You can read my review <a href="https://doi.org/10.1137/23N975715">here</a>.</p>
 				</div>
 			</main>
 
