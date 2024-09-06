@@ -96,7 +96,7 @@ html {
     height: 6vh;
     width: 13.5vh;
     background: linear-gradient(-45deg, var(--themebuttonright) 0% 35%, var(--themebuttonmiddle) 35% 65%, var(--themebuttonleft) 65% 100%);
-    margin-inline-start: 3vh;
+    margin-inline-start: 4vh;
   }
 
   /* Attributes of each row in the theme selector menu */
@@ -184,7 +184,7 @@ html {
 
 .nav-text-name {
   color: var(--headername);
-  font-size: 2em;
+  font-size: 1.75em;
 }
 
 .nav-text-name:hover {
@@ -194,7 +194,7 @@ html {
 
 .nav-text-notname {
   color: var(--headertext);
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 .nav-text-notname:hover {
