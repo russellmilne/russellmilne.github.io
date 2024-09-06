@@ -1,5 +1,11 @@
 /* CSS for the sandbox HTML file */
 
+/* Prevent font scaling in landscape while allowing user zoom */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 /* Settings that depend on whether the user is in portrait or landscape mode */
 
 @media all and (orientation:portrait) {
