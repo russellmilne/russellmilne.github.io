@@ -82,11 +82,11 @@ html {
   }
 
   #navbar-name {
-    margin-inline-start: 10vmin;
+    margin-inline-start: 9vmin;
   }
 
   #navbar-links {
-    margin-inline-end: 10vmin;
+    margin-inline-end: 9vmin;
   }
 
   /* Attributes of the button that displays the theme selection menu */
