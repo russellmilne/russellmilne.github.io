@@ -86,7 +86,7 @@ html {
   }
 
   #navbar-links {
-    margin-inline-end: 7vmin;
+    margin-inline-end: 8vmin;
   }
 
   /* Attributes of the button that displays the theme selection menu */
@@ -184,7 +184,7 @@ html {
 
 .nav-text-name {
   color: var(--headername);
-  font-size: 1.75em;
+  font-size: 2em;
 }
 
 .nav-text-name:hover {
