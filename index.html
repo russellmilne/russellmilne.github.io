@@ -4,9 +4,118 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Russell Milne's official website</title>
+	<link rel="stylesheet" href="rm-style.css">
+	<script defer src="rm-script.js" type="text/javascript"></script>
+
+	<!-- Favicons -->
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+	<link rel="icon" href="/favicon-16.png" sizes="16x16">
+	<link rel="icon" href="/favicon-32.png" sizes="32x32">
+	<link rel="icon" href="/favicon-128.png" sizes="128x128">
+	<link rel="icon" href="/favicon-192.png" sizes="192x192">
+
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 </head>
-<body>
-<p>This is the official website of Dr. Russell Milne. I am a postdoctoral researcher in mathematical biology. Currently, I am a member of the Interdisciplinary Lab for Mathematical Ecology and Epidemiology led by Prof. Hao Wang, in the University of Alberta's Department of Mathematics and Statistics. Previously, I did my Ph.D. under Profs. Chris Bauch and Madhur Anand at the University of Waterloo, and my Master's under Prof. Fred Guichard at McGill University.</p>
-<p>If you're interested in my research, you can have a look at my publications on <a href="https://www.researchgate.net/profile/Russell-Milne">ResearchGate</a> or <a href="https://scholar.google.com/citations?user=Jw41HA8AAAAJ&hl=en&oi=sra">Google Scholar</a>.</p>
+<body class="light-sol">
+
+	<div id="entire-page">
+
+		<nav class="navbar light-sol">
+
+			<div class="navbar-elts-list leftside" id="navbar-name">
+				<a href="index.html" class="nav-item nav-text-name">Russell Milne</a>
+			</div>
+
+			<!-- Navbar items -->
+			<div class="navbar-elts-list rightside" id="navbar-links">
+				
+				<a href="about.html" class="nav-item nav-text-notname">About</a>
+				<a href="research.html" class="nav-item nav-text-notname">Research</a>
+				<a href="teaching.html" class="nav-item nav-text-notname">Teaching</a>
+				<a href="hobbies.html" class="nav-item nav-text-notname">Hobbies</a>
+
+				<!-- Theme selector -->
+				<input type="checkbox" id="theme-checkbox" class="menu-shower" />
+				<label class="button" id="navbar-theme-button" for="theme-checkbox">
+				  <nav id="theme-menu">
+				  	<div class="theme-menu-row">
+				  		<button class="button-in-menu" id="theme-light-sol"></button>
+				  		<button class="textbutton" id="theme-light-sol-text">Haibian</button>
+				  	</div>
+				  	<div class="theme-menu-row">
+				  		<button class="button-in-menu" id="theme-dark-sol"></button>
+				  		<button class="textbutton" id="theme-dark-sol-text">Primorye</button>
+				  	</div>
+				  	<div class="theme-menu-row">
+				  		<button class="button-in-menu" id="theme-green"></button>
+				  		<button class="textbutton" id="theme-green-text">Thetis</button>
+				  	</div>
+				  	<div class="theme-menu-row">
+				  		<button class="button-in-menu" id="theme-light-grey"></button>
+				  		<button class="textbutton" id="theme-light-grey-text">Calx</button>
+				  	</div>
+				  	<div class="theme-menu-row">
+				  		<button class="button-in-menu" id="theme-dark-grey"></button>
+				  		<button class="textbutton" id="theme-dark-grey-text">Strobe</button>
+				  	</div>
+				  </nav>
+				</label>
+				<div class="overlay-theme-menu" id="theme-overlay"></div>
+
+				<!-- Hamburger menu (takes the place of navbar items on mobile) -->
+				<input type="checkbox" id="hamburger-checkbox" class="menu-shower" />
+				<label class="button" id="hamburger" for="hamburger-checkbox">
+					<svg
+						id="hamburger-svg"
+				    	viewBox="0 0 24 24"
+				    	stroke-width="3"
+				    	stroke="#123456"
+				    	fill="none"
+				    	stroke-linecap="round"
+				    	stroke-linejoin="round"
+				  	>
+				    	<path stroke="none" fill="none" />
+				    	<line x1="6" y1="6" x2="18" y2="6" />
+				    	<line x1="6" y1="12" x2="18" y2="12" />
+				    	<line x1="6" y1="18" x2="18" y2="18" />
+				    </svg>
+				    <nav id="hamburger-menu">
+				    	<div class="hamburger-menu-row">
+				    		<button class="textbutton" onclick="window.location='about.html';">About</button>
+				    	</div>
+				    	<div class="hamburger-menu-row">
+				    		<button class="textbutton" onclick="window.location='research.html';">Research</button>
+				    	</div>
+				    	<div class="hamburger-menu-row">
+				    		<button class="textbutton" onclick="window.location='teaching.html';">Teaching</button>
+				    	</div>
+				    	<div class="hamburger-menu-row">
+				    		<button class="textbutton" onclick="window.location='hobbies.html';">Hobbies</button>
+				    	</div>
+				    </nav>
+				</label>
+				<div class="overlay-hamburger-menu" id="hamburger-overlay"></div>
+
+			</div>
+
+		</nav>
+
+		<div class="scrollable-area">
+
+			<main class="light-sol">
+				<div class="wrapper" id="main-wrapper">
+					<p class="main-text">This is the official website of Dr. Russell Milne. I am a postdoctoral researcher in mathematical biology at the University of Alberta, and the current co-leader of the Interdisciplinary Lab in Mathematical Ecology and Epidemiology, working with Prof. Hao Wang.</p>
+					<p class="main-text">If you would like to contact me, my email address is rmilne at [domain name of the University of Alberta]. I usually check this email a few times per day, so if you need to contact me quickly, it's better to send me a message via text or WeChat. Additionally, if you are on campus at the University of Alberta, my office is in CAB 539.</p>
+					<p class="main-text last-para">You can see my research <a href="research.html">here</a>.</p>
+				</div>
+			</main>
+
+		</div>
+
+	</div>
+
 </body>
 </html>

@@ -1,0 +1,572 @@
+/* CSS for the sandbox HTML file */
+
+/* Prevent font scaling in landscape while allowing user zoom */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Settings that depend on whether the user is in portrait or landscape mode */
+
+@media all and (orientation:portrait) {
+  .nav-text-notname {
+    display: none;
+  }
+
+  #navbar-name {
+    margin-inline-start: 5vmin;
+  }
+
+  #navbar-links {
+    margin-inline-end: 5vmin;
+  }
+
+  /* Attributes of the button that displays the theme selection menu */
+  #navbar-theme-button { /* This used to be called "dropdown-button" */
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 6vh;
+    width: 6vh; /* If the user is in portrait mode, the theme buttons should be square */
+    background: linear-gradient(-45deg, var(--themebuttonright) 0% 35%, var(--themebuttonmiddle) 35% 65%, var(--themebuttonleft) 65% 100%);
+    margin-inline-start: 4vmin;
+  }
+
+  /* Attributes of each row in the theme selector menu */
+  .theme-menu-row {
+    /* More padding on mobile (only on the top and left though) */
+    padding-top: 5vmin;
+    padding-left: 5vmin;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
+  .button-in-menu {
+    border: 1.5px solid white;
+    border-radius: 2.5px;
+    height: 4.5vh;
+    width: 4.5vh; /* If the user is in portrait mode, the theme buttons should be square */
+    position: relative;
+  }
+
+  /* Attributes of the text buttons in each dropdown menu position */
+  .textbutton {
+    border: none;
+    background-color: inherit;
+    height: 4.5vh; /* Same height as the coloured buttons, which is larger in portrait than landscape mode */
+    /* text-align: center; */
+    font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1.4em; /* The text is also scaled up in portrait mode */
+    color: var(--headertext);
+  }
+
+  /* The hamburger should be visible only in portrait mode */
+  #hamburger {
+    display: inline;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 6vh;
+    width: 6vh;
+    background: var(--hamburgerbutton);
+    margin-inline-start: 4vmin;
+  }
+
+  /* I also style the SVG lines within the hamburger (this is unnecessary in landscape mode) */
+  #hamburger-svg {
+    stroke: var(--hamburgersvg);
+  }
+}
+@media all and (orientation:landscape) {
+  .nav-text-notname {
+    display: block;
+  }
+
+  #navbar-name {
+    margin-inline-start: 7vmin;
+  }
+
+  #navbar-links {
+    margin-inline-end: 8vmin;
+  }
+
+  /* Attributes of the button that displays the theme selection menu */
+  #navbar-theme-button { /* This used to be called "dropdown-button" */
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 6vh;
+    width: 13.5vh;
+    background: linear-gradient(-45deg, var(--themebuttonright) 0% 35%, var(--themebuttonmiddle) 35% 65%, var(--themebuttonleft) 65% 100%);
+    margin-inline-start: 4vh;
+  }
+
+  /* Attributes of each row in the theme selector menu */
+  .theme-menu-row {
+    padding-top: 3vmin;
+    padding-left: 3vmin;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Attributes of the buttons in the dropdown menu (like the dropdown display button, but smaller) */
+  .button-in-menu {
+    border: 1.5px solid white;
+    border-radius: 2.5px;
+    height: 4vh;
+    width: 9vh;
+    position: relative;
+  }
+
+  /* Attributes of the text buttons in each dropdown menu position */
+  .textbutton {
+    border: none;
+    background-color: inherit;
+    height: 4vh; /* Same height as the coloured buttons */
+    /* text-align: center; */
+    font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1em;
+    color: var(--headertext);
+  }
+
+  /* The hamburger should be visible only in portrait mode */
+  #hamburger {
+    display: none;
+    /* border: 2px solid white;
+    border-radius: 5px;
+    height: 6vh;
+    width: 6vh;
+    background: #dddddd;
+    margin-inline-start: 4vh; */
+  }
+}
+
+/* Settings that are the same regardless of how the page is viewed */
+
+.navbar {
+  /* This should have a higher z-index than the main box */
+  position: fixed;
+  z-index: 5;
+
+  width: 100%;
+  height: 10vh;
+  background: var(--header);
+  /* color: #abcdef; */
+}
+
+.navbar-elts-list {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.nav-item { /* .navbar-elts-list a */
+  /* color: white; */
+  text-decoration: none;
+  /* padding: 0.5vh 4vmin; /* First number is top and bottom padding, second number is left and right padding */
+  padding-top: 1vh;
+  padding-right: 4vmin;
+  padding-bottom: 0;
+  padding-left: 4vmin;
+}
+
+/*
+.nav-item:hover { /* .navbar-elts-list a:hover
+  background-color: #dddddd;
+  color: black;
+}
+*/
+
+/*
+.navbar-elts-list div {
+  margin-inline-start: 4vh;
+}
+*/
+
+.nav-text-name {
+  color: var(--headername);
+  font-size: 2em;
+}
+
+.nav-text-name:hover {
+  background-color: var(--headername);
+  color: var(--header);
+}
+
+.nav-text-notname {
+  color: var(--headertext);
+  font-size: 1.25em;
+}
+
+.nav-text-notname:hover {
+  background-color: var(--headertext);
+  color: var(--header);
+}
+
+.leftside {
+  float: left;
+}
+
+.rightside {
+  float: right;
+}
+
+/* Theme selector */
+#theme-checkbox {
+  display: none;
+}
+#navbar-theme-button #theme-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 10vh;
+    left: 105vw;
+    width: 200px;
+    height: 90vh;
+    transition: 0.3s;
+    background: var(--thememenu);
+    align-items: left;
+}
+#theme-checkbox:checked + #navbar-theme-button #theme-menu {
+    visibility: visible;
+    left: calc(100vw - 200px);
+}
+.overlay-theme-menu {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+#theme-checkbox:checked ~ .overlay-theme-menu {
+   visibility: visible;
+  opacity: 0.4;
+}
+
+/* Making it so that the theme button changes the cursor to a pointer when you hover over it,
+the theme menu (which is within the theme button) does not, and the elements within the theme menu do */
+#navbar-theme-button:hover {
+  cursor: pointer;
+}
+#theme-menu:hover {
+  cursor: default;
+}
+.button-in-menu:hover {
+  cursor: pointer;
+}
+.textbutton:hover {
+  cursor: pointer;
+}
+
+/* Old code for the element that contains the dropdown button and menu
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-inline-start: 4vh;
+  padding-bottom: 1.5vh;
+  transform: translateY(0.75vh);
+}
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+}
+*/
+
+/* Old code for the dropdown menu for theme selection
+.dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  top: 8.35vh;
+  left: -10vh;
+  z-index: 99;
+  background: #ff0000;
+
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+
+  transition: opacity 0.3s ease-out, visibility 0.3s;
+  transition-delay: 0.1s;
+
+  min-width: 13.5vh;
+}
+
+.dropdown-content a {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: inherit;
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  color: inherit;
+  background: inherit;
+}
+*/
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 0;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+/* Attributes of specific buttons in the dropdown menu (representing specific themes) */
+#theme-light-sol {
+  background: linear-gradient(-45deg, var(--intermediary1) 0% 35%, var(--lightaquamarine) 35% 65%, var(--intermediary2) 65% 100%);
+}
+#theme-dark-sol {
+  background: linear-gradient(-45deg, var(--intermediary2) 0% 35%, var(--teal) 35% 65%, var(--darkteal) 65% 100%);
+}
+#theme-green {
+  background: linear-gradient(-45deg, var(--aquamarine) 0% 35%, var(--intermediary1) 35% 65%, var(--intermediary2) 65% 100%);
+}
+#theme-light-grey {
+  background: linear-gradient(-45deg, var(--grey2) 0% 35%, var(--grey3) 35% 65%, var(--aquamarine) 65% 100%);
+}
+#theme-dark-grey {
+  background: linear-gradient(-45deg, var(--grey4) 0% 35%, var(--aquamarine) 35% 65%, var(--grey4) 65% 100%);
+}
+
+/* Stuff related to the hamburger menu */
+#hamburger-checkbox {
+  display: none;
+}
+#hamburger #hamburger-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 10vh;
+    left: 105vw;
+    width: 200px;
+    height: 90vh;
+    transition: 0.3s;
+    background: var(--thememenu);
+    align-items: left;
+}
+#hamburger-checkbox:checked + #hamburger #hamburger-menu {
+    visibility: visible;
+    left: calc(100vw - 200px);
+}
+.overlay-hamburger-menu {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+#hamburger-checkbox:checked ~ .overlay-hamburger-menu {
+   visibility: visible;
+  opacity: 0.4;
+}
+
+.hamburger-menu-row {
+  padding: 1.5vmin 1.5vmin;
+  display: block;
+  align-items: center;
+}
+.hamburger-item {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+main {
+  margin: 5vmin;
+  padding: 0;
+  min-height: 80vh;
+  background-color: var(--container);
+  border-radius: 2vmin;
+
+  position: relative;
+  z-index: 1; /* Below the dropdown menu */
+
+  color: var(--containertext);
+}
+
+.scrollable-area {
+  position: fixed;
+  top: 10vh; /* Same height as the navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Below the dropdown menu */
+  /* The scrollbar should be enabled in the area below the navbar */
+  overflow-y: scroll;
+}
+
+#main-wrapper {
+  padding: 20px;
+}
+
+/* For all paragraphs inside the main text besides the last one,
+I remove the default top margin (because it interacts with the padding of the outside wrapper in an undesirable way),
+but I keep the bottom margin (to maintain spacing between paragraphs). */
+.main-text {
+  margin-top: 0;
+}
+/* For the last paragraph in the main text, I also remove the bottom margin */
+.last-para {
+  margin-bottom: 0;
+}
+
+body {
+  background-color: var(--bg);
+  margin: 0;
+  padding: 0;
+  font-family: "Overpass", "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* Four variations of the Overpass font */
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-Regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-Bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-Italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Overpass";
+  src: url('font/Overpass-BoldItalic.woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Links */
+a {
+  color: var(--textaccents);
+}
+
+.hover-highlight.light-grey:hover {
+  background-color: var(--aquamarine);
+  color: var(--grey4);
+}
+
+/* Theme colours, and colour schemes that can be toggled between */
+:root {
+  --white: #ffffff;
+  --grey1: #f0f0f0;
+  --grey2: #d5d5d5;
+  --grey3: #404040;
+  --grey4: #252525;
+  --notblack: #101010;
+  --lightaquamarine: #e5fff6;
+  --aquamarine: #99ffdc;
+  --intermediary1: #65dfc4;
+  --intermediary2: #18989f;
+  --teal: #00687f;
+  --darkteal: #004454;
+}
+
+.light-sol {
+  --header: var(--aquamarine);
+  --headertext: var(--teal);
+  --bg: var(--intermediary2);
+  --container: var(--lightaquamarine);
+  --containertext: var(--darkteal);
+  --headername: var(--darkteal);
+  --textaccents: var(--notblack);
+  --buttons: var(--teal);
+  --themebuttonright: var(--intermediary1);
+  --themebuttonmiddle: var(--lightaquamarine);
+  --themebuttonleft: var(--intermediary2);
+  --thememenu: var(--lightaquamarine);
+  --hamburgerbutton: var(--lightaquamarine);
+  --hamburgersvg: var(--intermediary2);
+}
+
+.dark-sol {
+  --header: var(--intermediary2);
+  --headertext: var(--aquamarine);
+  --bg: var(--darkteal);
+  --container: var(--teal);
+  --containertext: var(--lightaquamarine);
+  --headername: var(--lightaquamarine);
+  --textaccents: var(--intermediary1);
+  --buttons: var(--intermediary1);
+  --themebuttonright: var(--intermediary2);
+  --themebuttonmiddle: var(--teal);
+  --themebuttonleft: var(--darkteal);
+  --thememenu: var(--header);
+  --hamburgerbutton: var(--teal);
+  --hamburgersvg: var(--aquamarine);
+}
+
+.green {
+  --header: var(--intermediary1);
+  --headertext: var(--teal);
+  --bg: var(--intermediary2);
+  --container: var(--aquamarine);
+  --containertext: var(--darkteal);
+  --headername: var(--darkteal);
+  --textaccents: var(--notblack);
+  --buttons: var(--teal);
+  --themebuttonright: var(--aquamarine);
+  --themebuttonmiddle: var(--intermediary1);
+  --themebuttonleft: var(--intermediary2);
+  --thememenu: var(--header);
+  --hamburgerbutton: var(--aquamarine);
+  --hamburgersvg: var(--intermediary2);
+}
+
+.light-grey {
+  --header: var(--grey3);
+  --headertext: var(--white);
+  --bg: var(--grey1);
+  --container: var(--grey2);
+  --containertext: var(--grey4);
+  --headername: var(--aquamarine);
+  --textaccents: var(--teal);
+  --buttons: var(--aquamarine);
+  --themebuttonright: var(--grey2);
+  --themebuttonmiddle: var(--grey3);
+  --themebuttonleft: var(--aquamarine);
+  --thememenu: var(--header);
+  --hamburgerbutton: #8a8a8a;
+  --hamburgersvg: var(--aquamarine);
+}
+
+.dark-grey {
+  --header: var(--notblack);
+  --headertext: var(--white);
+  --bg: var(--grey4);
+  --container: var(--grey3);
+  --containertext: var(--grey1);
+  --headername: var(--aquamarine);
+  --textaccents: var(--aquamarine);
+  --buttons: var(--teal);
+  --themebuttonright: var(--grey4);
+  --themebuttonmiddle: var(--aquamarine);
+  --themebuttonleft: var(--grey4);
+  --thememenu: var(--header);
+  --hamburgerbutton: var(--grey4);
+  --hamburgersvg: var(--aquamarine);
+}
