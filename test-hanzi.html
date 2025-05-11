@@ -9,7 +9,12 @@
 <body>
 	<input type="text" id="hanzi-input" placeholder="Hanzi">
 	<button id="hanzi-updater-button">Select hanzi</button>
-	<div id="character-target-div"></div>
+
+	<div class="character-target-div"></div>
+	<div class="character-target-div"></div>
+	<div class="character-target-div"></div>
+	<div class="character-target-div"></div>
+	
 	<button id="animate-button">Animate</button>
 
 	<script type="text/javascript">
@@ -21,18 +26,21 @@
 		document.getElementById("hanzi-updater-button").addEventListener("click", updateHanzi);
 
 		function updateHanzi() {
-		  document.getElementById("character-target-div").innerHTML = "";
-		  selectedHanzi = hanziInput.value[0];
-		  writer = HanziWriter.create('character-target-div', selectedHanzi, {
-		  width: 100,
-		  height: 100,
-		  padding: 5,
-		  showOutline: true
-		});
+			var numHanzi = Math.min(4,hanziInput.value.length) // The longest HSK words have 4 hanzi, as do chengyu
+			for (var i = 0; i < numHanzi; i++) {
+					document.querySelectorAll("character-target-div")[i].innerHTML = "";
+					selectedHanzi = hanziInput.value[i];
+					writer = HanziWriter.create(document.querySelectorAll("character-target-div")[i], selectedHanzi, {
+					width: 100,
+					height: 100,
+					padding: 5,
+					showOutline: true
+				});
+			}
 		}
 
 		document.getElementById('animate-button').addEventListener('click', function() {
-		  writer.animateCharacter();
+			writer.animateCharacter();
 		});
 	</script>
 </body>
