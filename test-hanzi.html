@@ -8,11 +8,16 @@
 </head>
 <body>
 	<div id="character-target-div"></div>
+	<button id="animate-button">Animate</button>
 	<script type="text/javascript">
-		var writer = HanziWriter.create('character-target-div', '我', {
+		var writer = HanziWriter.create('character-target-div', '国', {
 		  width: 100,
 		  height: 100,
-		  padding: 5
+		  padding: 5,
+		  showOutline: true
+		});
+		document.getElementById('animate-button').addEventListener('click', function() {
+		  writer.animateCharacter();
 		});
 	</script>
 </body>
