@@ -130,46 +130,47 @@
 		    	}
 		    });
 
+		    // Video recording setup (one video per canvas)
+
+		    var canvas0 = document.querySelectorAll("canvas")[0];
+		    var canvas1 = document.querySelectorAll("canvas")[1];
+		    var canvas2 = document.querySelectorAll("canvas")[2];
+		    var canvas3 = document.querySelectorAll("canvas")[3];
+		    var ctx0 = canvas0.getContext("2d");
+		    var ctx1 = canvas1.getContext("2d");
+		    var ctx2 = canvas2.getContext("2d");
+		    var ctx3 = canvas3.getContext("2d");
+
+		    var video0 = document.querySelectorAll("video")[0];
+		    var video1 = document.querySelectorAll("video")[1];
+		    var video2 = document.querySelectorAll("video")[2];
+		    var video3 = document.querySelectorAll("video")[3];
+
+		    var videoStream0 = canvas0.captureStream(30);
+		    var mediaRecorder = new MediaRecorder(videoStream0);
+
+		    var chunks = [];
+		    mediaRecorder.ondataavailable = function(e) {
+		      chunks.push(e.data);
+		    };
+
+		    mediaRecorder.onstop = function(e) {
+		      var blob = new Blob(chunks, { 'type' : 'video/mp4' });
+		      chunks = [];
+		      var videoURL = URL.createObjectURL(blob);
+		      video.src = videoURL;
+		    };
+		    mediaRecorder.ondataavailable = function(e) {
+		      chunks.push(e.data);
+		    };
+
+		    mediaRecorder.start();
+		    setTimeout(function (){ mediaRecorder.stop(); }, 15000);
+
 		}
 
 		document.getElementById('animate-button').addEventListener('click', chainAnimations);
 
-		// Video recording setup (one video per canvas)
-
-		var canvas0 = document.querySelectorAll("canvas")[0];
-		var canvas1 = document.querySelectorAll("canvas")[1];
-		var canvas2 = document.querySelectorAll("canvas")[2];
-		var canvas3 = document.querySelectorAll("canvas")[3];
-		var ctx0 = canvas0.getContext("2d");
-		var ctx1 = canvas1.getContext("2d");
-		var ctx2 = canvas2.getContext("2d");
-		var ctx3 = canvas3.getContext("2d");
-
-		var video0 = document.querySelectorAll("video")[0];
-		var video1 = document.querySelectorAll("video")[1];
-		var video2 = document.querySelectorAll("video")[2];
-		var video3 = document.querySelectorAll("video")[3];
-
-		var videoStream0 = canvas0.captureStream(30);
-		var mediaRecorder = new MediaRecorder(videoStream0);
-
-		var chunks = [];
-		mediaRecorder.ondataavailable = function(e) {
-		  chunks.push(e.data);
-		};
-
-		mediaRecorder.onstop = function(e) {
-		  var blob = new Blob(chunks, { 'type' : 'video/mp4' });
-		  chunks = [];
-		  var videoURL = URL.createObjectURL(blob);
-		  video.src = videoURL;
-		};
-		mediaRecorder.ondataavailable = function(e) {
-		  chunks.push(e.data);
-		};
-
-		mediaRecorder.start();
-		setTimeout(function (){ mediaRecorder.stop(); }, 15000);
 	</script>
 </body>
 </html>
