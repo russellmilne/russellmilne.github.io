@@ -11,7 +11,7 @@
 	<button id="hanzi-updater-button">Select hanzi</button>
 
 	<div>
-		<span id="span0"></span>
+		<canvas id="span0"></canvas>
 		<span id="span1"></span>
 		<span id="span2"></span>
 		<span id="span3"></span>
@@ -46,7 +46,8 @@
 					padding: 5,
 					showOutline: true,
 					strokeAnimationSpeed: 1.5,
-					delayBetweenStrokes: 100
+					delayBetweenStrokes: 100,
+					renderer: 'canvas'
 				});
 
 					if (numHanzi > 1) {
@@ -57,7 +58,8 @@
 							padding: 5,
 							showOutline: true,
 							strokeAnimationSpeed: 1.5,
-							delayBetweenStrokes: 100
+							delayBetweenStrokes: 100,
+							renderer: 'canvas'
 						});
 
 							if (numHanzi > 2) {
@@ -68,7 +70,8 @@
 									padding: 5,
 									showOutline: true,
 									strokeAnimationSpeed: 1.5,
-									delayBetweenStrokes: 100
+									delayBetweenStrokes: 100,
+									renderer: 'canvas'
 								});
 
 									if (numHanzi > 3) {
@@ -79,7 +82,8 @@
 											padding: 5,
 											showOutline: true,
 											strokeAnimationSpeed: 1.5,
-											delayBetweenStrokes: 100
+											delayBetweenStrokes: 100,
+											renderer: 'canvas'
 										});
 									}
 							}
