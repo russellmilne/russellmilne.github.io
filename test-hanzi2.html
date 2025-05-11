@@ -17,6 +17,13 @@
 		// URL.createObjectURL -> to create a URL from a stream so we can use it as src
 
 		window.onload = function () {
+		  const urlParams = new URL(window.location.toLocaleString());
+		  if (urlParams.has('hanzi0')) {
+		  	const hanzi0 = urlParams.get('hanzi0');
+		  } else {
+		  	const hanzi0 = '我'
+		  }
+
 		  var video = document.getElementById('video');
 		  var canvas = document.getElementById('canvas');
 		  canvas.width = 2000;
@@ -45,7 +52,7 @@
 		  var data = pixels.data;
 		  var numPixels = data.length;
 
-		  var writer = HanziWriter.create('canvas', '国', {
+		  var writer = HanziWriter.create('canvas', hanzi0, {
 		    width: 1990,
 		    height: 1990,
 		    padding: 5,
