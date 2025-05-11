@@ -7,10 +7,21 @@
 	<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
 </head>
 <body>
+	<input type="text" id="hanzi-input" placeholder="Hanzi">
+	<button id="hanzi-updater-button">Select hanzi</button>
 	<div id="character-target-div"></div>
 	<button id="animate-button">Animate</button>
+
 	<script type="text/javascript">
-		const selectedHanzi = '数'
+		const hanziInput = document.getElementById("hanzi-input");
+
+		const selectedHanzi = '汉'
+
+		document.getElementById("hanzi-updater-button").addEventListener("click", updateHanzi);
+
+		function updateHanzi() {
+		  selectedHanzi = hanziInput.value[0];
+		}
 
 		var writer = HanziWriter.create('character-target-div', selectedHanzi, {
 		  width: 100,
