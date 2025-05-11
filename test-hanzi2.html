@@ -58,10 +58,10 @@
 		    height: 990,
 		    padding: 5,
 		    showOutline: true,
-		    //renderer: 'canvas'
+		    renderer: 'canvas'
 		  });
 
-		  var stream = canvas.captureStream(15);
+		  var stream = canvas.captureStream(60);
 		  var recorder = new MediaRecorder(stream);
 
 		  recorder.addEventListener('dataavailable', finishCapturing);
