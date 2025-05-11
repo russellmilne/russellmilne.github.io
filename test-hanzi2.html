@@ -29,8 +29,8 @@
 		  // We need the 2D context to individually manipulate pixel data
 		  var ctx = canvas.getContext('2d');
 
-		  // Start with a black background
-		  ctx.fillStyle = '#000';
+		  // Start with a white background
+		  ctx.fillStyle = '#fff';
 		  ctx.fillRect(0, 0, width, height);
 		  
 		  // Since we're continuously accessing and overwriting the pixels
@@ -40,6 +40,15 @@
 		  var pixels = ctx.getImageData(0, 0, width, height);
 		  var data = pixels.data;
 		  var numPixels = data.length;
+
+		  var writer = HanziWriter.create('canvas', '国', {
+		    width: 100,
+		    height: 100,
+		    padding: 5,
+		    showOutline: true,
+		    renderer: 'canvas'
+		  });
+		  writer.animateCharacter();
 
 		  var stream = canvas.captureStream(15);
 		  var recorder = new MediaRecorder(stream);
@@ -67,38 +76,6 @@
 		    var videoURL = URL.createObjectURL(blob);
 		    video.src = videoURL;
 		    video.play();
-		  }
-
-
-		  function draw() {
-		    // We don't want to render again if we're not capturing
-		    if(capturing) {
-		      requestAnimationFrame(draw);
-		    }
-		    drawWhiteNoise();
-		  }
-
-
-		  function drawWhiteNoise() {
-		    var offset = 0;
-
-		    for(var i = 0; i < numPixels; i++) {
-		      var grey = Math.round(Math.random() * 255);
-		      
-		      // The data array has pixel values in RGBA order
-		      // (Red, Green, Blue and Alpha for transparency)
-		      // We will make R, G and B have the same value ('grey'),
-		      // then skip the Alpha value by increasing the offset,
-		      // as we're happy with the opaque value we set when painting
-		      // the background black at the beginning
-		      data[offset++] = grey;
-		      data[offset++] = grey;
-		      data[offset++] = grey;
-		      offset++; // skip the alpha component
-		    }
-
-		    // And tell the context to draw the updated pixels in the canvas
-		    ctx.putImageData(pixels, 0, 0);
 		  }
 
 		};
