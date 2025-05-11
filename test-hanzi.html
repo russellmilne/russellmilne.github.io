@@ -10,10 +10,10 @@
 	<input type="text" id="hanzi-input" placeholder="Hanzi">
 	<button id="hanzi-updater-button">Select hanzi</button>
 
-	<div class="character-target-div" id="div0"></div>
-	<div class="character-target-div" id="div1"></div>
-	<div class="character-target-div" id="div2"></div>
-	<div class="character-target-div" id="div3"></div>
+	<div id="div0"></div>
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
 	
 	<button id="animate-button">Animate</button>
 
@@ -27,16 +27,49 @@
 
 		function updateHanzi() {
 			var numHanzi = Math.min(4,hanziInput.value.length) // The longest HSK words have 4 hanzi, as do chengyu
-			for (var i = 0; i < numHanzi; i++) {
-					document.querySelectorAll("character-target-div")[i].innerHTML = "";
-					selectedHanzi = hanziInput.value[i];
-					var currentDiv = "div" + i.toString();
-					writer = HanziWriter.create(document.querySelectorAll(currentDiv, selectedHanzi, {
+
+			if (numHanzi > 0) {
+					document.getElementById("div0").innerHTML = "";
+					selectedHanzi = hanziInput.value[0];
+					writer = HanziWriter.create('div0', selectedHanzi, {
 					width: 100,
 					height: 100,
 					padding: 5,
 					showOutline: true
 				});
+
+					if (numHanzi > 1) {
+							document.getElementById("div1").innerHTML = "";
+							selectedHanzi = hanziInput.value[1];
+							writer = HanziWriter.create('div1', selectedHanzi, {
+							width: 100,
+							height: 100,
+							padding: 5,
+							showOutline: true
+						});
+
+							if (numHanzi > 2) {
+									document.getElementById("div2").innerHTML = "";
+									selectedHanzi = hanziInput.value[2];
+									writer = HanziWriter.create('div2', selectedHanzi, {
+									width: 100,
+									height: 100,
+									padding: 5,
+									showOutline: true
+								});
+
+									if (numHanzi > 3) {
+											document.getElementById("div3").innerHTML = "";
+											selectedHanzi = hanziInput.value[3];
+											writer = HanziWriter.create('div3', selectedHanzi, {
+											width: 100,
+											height: 100,
+											padding: 5,
+											showOutline: true
+										});
+									}
+							}
+					}
 			}
 		}
 
