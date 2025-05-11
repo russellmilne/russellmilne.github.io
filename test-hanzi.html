@@ -10,10 +10,12 @@
 	<input type="text" id="hanzi-input" placeholder="Hanzi">
 	<button id="hanzi-updater-button">Select hanzi</button>
 
-	<div id="div0"></div>
-	<div id="div1"></div>
-	<div id="div2"></div>
-	<div id="div3"></div>
+	<div>
+		<span id="span0"></span>
+		<span id="span1"></span>
+		<span id="span2"></span>
+		<span id="span3"></span>
+	</div>
 	
 	<button id="animate-button">Animate</button>
 
@@ -31,45 +33,49 @@
 		function updateHanzi() {
 			var numHanzi = Math.min(4,hanziInput.value.length) // The longest HSK words have 4 hanzi, as do chengyu
 
-			document.getElementById("div0").innerHTML = "";
-			document.getElementById("div1").innerHTML = "";
-			document.getElementById("div2").innerHTML = "";
-			document.getElementById("div3").innerHTML = "";
+			document.getElementById("span0").innerHTML = "";
+			document.getElementById("span1").innerHTML = "";
+			document.getElementById("span2").innerHTML = "";
+			document.getElementById("span3").innerHTML = "";
 
 			if (numHanzi > 0) {
 					selectedHanzi = hanziInput.value[0];
-					character0 = HanziWriter.create('div0', selectedHanzi, {
+					character0 = HanziWriter.create('span0', selectedHanzi, {
 					width: 100,
 					height: 100,
 					padding: 5,
-					showOutline: true
+					showOutline: true,
+					strokeAnimationSpeed: 1.5
 				});
 
 					if (numHanzi > 1) {
 							selectedHanzi = hanziInput.value[1];
-							character1 = HanziWriter.create('div1', selectedHanzi, {
+							character1 = HanziWriter.create('span1', selectedHanzi, {
 							width: 100,
 							height: 100,
 							padding: 5,
-							showOutline: true
+							showOutline: true,
+							strokeAnimationSpeed: 1.5
 						});
 
 							if (numHanzi > 2) {
 									selectedHanzi = hanziInput.value[2];
-									character2 = HanziWriter.create('div2', selectedHanzi, {
+									character2 = HanziWriter.create('span2', selectedHanzi, {
 									width: 100,
 									height: 100,
 									padding: 5,
-									showOutline: true
+									showOutline: true,
+									strokeAnimationSpeed: 1.5
 								});
 
 									if (numHanzi > 3) {
 											selectedHanzi = hanziInput.value[3];
-											character3 = HanziWriter.create('div3', selectedHanzi, {
+											character3 = HanziWriter.create('span3', selectedHanzi, {
 											width: 100,
 											height: 100,
 											padding: 5,
-											showOutline: true
+											showOutline: true,
+											strokeAnimationSpeed: 1.5
 										});
 									}
 							}
