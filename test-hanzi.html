@@ -81,11 +81,25 @@
 		  var delayBetweenAnimations = 1000; // milliseconds
 		    character0.hideCharacter();
 		    character1.hideCharacter();
+		    character2.hideCharacter();
+		    character3.hideCharacter();
 
 		    character0.animateCharacter({
 		      onComplete: function() {
 		        setTimeout(function() {
-		          character1.animateCharacter();
+		          character1.animateCharacter({
+		          	onComplete: function() {
+		          		setTimeout(function() {
+		          			character2.animateCharacter({
+		          				onComplete: function() {
+		          					setTimeout(function() {
+		          						character3.animateCharacter();
+		          					}, delayBetweenAnimations);
+		          				}
+		          			});
+		          		}, delayBetweenAnimations);
+		          	}
+		          });
 		        }, delayBetweenAnimations);
 		      }
 		    });
