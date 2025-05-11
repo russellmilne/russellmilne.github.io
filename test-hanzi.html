@@ -15,18 +15,13 @@
 	<script type="text/javascript">
 		const hanziInput = document.getElementById("hanzi-input");
 
-		var selectedHanzi = '汉'
-		var writer = HanziWriter.create('character-target-div', selectedHanzi, {
-		  width: 100,
-		  height: 100,
-		  padding: 5,
-		  showOutline: true
-		});
+		var selectedHanzi
+		var writer
 
 		document.getElementById("hanzi-updater-button").addEventListener("click", updateHanzi);
 
 		function updateHanzi() {
-		  document.getElementById("character-target-div").html('');
+		  document.getElementById("character-target-div").innerHTML = "";
 		  selectedHanzi = hanziInput.value[0];
 		  writer = HanziWriter.create('character-target-div', selectedHanzi, {
 		  width: 100,
