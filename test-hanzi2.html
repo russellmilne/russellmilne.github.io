@@ -5,179 +5,116 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Test area for the hanzi video project</title>
 	<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
-</head>
-<body>
-	<input type="text" id="hanzi-input" placeholder="Hanzi">
-	<button id="hanzi-updater-button">Select hanzi</button>
-
-	<div>
-		<canvas id="span0"></canvas>
-		<canvas id="span1"></canvas>
-		<canvas id="span2"></canvas>
-		<canvas id="span3"></canvas>
-	</div>
-
-	<div>
-		<!-- <video autoplay controls download id="video0"></video>
-		<video autoplay controls download id="video1"></video>
-		<video autoplay controls download id="video2"></video>
-		<video autoplay controls download id="video3"></video> -->
-	</div>
-	
-	<button id="animate-button">Animate</button>
-
 	<script type="text/javascript">
-		const hanziInput = document.getElementById("hanzi-input");
+		// This example gets a video stream from a canvas on which we will draw
+		// black and white noise, and captures it to a video
+		//
+		// The relevant functions in use are:
+		//
+		// requestAnimationFrame -> to create a render loop (better than setTimeout)
+		// canvas.captureStream -> to get a stream from a canvas
+		// context.getImageData -> to get access to the canvas pixels
+		// URL.createObjectURL -> to create a URL from a stream so we can use it as src
 
-		var selectedHanzi
-		var character0
-		var character1
-		var character2
-		var character3
+		window.onload = function () {
+		  var video = document.getElementById('video');
+		  var canvas = document.getElementById('canvas');
+		  var width = canvas.width;
+		  var height = canvas.height;
+		  var capturing = false;
 
-		// When the button is clicked, the first four hanzi in the text box should appear as animations
+		  video.width = width;
+		  video.height = height;
 
-		document.getElementById("hanzi-updater-button").addEventListener("click", updateHanzi);
+		  // We need the 2D context to individually manipulate pixel data
+		  var ctx = canvas.getContext('2d');
 
-		function updateHanzi() {
-			var numHanzi = Math.min(4,hanziInput.value.length) // The longest HSK words have 4 hanzi, as do chengyu
+		  // Start with a black background
+		  ctx.fillStyle = '#000';
+		  ctx.fillRect(0, 0, width, height);
+		  
+		  // Since we're continuously accessing and overwriting the pixels
+		  // object, we'll request it once and reuse it across calls to draw()
+		  // for best performance (we don't need to create ImageData objects
+		  // on every frame)
+		  var pixels = ctx.getImageData(0, 0, width, height);
+		  var data = pixels.data;
+		  var numPixels = data.length;
 
-			document.getElementById("span0").innerHTML = "";
-			document.getElementById("span1").innerHTML = "";
-			document.getElementById("span2").innerHTML = "";
-			document.getElementById("span3").innerHTML = "";
+		  var stream = canvas.captureStream(15);
+		  var recorder = new MediaRecorder(stream);
 
-			if (numHanzi > 0) {
-					selectedHanzi = hanziInput.value[0];
-					character0 = HanziWriter.create('span0', selectedHanzi, {
-					width: 100,
-					height: 100,
-					padding: 5,
-					showOutline: true,
-					strokeAnimationSpeed: 1.5,
-					delayBetweenStrokes: 100,
-					renderer: 'canvas'
-				});
+		  recorder.addEventListener('dataavailable', finishCapturing);
 
-					if (numHanzi > 1) {
-							selectedHanzi = hanziInput.value[1];
-							character1 = HanziWriter.create('span1', selectedHanzi, {
-							width: 100,
-							height: 100,
-							padding: 5,
-							showOutline: true,
-							strokeAnimationSpeed: 1.5,
-							delayBetweenStrokes: 100,
-							renderer: 'canvas'
-						});
+		  startCapturing();
+		  recorder.start();
 
-							if (numHanzi > 2) {
-									selectedHanzi = hanziInput.value[2];
-									character2 = HanziWriter.create('span2', selectedHanzi, {
-									width: 100,
-									height: 100,
-									padding: 5,
-									showOutline: true,
-									strokeAnimationSpeed: 1.5,
-									delayBetweenStrokes: 100,
-									renderer: 'canvas'
-								});
+		  setTimeout(function() {
+		    recorder.stop();
+		  }, 2000);
 
-									if (numHanzi > 3) {
-											selectedHanzi = hanziInput.value[3];
-											character3 = HanziWriter.create('span3', selectedHanzi, {
-											width: 100,
-											height: 100,
-											padding: 5,
-											showOutline: true,
-											strokeAnimationSpeed: 1.5,
-											delayBetweenStrokes: 100,
-											renderer: 'canvas'
-										});
-									}
-							}
-					}
-			}
-		}
 
-		// Function that animates the hanzi
-		function chainAnimations() {
-		  var delayBetweenAnimations = 800; // milliseconds
-		    character0.hideCharacter();
-		    character1.hideCharacter();
-		    character2.hideCharacter();
-		    character3.hideCharacter({
-		    	onComplete: function() {
-		    		character0.animateCharacter({
-		    		  onComplete: function() {
-		    		    setTimeout(function() {
-		    		      character1.animateCharacter({
-		    		      	onComplete: function() {
-		    		      		setTimeout(function() {
-		    		      			character2.animateCharacter({
-		    		      				onComplete: function() {
-		    		      					setTimeout(function() {
-		    		      						character3.animateCharacter();
-		    		      					}, delayBetweenAnimations);
-		    		      				}
-		    		      			});
-		    		      		}, delayBetweenAnimations);
-		    		      	}
-		    		      });
-		    		    }, delayBetweenAnimations);
-		    		  }
-		    		});
-		    	}
-		    });
+		  function startCapturing() {
+		    capturing = true;
+		    draw();
+		  }
 
-		    var canvas0 = document.querySelectorAll("canvas")[0];
 
-		    const recording = record(canvas0, 10000)
-		    // play it on another video element
-		    var video$ = document.createElement('video')
-		    document.body.appendChild(video$)
-		    recording.then(url => video$.setAttribute('src', url) )
+		  function finishCapturing(e) {
+		    capturing = false;
+		    var videoData = [ e.data ];
+		    var blob = new Blob(videoData, { 'type': 'video/webm' });
+		    var videoURL = URL.createObjectURL(blob);
+		    video.src = videoURL;
+		    video.play();
+		  }
 
-		    // download it
-		    var link$ = document.createElement('a')
-		    link$.setAttribute('download','recordingVideo') 
-		    recording.then(url => {
-		     link$.setAttribute('href', url) 
-		     link$.click()
-		    })
 
-		}
+		  function draw() {
+		    // We don't want to render again if we're not capturing
+		    if(capturing) {
+		      requestAnimationFrame(draw);
+		    }
+		    drawWhiteNoise();
+		  }
 
-		document.getElementById('animate-button').addEventListener('click', chainAnimations);
 
-		function record(canvas, time) {
-		    var recordedChunks = [];
-		    return new Promise(function (res, rej) {
-		        var stream = canvas.captureStream(25 /*fps*/);
-		        mediaRecorder = new MediaRecorder(stream, {
-		            mimeType: "video/webm; codecs=vp9"
-		        });
-		        
-		        //ondataavailable will fire in interval of `time || 4000 ms`
-		        mediaRecorder.start(time || 4000);
+		  function drawWhiteNoise() {
+		    var offset = 0;
 
-		        mediaRecorder.ondataavailable = function (event) {
-		            recordedChunks.push(event.data);
-		             // after stop `dataavilable` event run one more time
-		            if (mediaRecorder.state === 'recording') {
-		                mediaRecorder.stop();
-		            }
+		    for(var i = 0; i < numPixels; i++) {
+		      var grey = Math.round(Math.random() * 255);
+		      
+		      // The data array has pixel values in RGBA order
+		      // (Red, Green, Blue and Alpha for transparency)
+		      // We will make R, G and B have the same value ('grey'),
+		      // then skip the Alpha value by increasing the offset,
+		      // as we're happy with the opaque value we set when painting
+		      // the background black at the beginning
+		      data[offset++] = grey;
+		      data[offset++] = grey;
+		      data[offset++] = grey;
+		      offset++; // skip the alpha component
+		    }
 
-		        }
+		    // And tell the context to draw the updated pixels in the canvas
+		    ctx.putImageData(pixels, 0, 0);
+		  }
 
-		        mediaRecorder.onstop = function (event) {
-		            var blob = new Blob(recordedChunks, {type: "video/webm" });
-		            var url = URL.createObjectURL(blob);
-		            res(url);
-		        }
-		    })
-		}
+		};
 
 	</script>
+</head>
+<body>
+	<main class="row">
+	    <figure>
+	      <canvas id="canvas" width="320" height="320"></canvas><br>
+	      <caption>This is a <code>canvas</code> element</caption>
+	    </figure>
+	    <figure>
+	      <video id="video" controls loop></video><br>
+	      <caption>This is a <code>video</code> element</caption>
+	    </figure>
+	</main>
 </body>
 </html>
