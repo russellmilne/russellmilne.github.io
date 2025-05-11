@@ -69,14 +69,20 @@
 		  startCapturing(writer);
 		  recorder.start();
 
-		  setTimeout(function() {
-		    recorder.stop();
-		  }, 10000);
+		  //setTimeout(function() {
+		  //  recorder.stop();
+		  //}, 10000);
 
 
 		  function startCapturing(writerarg) {
 		    capturing = true;
-		    writerarg.animateCharacter();
+		    writerarg.animateCharacter({
+		    	onComplete: function() {
+		    		setTimeout(function() {
+		    			recorder.stop();
+		    		}, 1000);
+		    	}
+		    });
 		  }
 
 
