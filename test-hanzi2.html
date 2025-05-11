@@ -21,14 +21,14 @@
 		  var canvas = document.getElementById('canvas');
 		  canvas.width = 2000;
 		  canvas.height = 2000;
-		  canvas.style.width = 200;
-		  canvas.style.height = 200;
+		  canvas.style.width = '200px';
+		  canvas.style.height = '200px';
 		  var width = canvas.width;
 		  var height = canvas.height;
 		  var capturing = false;
 
-		  video.width = auto;
-		  video.height = auto;
+		  video.width = width;
+		  video.height = height;
 
 		  // We need the 2D context to individually manipulate pixel data
 		  var ctx = canvas.getContext('2d');
