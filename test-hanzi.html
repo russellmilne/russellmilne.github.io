@@ -85,30 +85,44 @@
 
 		function chainAnimations() {
 		  var delayBetweenAnimations = 1000; // milliseconds
-		    character0.hideCharacter();
-		    character1.hideCharacter();
-		    character2.hideCharacter();
-		    character3.hideCharacter();
-
-		    character0.animateCharacter({
-		      onComplete: function() {
-		        setTimeout(function() {
-		          character1.animateCharacter({
-		          	onComplete: function() {
-		          		setTimeout(function() {
-		          			character2.animateCharacter({
-		          				onComplete: function() {
-		          					setTimeout(function() {
-		          						character3.animateCharacter();
-		          					}, delayBetweenAnimations);
-		          				}
-		          			});
-		          		}, delayBetweenAnimations);
-		          	}
-		          });
-		        }, delayBetweenAnimations);
-		      }
+		    character0.hideCharacter({
+		    	onComplete: function() {
+		    		character1.hideCharacter({
+		    			onComplete: function() {
+		    				character2.hideCharacter({
+		    					onComplete: function() {
+		    						character3.hideCharacter({
+		    							onComplete: function() {
+		    								character0.animateCharacter({
+		    								  onComplete: function() {
+		    								    setTimeout(function() {
+		    								      character1.animateCharacter({
+		    								      	onComplete: function() {
+		    								      		setTimeout(function() {
+		    								      			character2.animateCharacter({
+		    								      				onComplete: function() {
+		    								      					setTimeout(function() {
+		    								      						character3.animateCharacter();
+		    								      					}, delayBetweenAnimations);
+		    								      				}
+		    								      			});
+		    								      		}, delayBetweenAnimations);
+		    								      	}
+		    								      });
+		    								    }, delayBetweenAnimations);
+		    								  }
+		    								});
+		    							}
+		    						});
+		    					}
+		    				});
+		    			}
+		    		});
+		    	}
 		    });
+		    // character1.hideCharacter();
+		    // character2.hideCharacter();
+		    // character3.hideCharacter();
 		}
 
 		document.getElementById('animate-button').addEventListener('click', chainAnimations);
