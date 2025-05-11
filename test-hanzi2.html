@@ -67,7 +67,7 @@
 		  recorder.addEventListener('dataavailable', finishCapturing);
 
 		  startCapturing(writer);
-		  //recorder.start();
+		  recorder.start();
 
 		  //setTimeout(function() {
 		  //  recorder.stop();
@@ -76,19 +76,15 @@
 
 		  function startCapturing(writerarg) {
 		    capturing = true;
-		    recorder.start({
-		    	onComplete: function() {
-		    		setTimeout(function() {
-		    			writerarg.animateCharacter({
-		    				onComplete: function() {
-		    					setTimeout(function() {
-		    						recorder.stop();
-		    					}, 1000);
-		    				}
-		    			});
-		    		}, 500);
-		    	}
-		    });
+		    setTimeout(function() {
+		    	writerarg.animateCharacter({
+		    			    	onComplete: function() {
+		    			    		setTimeout(function() {
+		    			    			recorder.stop();
+		    			    		}, 1000);
+		    			    	}
+		    			    });
+		    }, 500);
 		  }
 
 
