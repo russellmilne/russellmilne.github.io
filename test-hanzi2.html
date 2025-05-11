@@ -18,10 +18,10 @@
 	</div>
 
 	<div>
-		<video autoplay controls download id="video0"></video>
+		<!-- <video autoplay controls download id="video0"></video>
 		<video autoplay controls download id="video1"></video>
 		<video autoplay controls download id="video2"></video>
-		<video autoplay controls download id="video3"></video>
+		<video autoplay controls download id="video3"></video> -->
 	</div>
 	
 	<button id="animate-button">Animate</button>
@@ -130,46 +130,51 @@
 		    	}
 		    });
 
-		    // Video recording setup (one video per canvas)
+		    const recording = record(canvas0, 10000)
+		    // play it on another video element
+		    var video$ = document.createElement('video')
+		    document.body.appendChild(video$)
+		    recording.then(url => video$.setAttribute('src', url) )
 
-		    var canvas0 = document.querySelectorAll("canvas")[0];
-		    var canvas1 = document.querySelectorAll("canvas")[1];
-		    var canvas2 = document.querySelectorAll("canvas")[2];
-		    var canvas3 = document.querySelectorAll("canvas")[3];
-		    var ctx0 = canvas0.getContext("2d");
-		    var ctx1 = canvas1.getContext("2d");
-		    var ctx2 = canvas2.getContext("2d");
-		    var ctx3 = canvas3.getContext("2d");
-
-		    var video0 = document.querySelectorAll("video")[0];
-		    var video1 = document.querySelectorAll("video")[1];
-		    var video2 = document.querySelectorAll("video")[2];
-		    var video3 = document.querySelectorAll("video")[3];
-
-		    var videoStream0 = canvas0.captureStream(30);
-		    var mediaRecorder = new MediaRecorder(videoStream0);
-
-		    var chunks = [];
-		    mediaRecorder.ondataavailable = function(e) {
-		      chunks.push(e.data);
-		    };
-
-		    mediaRecorder.onstop = function(e) {
-		      var blob = new Blob(chunks, { 'type' : 'video/mp4' });
-		      chunks = [];
-		      var videoURL = URL.createObjectURL(blob);
-		      video.src = videoURL;
-		    };
-		    mediaRecorder.ondataavailable = function(e) {
-		      chunks.push(e.data);
-		    };
-
-		    mediaRecorder.start();
-		    setTimeout(function (){ mediaRecorder.stop(); }, 15000);
+		    // download it
+		    var link$ = document.createElement('a')
+		    link$.setAttribute('download','recordingVideo') 
+		    recording.then(url => {
+		     link$.setAttribute('href', url) 
+		     link$.click()
+		    })
 
 		}
 
 		document.getElementById('animate-button').addEventListener('click', chainAnimations);
+
+		function record(canvas, time) {
+		    var recordedChunks = [];
+		    return new Promise(function (res, rej) {
+		        var stream = canvas.captureStream(25 /*fps*/);
+		        mediaRecorder = new MediaRecorder(stream, {
+		            mimeType: "video/webm; codecs=vp9"
+		        });
+		        
+		        //ondataavailable will fire in interval of `time || 4000 ms`
+		        mediaRecorder.start(time || 4000);
+
+		        mediaRecorder.ondataavailable = function (event) {
+		            recordedChunks.push(event.data);
+		             // after stop `dataavilable` event run one more time
+		            if (mediaRecorder.state === 'recording') {
+		                mediaRecorder.stop();
+		            }
+
+		        }
+
+		        mediaRecorder.onstop = function (event) {
+		            var blob = new Blob(recordedChunks, {type: "video/webm" });
+		            var url = URL.createObjectURL(blob);
+		            res(url);
+		        }
+		    })
+		}
 
 	</script>
 </body>
