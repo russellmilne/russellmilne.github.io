@@ -74,13 +74,13 @@
 
 		function chainAnimations() {
 		  var delayBetweenAnimations = 1000; // milliseconds
+		    character0.hideCharacter();
 		    character1.hideCharacter();
-		    character2.hideCharacter();
 
-		    character1.animateCharacter({
+		    character0.animateCharacter({
 		      onComplete: function() {
 		        setTimeout(function() {
-		          character2.animateCharacter();
+		          character1.animateCharacter();
 		        }, delayBetweenAnimations);
 		      }
 		    });
