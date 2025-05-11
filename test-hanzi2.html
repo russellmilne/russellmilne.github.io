@@ -61,13 +61,13 @@
 		    renderer: 'canvas'
 		  });
 
-		  var stream = canvas.captureStream(60);
+		  var stream = canvas.captureStream(40);
 		  var recorder = new MediaRecorder(stream);
 
 		  recorder.addEventListener('dataavailable', finishCapturing);
 
 		  startCapturing(writer);
-		  recorder.start();
+		  //recorder.start();
 
 		  //setTimeout(function() {
 		  //  recorder.stop();
@@ -76,6 +76,7 @@
 
 		  function startCapturing(writerarg) {
 		    capturing = true;
+		    recorder.start();
 		    writerarg.animateCharacter({
 		    	onComplete: function() {
 		    		setTimeout(function() {
