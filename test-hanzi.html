@@ -54,7 +54,8 @@
 		    height: 990,
 		    padding: 5,
 		    showOutline: true,
-		    renderer: 'canvas'
+		    renderer: 'canvas',
+		    delayBetweenLoops: 500000
 		  });
 
 		  var stream = canvas.captureStream(30);
@@ -65,21 +66,15 @@
 		  startCapturing(writer);
 		  recorder.start();
 
-		  //setTimeout(function() {
-		  //  recorder.stop();
-		  //}, 10000);
+		  setTimeout(function() {
+		    recorder.stop();
+		  }, 15000);
 
 
 		  function startCapturing(writerarg) {
 		    capturing = true;
 		    setTimeout(function() {
-		    	writerarg.animateCharacter({
-		    			    	onComplete: function() {
-		    			    		setTimeout(function() {
-		    			    			recorder.stop();
-		    			    		}, 1000);
-		    			    	}
-		    			    });
+		    	writerarg.loopCharacterAnimation();
 		    }, 500);
 		  }
 
@@ -87,7 +82,7 @@
 		  function finishCapturing(e) {
 		    capturing = false;
 		    var videoData = [ e.data ];
-		    var blob = new Blob(videoData, { 'type': 'video/webm' });
+		    var blob = new Blob(videoData, { 'type': 'video/mp4' });
 		    var videoURL = URL.createObjectURL(blob);
 		    video.src = videoURL;
 		    video.play();
