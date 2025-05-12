@@ -19,11 +19,7 @@
 		window.onload = function () {
 		  const url = new URL(window.location.href);
 		  const urlParams = new URLSearchParams(url.search);
-		  if (urlParams.has('hanzi0')) {
-		  	const hanzi0 = urlParams.get('hanzi0');
-		  } else {
-		  	const hanzi0 = '我'
-		  }
+		  const hanzi0 = urlParams.get('hanzi0');
 
 		  var video = document.getElementById('video');
 		  var canvas = document.getElementById('canvas');
