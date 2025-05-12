@@ -76,11 +76,13 @@
 		    	writerarg.animateCharacter({
 		    			    	onComplete: function() {
 		    			    		setTimeout(function() {
-		    			    			recorder.stop();
+		    			    			//recorder.stop();
 		    			    		}, 1000);
 		    			    	}
 		    			    });
 		    }, 500);
+
+		    recorder.stop()
 		  }
 
 
