@@ -76,7 +76,8 @@
 		    	writerarg.animateCharacter({
 		    			    	onComplete: function() {
 		    			    		setTimeout(function() {
-		    			    			writerarg.updateColor('strokeColor','#AA9913',{
+		    			    			writerarg.hideOutline({
+		    			    				duration: 5000,
 		    			    				onComplete: function() {
 		    			    					recorder.stop();
 		    			    				}
