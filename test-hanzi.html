@@ -55,7 +55,6 @@
 		    padding: 5,
 		    showOutline: true,
 		    renderer: 'canvas',
-		    delayBetweenLoops: 500000
 		  });
 
 		  var stream = canvas.captureStream(30);
@@ -77,7 +76,11 @@
 		    	writerarg.animateCharacter({
 		    			    	onComplete: function() {
 		    			    		setTimeout(function() {
-		    			    			recorder.stop();
+		    			    			writerarg.updateColor('strokeColor','#AA9913',{
+		    			    				onComplete: function() {
+		    			    					recorder.stop();
+		    			    				}
+		    			    			});
 		    			    		}, 1000);
 		    			    	}
 		    			    });
@@ -86,14 +89,12 @@
 
 
 		  function finishCapturing(e) {
-		  	setTimeout(function() {
-		  		capturing = false;
-		    	var videoData = [ e.data ];
-		    	var blob = new Blob(videoData, { 'type': 'video/mp4' });
-		    	var videoURL = URL.createObjectURL(blob);
-		    	video.src = videoURL;
-		    	video.play();
-		  	}, 5000);
+		    capturing = false;
+		    var videoData = [ e.data ];
+		    var blob = new Blob(videoData, { 'type': 'video/mp4' });
+		    var videoURL = URL.createObjectURL(blob);
+		    video.src = videoURL;
+		    video.play();
 		  }
 
 		};
