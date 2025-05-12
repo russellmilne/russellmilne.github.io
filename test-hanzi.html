@@ -61,7 +61,7 @@
 		  var stream = canvas.captureStream(30);
 		  var recorder = new MediaRecorder(stream);
 
-		  //recorder.addEventListener('dataavailable', finishCapturing);
+		  recorder.addEventListener('dataavailable', finishCapturing);
 
 		  startCapturing(writer);
 		  recorder.start();
@@ -78,7 +78,6 @@
 		    			    	onComplete: function() {
 		    			    		setTimeout(function() {
 		    			    			recorder.stop();
-		    			    			finishCapturing(recorder)
 		    			    		}, 1000);
 		    			    	}
 		    			    });
@@ -87,12 +86,14 @@
 
 
 		  function finishCapturing(e) {
-		    capturing = false;
-		    var videoData = [ e.data ];
-		    var blob = new Blob(videoData, { 'type': 'video/mp4' });
-		    var videoURL = URL.createObjectURL(blob);
-		    video.src = videoURL;
-		    video.play();
+		  	setTimeout(function() {
+		  		capturing = false;
+		    	var videoData = [ e.data ];
+		    	var blob = new Blob(videoData, { 'type': 'video/mp4' });
+		    	var videoURL = URL.createObjectURL(blob);
+		    	video.src = videoURL;
+		    	video.play();
+		  	}, 5000);
 		  }
 
 		};
