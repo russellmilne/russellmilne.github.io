@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.image {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Image Modal</h2>
+<p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+<p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+
+<img src="img/2020-05-09_16-44-13.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2020-06-27_17-03-42.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2020-07-29_15-56-59.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2020-07-30_10-53-08.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2020-08-23_11-35-23.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2021-08-19_05-51-57.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-03-15_21-47-26.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-05-21_06-18-59.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-07-01_21-11-23.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-07-01_21-13-52.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-07-14_18-14-39.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-07-19_15-34-57.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-07-29_21-29-13.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-09-01_21-08-02.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+
+<img src="img/2022-11-17_21-26-41.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-11-17_21-39-13.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-12-01_14-42-01.jpg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-12-06_18-51-28.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-12-09_14-37-16.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-12-12_11-12-54.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2022-12-30 16-56-22.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2023-03-09 14-49-13.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2023-06-12 12-17-35.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2023-07-23 14-37-12.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2023-08-30 18-44-35.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+
+<img src="img/2023-10-17 16-09-23.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2023-12-27 14-48-13.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-03-29 17-30-29.png" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-04-03 20-13-58.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-05-20 18-25-34.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-05-27 12-49-27.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-05-30 14-02-44.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-06-08 21-31-06.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-06-12 19-18-15.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-06-17 20-17-38.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-06-18 18-23-31.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-06-26 21-01-13.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-06-27 19-13-18.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+
+<img src="img/2024-09-29 14-36-44.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-10-31 20-41-30.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-11-10 07-58-51.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-11-13 13-25-19.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-11-13 16-45-57.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-12-20 16-44-21.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2024-12-23 14-58-40.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2025-01-01 17-02-44.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2025-03-28 21-44-17.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2025-05-03 18-34-01.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2025-06-30 11-55-32.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+<img src="img/2025-07-22 13-25-08.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)">
+
+<!-- <img src="img/aaaaaaa.jpeg" alt="aaaaaaa" style="height:20vh;aspect-ratio:auto;padding:1%" class="image" onclick="modaldisplay(this)"> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+function modaldisplay(inputpicture){
+  modal.style.display = "block";
+  modalImg.src = inputpicture.src;
+  captionText.innerHTML = inputpicture.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
