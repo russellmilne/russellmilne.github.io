@@ -184,7 +184,7 @@ html {
 
 .nav-text-name {
   color: var(--headername);
-  font-size: 2.3em;
+  font-size: 2.2em;
 }
 
 .nav-text-name:hover {
@@ -194,7 +194,7 @@ html {
 
 .nav-text-notname {
   color: var(--headertext);
-  font-size: 1.4em;
+  font-size: 1.35em;
 }
 
 .nav-text-notname:hover {
@@ -425,7 +425,7 @@ but I keep the bottom margin (to maintain spacing between paragraphs). */
 .main-text {
   margin-top: 0;
   /* Testing a larger font size and greater line spacing */
-  font-size: 1.1em;
+  font-size: 1.08em;
   line-height: 1.5;
 }
 /* For the last paragraph in the main text, I also remove the bottom margin */
