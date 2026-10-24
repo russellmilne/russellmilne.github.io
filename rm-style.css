@@ -415,7 +415,7 @@ main {
   overflow-y: scroll;
 }
 
-#main-wrapper {
+.wrapper {
   padding: 20px;
 }
 
